@@ -21,14 +21,14 @@ function CarteActeur() {
       options
     )
       .then((res) => res.json())
-      .then((data) => setActeursInfos(data.cast));
+      .then((data) => setActeursInfos(data.cast.slice(0, 10)));
   }, []);
 
   return (
-    <div>
+    <div className="container_card">
       {console.log("je suis dans le return", acteursInfos)};
       {acteursInfos.map((acteurInfo) => (
-        <div className="container_card" key={acteurInfo.id}>
+        <div key={acteurInfo.id}>
           <li className="card">
             {/* <a href="profile-acteur"> */}
             <img
