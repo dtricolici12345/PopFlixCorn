@@ -1,8 +1,10 @@
 import "./App.css";
+import CarteActeur from "./Components/CarteActeur";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <CarteActeur />
     </div>
   );
 }
