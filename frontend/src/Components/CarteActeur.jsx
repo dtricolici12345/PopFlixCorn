@@ -26,7 +26,7 @@ function CarteActeur() {
 
   return (
     <div className="container_card">
-      {console.log("je suis dans le return", acteursInfos)};
+      {console.log("je suis dans le return", acteursInfos)}
       {acteursInfos.map((acteurInfo) => (
         <div key={acteurInfo.id}>
           <li className="card">
@@ -40,8 +40,8 @@ function CarteActeur() {
             <p className="original_name">{acteurInfo.original_name}</p>
             <p className="character">{acteurInfo.character}</p>
           </li>
-        </div>)
-      )};
+        </div>
+      ))}
     </div>
   );
 }
