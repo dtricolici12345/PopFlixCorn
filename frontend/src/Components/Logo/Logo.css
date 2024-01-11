@@ -1,0 +1,37 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.title {
+    margin: 0;
+    padding-top: 10px;
+    font-family: Bebas Neue;
+    font-size: 30px;
+}
+
+.word-pop {
+    color: #F8F8F2;
+}
+
+.word-flix {
+    color: #FFA00B;
+    font-size: 40px;
+}
+
+.word-corn {
+    color: #F8F8F2;
+}
+
+.Home {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+}

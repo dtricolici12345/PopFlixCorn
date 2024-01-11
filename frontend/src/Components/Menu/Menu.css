@@ -1,0 +1,154 @@
+#toggle {
+  display: none;
+}
+
+#show-menu {
+  display: flex;
+  flex-direction: column;
+  padding-right: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    position: fixed;
+    bottom: 75px;
+    right: 55%;
+    display: flex;
+  }
+
+  #menuclose {
+    border-radius: 100%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+
+  #menuclose .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #fff;
+    margin: 2px 0;
+    transition: 0.4s;
+  }
+
+  #menuclose.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  #menuclose.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #menuclose.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .btn {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  }
+
+  .btn:not(:first-child) {
+    opacity: 0;
+    z-index: -2;
+    transition: all 0.6s cubic-bezier(.87, -.41, .19, 1.44);
+  }
+
+  .btn:nth-child(2) {
+    left: 0;
+    top: 0;
+    transition-delay: 0s;
+  }
+
+  .btn:nth-child(3) {
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+  }
+
+  .btn:nth-child(4) {
+    top: 0;
+    transition-delay: 0.3s;
+  }
+
+  .btn:nth-child(5) {
+    top: 0;
+    left: 0;
+    transition-delay: 0.2s;
+  }
+
+  .btn:nth-child(6) {
+    left: 0;
+    transition-delay: 0.4s;
+  }
+
+  input#toggle:checked~#show-menu .btn:nth-child(2) {
+    left: -150px;
+    top: 1px;
+    opacity: 1;
+  }
+
+  input#toggle:checked~#show-menu .btn:nth-child(3) {
+    left: -100px;
+    top: -100px;
+    opacity: 1;
+  }
+
+  input#toggle:checked~#show-menu .btn:nth-child(4) {
+    top: -130px;
+    opacity: 1;
+  }
+
+
+  input#toggle:checked~#show-menu .btn:nth-child(5) {
+    top: -100px;
+    left: 100px;
+    opacity: 1;
+  }
+
+  input#toggle:checked~#show-menu .btn:nth-child(6) {
+
+    left: 150px;
+    top: -0.1px;
+    opacity: 1;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+
+  .btn {
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .btn:hover {
+    transform: translateX(-10px);
+  }
+
+  #menuclose {
+    display: none;
+  }
+}

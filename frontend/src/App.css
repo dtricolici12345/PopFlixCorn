@@ -1,19 +1,20 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #282A36;
 }
 
+/* .App {
+  display: flex;
+} */
 
 /* media query */
 /* Petit écran (mobile) */
-@media screen  and (max-width: 768px) {
-}
+@media screen and (max-width: 768px) {}
 
 /* Ecran moyen (Tablettes) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-}
+@media screen and (min-width: 769px) and (max-width: 1024px) {}
 
 /* Grand écran (Ordi) */
-@media screen and (min-width: 1025px) {
-}
+@media screen and (min-width: 1025px) {}
