@@ -2,8 +2,30 @@
   background-color: #282A36;
 }
 
+.container_banner {
+  margin: 0 5% 0 5%;
+}
+
+.title_acteurs {
+  color: #F8F8F2;
+  margin: 10px;
+}
+
 .container_card {
   display: flex;
+  justify-content: flex-start;
+  max-width: 60em;
+  overflow-x: auto;
+  z-index: 1;
+}
+
+.container_card:before {
+  content: "";
+  position: absolute;
+  width: 60em;
+  height: 18em;
+  z-index: 2;
+  box-shadow: inset -15px 0 5px -7px #282A36;
 }
 
 .card {
@@ -23,7 +45,7 @@
 }
 
 .original_name {
-  color: white;
+  color: #F8F8F2;
   font-family: 'Open Sans', sans-serif;
   padding: 10px 10px 2px 10px;
   font-size: 0.8em;

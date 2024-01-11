@@ -25,23 +25,27 @@ function CarteActeur() {
   }, []);
 
   return (
-    <div className="container_card">
-      {console.log("je suis dans le return", acteursInfos)}
-      {acteursInfos.map((acteurInfo) => (
-        <div key={acteurInfo.id}>
-          <li className="card">
-            {/* <a href="profile-acteur"> */}
-            <img
-              className="profile_path"
-              src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
-              alt="Picture_acteur"
-            />
-            {/* </a> */}
-            <p className="original_name">{acteurInfo.original_name}</p>
-            <p className="character">{acteurInfo.character}</p>
-          </li>
-        </div>
-      ))}
+    <div className="container_banner">
+      <h2 className="title_acteurs">Acteurs :</h2>
+
+      <div className="container_card">
+        {console.log("je suis dans le return", acteursInfos)}
+        {acteursInfos.map((acteurInfo) => (
+          <div key={acteurInfo.id}>
+            <li className="card">
+              {/* <a href="profile-acteur"> */}
+              <img
+                className="profile_path"
+                src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
+                alt="Picture_acteur"
+              />
+              {/* </a> */}
+              <p className="original_name">{acteurInfo.original_name}</p>
+              <p className="character">{acteurInfo.character}</p>
+            </li>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
