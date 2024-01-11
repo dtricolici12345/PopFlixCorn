@@ -19,14 +19,14 @@
   z-index: 1;
 }
 
-.container_card:before {
+/* .container_card:before {
   content: "";
   position: absolute;
   width: 60em;
   height: 18em;
   z-index: 2;
   box-shadow: inset -15px 0 5px -7px #282A36;
-}
+} */
 
 .card {
   background-color: #282A36;
