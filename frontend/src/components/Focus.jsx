@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import "../styles/Focus.css";
+import logo from "../assets/watch.png";
 
 function Focus({ video }) {
   Focus.propTypes = {
@@ -41,10 +42,10 @@ function Focus({ video }) {
       .catch((err) => console.info(err));
   }, [video.id]);
 
-  console.info(movieDetail);
+  // console.info(movieDetail);
   // console.info(movieCertification);
-  console.info(tvDetail);
-  console.info(tvCertification);
+  // console.info(tvDetail);
+  // console.info(tvCertification);
 
   const getBorderColor = () => {
     const note =
@@ -56,15 +57,18 @@ function Focus({ video }) {
     return "border-green";
   };
 
-  const toHoursAndMinutes = (totalMinutes) => {
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = Math.floor((totalMinutes - hours) / 60);
-    return `${hours}h${minutes}m`;
+  const toDaysHoursAndMinutes = (totalMinutes) => {
+    const days = Math.floor(totalMinutes / 1440);
+    const remainingMinutes = totalMinutes - days * 1440;
+    const hours = Math.floor(remainingMinutes / 60);
+    const minutes = Math.floor(remainingMinutes - hours * 60);
+    if (days >= 1) return `${days}j ${hours}h ${minutes}min`;
+    return `${hours}h ${minutes}min`;
   };
 
+  console.info(toDaysHoursAndMinutes(112));
+
   return (
-    // <>
-    //   {media.media_type === "movie" ? (
     <div className="mfocus-card">
       <div className="mfocus-card-bloc-image">
         <img
@@ -92,6 +96,8 @@ function Focus({ video }) {
             {video.media_type === "movie"
               ? movieDetail.release_date?.slice(0, 4)
               : tvDetail.first_air_date?.slice(0, 4)}
+            {video.media_type === "tv" &&
+              ` - ${tvDetail.number_of_seasons} saisons`}
             )
           </span>
         </div>
@@ -117,11 +123,13 @@ function Focus({ video }) {
                     : `${genre.name}, `
                 )}
           </span>
-          <img src="../assets/time-and-date.png" alt="logo time" />
+          <img src={logo} alt="time" />
           <span className="mfocus-time">
             {video.media_type === "movie"
-              ? toHoursAndMinutes(movieDetail.runtime)
-              : `${tvDetail.number_of_seasons} saisons`}
+              ? toDaysHoursAndMinutes(movieDetail.runtime)
+              : toDaysHoursAndMinutes(
+                  tvDetail.number_of_episodes * tvDetail.episode_run_time
+                )}
           </span>
         </div>
         <div className="mfocus-tagline">

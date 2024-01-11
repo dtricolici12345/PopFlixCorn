@@ -3,10 +3,10 @@ import "./App.css";
 
 function App() {
   // Oppenheimer
-  const video1 = {
-    media_type: "movie",
-    id: 872585,
-  };
+  // const video1 = {
+  //   media_type: "movie",
+  //   id: 872585,
+  // };
 
   // Asterix & Obelix
   // const video2 = {
@@ -14,33 +14,27 @@ function App() {
   //   id: 643215,
   // };
 
-  // Napoléon
-  // const video3 = {
-  //   media_type: "movie",
-  //   id: 753342,
-  // };
-
   // Friends
-  // const video4 = {
+  // const video3 = {
   //   media_type: "tv",
   //   id: 1668,
   // };
 
   // Breaking bad
-  // const video5 = {
+  // const video4 = {
   //   media_type: "tv",
   //   id: 1396,
   // };
 
   // The Handmaid's Tale
-  // const video6 = {
-  //   media_type: "tv",
-  //   id: 69478,
-  // };
+  const video5 = {
+    media_type: "tv",
+    id: 69478,
+  };
 
   return (
     <div className="App">
-      <Focus video={video1} />
+      <Focus video={video5} />
     </div>
   );
 }
