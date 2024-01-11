@@ -30,36 +30,52 @@
 }
 
 .mfocus-note {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--light-color);
-  border: var(--light-color) 2px solid;
+  border: 4px solid;
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
-  text-align: center;
-  line-height: 3rem;
   position: relative;
   top: -3.75rem;
-  left: 10rem;
+  left: 11.5rem;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
 }
 
-.mfocus-card-text {
+.border-red {
+  border-color: red;
+}
+
+.border-orange {
+  border-color: orange;
+}
+
+.border-green {
+  border-color: green;
+}
+
+.border- .mfocus-card-text {
   display: flex;
   flex-direction: column;
   /* border: 1px solid green; */
 }
 
 .mfocus-firstline {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 .mfocus-title {
   color: var(--secondary-color);
   font-size: 2rem;
+  text-decoration: underline;
 }
 
-.mfocus-year-time {
+.mfocus-year {
   color: var(--darkerlight-color);
-  font-size: 1rem;
+  font-size: 1.25rem;
+  padding-left: 0.5rem;
 }
 
 .mfocus-secondline {
@@ -68,12 +84,23 @@
 
 .mfocus-certification {
   color: var(--light-color);
+  font-size: 0.75rem;
+  padding: 0.25rem;
   border: 1px solid var(--light-color);
 }
 
 .mfocus-genre {
   color: var(--secondary-color);
   padding-left: 0.5rem;
+}
+
+.mfocus-secondline img {
+  width: 3rem;
+}
+
+.mfocus-time {
+  padding-left: 0.5rem;
+  color: var(--light-color);
 }
 
 .mfocus-tagline {
@@ -84,7 +111,7 @@
 
 .mfocus-overview {
   color: var(--light-color);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 .mfocus-button {
