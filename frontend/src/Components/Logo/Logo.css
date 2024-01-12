@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  
 
 }
 
@@ -13,7 +14,7 @@
 .title {
     margin: 0;
     padding-top: 10px;
-    font-family: Bebas Neue;
+    font-family: 'Bebas Neue', sans-serif;
     font-size: 30px;
 }
 
@@ -31,6 +32,7 @@
 }
 
 .Home {
+   
     display: flex;
     text-decoration: none;
     color: inherit;
