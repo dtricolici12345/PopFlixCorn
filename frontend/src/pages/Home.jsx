@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MyRandom from "../Components/Random";
+import MyRandom from "../components/Random";
 import "../styles/Home.css";
 
 function Home() {
