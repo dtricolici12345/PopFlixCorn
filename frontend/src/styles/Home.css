@@ -32,6 +32,7 @@ body {
   }
   .searchbar-container {
     display: flex;
+    align-items: center;
   }
 
   main input {
@@ -42,7 +43,7 @@ body {
     font-size: 2.5rem;
     color: #f6f6f6;
     line-height: 4rem;
-    width: 29rem;
+    width: 20rem;
   }
 
   main input:focus {
@@ -55,7 +56,7 @@ body {
 
   main input::placeholder {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #f6f6f6;
     line-height: 4rem;
   }
@@ -63,7 +64,7 @@ body {
   .line {
     border-left: 1px solid #b8b8b6;
     display: inline-block;
-    height: 4rem;
+    height: 3rem;
   }
   .suggests {
     display: flex;
@@ -122,6 +123,7 @@ body {
 
   .searchbar-container {
     display: flex;
+    align-items: center;
   }
 
   main input {
