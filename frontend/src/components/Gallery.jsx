@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import CreateGallery from "./CreateGallery";
 
 function Gallery() {
-  // eslint-disable-next-line
-  const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
@@ -29,10 +27,9 @@ function Gallery() {
 
   return (
     <div className="A4cards">
-      {researchListGallery.map((item, index) => (
+      {researchListGallery.map((item) => (
         <CreateGallery
-          // eslint-disable-next-line react/no-array-index-key
-          key={index}
+          key={item.id}
           title={item.name}
           imageUrl={item.poster_path}
           details={item.overview}
