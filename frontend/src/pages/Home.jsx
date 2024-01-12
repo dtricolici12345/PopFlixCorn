@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
 import Random from "../Components/Random";
+import "../styles/Home.css";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
