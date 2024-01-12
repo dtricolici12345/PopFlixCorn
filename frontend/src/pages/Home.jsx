@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import MyRandom from "../components/Random";
 import "../styles/Home.css";
-import Random from "../components/Random";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -60,7 +60,7 @@ function Home() {
               onKeyPress={handleKeyPress}
             />
             <span className="line" />
-            <Random className="dice" />
+            <MyRandom className="dice" />
           </div>
           <div className="suggests">
             {searchResults && searchResults.length > 0 ? (
