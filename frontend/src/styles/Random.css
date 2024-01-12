@@ -1,0 +1,18 @@
+.DiceButton {
+  background: none;
+  border: none;
+}
+@media screen and (max-width: 768px) {
+  .Dice {
+    height: 3rem;
+    margin-left: 0.5rem;
+    transition: all 500ms;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .Dice {
+    height: 4rem;
+    margin-left: 1rem;
+  }
+}
