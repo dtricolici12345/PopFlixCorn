@@ -1,0 +1,40 @@
+.A4cards {
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #282a36;
+}
+
+.A4card {
+  border-radius: 10px;
+  width: 248.02px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  /* box-shadow:  #FFA00B 0px 8px 24px; */
+}
+
+.A4card-img {
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(185, 0, 0);
+  height: 359.19px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.A4card-body {
+  padding: 10px 20px;
+  border: 6px solid #ffa00b;
+  height: 100%;
+  border-radius: 10px;
+  color: #f8f8f2;
+}
+
+.A4card-title {
+  font-weight: bold;
+}
