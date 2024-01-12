@@ -55,13 +55,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
 
   .btn:not(:first-child) {
     opacity: 0;
     z-index: -2;
-    transition: all 0.6s cubic-bezier(.87, -.41, .19, 1.44);
+    transition: all 0.6s cubic-bezier(0.87, -0.41, 0.19, 1.44);
   }
 
   .btn:nth-child(2) {
@@ -92,32 +92,30 @@
     transition-delay: 0.4s;
   }
 
-  input#toggle:checked~#show-menu .btn:nth-child(2) {
+  input#toggle:checked ~ #show-menu .btn:nth-child(2) {
     left: -150px;
     top: 1px;
     opacity: 1;
   }
 
-  input#toggle:checked~#show-menu .btn:nth-child(3) {
+  input#toggle:checked ~ #show-menu .btn:nth-child(3) {
     left: -100px;
     top: -100px;
     opacity: 1;
   }
 
-  input#toggle:checked~#show-menu .btn:nth-child(4) {
+  input#toggle:checked ~ #show-menu .btn:nth-child(4) {
     top: -130px;
     opacity: 1;
   }
 
-
-  input#toggle:checked~#show-menu .btn:nth-child(5) {
+  input#toggle:checked ~ #show-menu .btn:nth-child(5) {
     top: -100px;
     left: 100px;
     opacity: 1;
   }
 
-  input#toggle:checked~#show-menu .btn:nth-child(6) {
-
+  input#toggle:checked ~ #show-menu .btn:nth-child(6) {
     left: 150px;
     top: -0.1px;
     opacity: 1;
@@ -141,7 +139,7 @@
   .btn {
     transition: transform 0.3s ease;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 30px;
   }
 
   .btn:hover {

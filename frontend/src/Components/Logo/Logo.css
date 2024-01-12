@@ -1,39 +1,37 @@
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
-    height: 60px;
-    margin-right: 10px;
+  height: 60px;
+  margin-right: 10px;
 }
 
 .title {
-    margin: 0;
-    padding-top: 10px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
+  margin: 0;
+  padding-top: 10px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 30px;
 }
 
 .word-pop {
-    color: #F8F8F2;
+  color: #f8f8f2;
 }
 
 .word-flix {
-    color: #FFA00B;
-    font-size: 40px;
+  color: #ffa00b;
+  font-size: 40px;
 }
 
 .word-corn {
-    color: #F8F8F2;
+  color: #f8f8f2;
 }
 
 .Home {
-   
-    display: flex;
-    text-decoration: none;
-    color: inherit;
+  padding-top: 35px;
+  display: flex;
+  text-decoration: none;
+  color: inherit;
 }

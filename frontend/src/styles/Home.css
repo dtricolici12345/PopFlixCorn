@@ -1,36 +1,37 @@
-/* Ajoute le style CSS ici */
 :root {
   height: 100%;
   width: 100%;
+  margin: 0;
 }
 
 body {
   height: 100vh;
   width: 100vw;
+  margin: 0;
 }
 
 /* media query */
 /* Petit écran (mobile) */
 @media screen and (max-width: 768px) {
   main {
-    min-height: 100dvh;
+    height: 100dvh;
     background-image: url("../assets/home-back.png");
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Kanit", sans-serif;
+    overflow: hidden;
   }
-
   .search {
-    position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 4rem;
-    padding: 0;
-    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .searchbar-container {
+    display: flex;
   }
 
   main input {
@@ -38,10 +39,10 @@ body {
     background: none;
     border: none;
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: #f6f6f6;
     line-height: 4rem;
-    width: 40px;
+    width: 29rem;
   }
 
   main input:focus {
@@ -56,14 +57,34 @@ body {
     text-align: center;
     font-size: 2.5rem;
     color: #f6f6f6;
+    line-height: 4rem;
   }
 
   .line {
     border-left: 1px solid #b8b8b6;
     display: inline-block;
-    height: 3rem;
+    height: 4rem;
+  }
+  .suggests {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
   }
 
+  .suggest,
+  a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #b8b8b6;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .errorcode {
+    color: #b50101;
+  }
   .color {
     content: "";
     display: block;
@@ -82,21 +103,25 @@ body {
   main {
     background-image: url("../assets/home-back.png");
     height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Kanit", sans-serif;
+    margin: 0;
   }
 
   .search {
-    position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
     height: 4rem;
+    flex-direction: column;
+  }
+
+  .searchbar-container {
+    display: flex;
   }
 
   main input {
@@ -132,14 +157,39 @@ body {
     height: 4rem;
   }
 
+  .suggests {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .suggest,
+  a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #b8b8b6;
+    text-decoration: none;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .suggest:hover {
+    background-color: #f6f6f61b;
+  }
+
+  .errorcode {
+    color: #b50101;
+  }
+
   .color {
     content: "";
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: #282a36cc;
     z-index: auto;
   }

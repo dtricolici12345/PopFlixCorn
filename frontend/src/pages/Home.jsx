@@ -1,73 +1,84 @@
-import React, { useState } from "react";
+// Home.js
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Home.css";
 
 function Home() {
-  // Valeur de searchQuery par défaut est vide
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
-  // Function pour la recherche
   const handleSearch = () => {
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
         Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDA5OWZiMmIwZjMxNGY5YmIzMjJjNzY2MGExMWVmNSIsInN1YiI6IjY1OTg0OTc3MWQxYmY0MDFhOGU0YmViMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1Qtip1eiVi7XgfcZBaGDsa5LzjXMd4Ym3Ems_tmCiTQ",
+          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZTJhZGFmMTkyNDExODRhZGFhMWI1MzZhZWIwMGRiOCIsInN1YiI6IjY1OTY2OWNkNjBjNTFkM2U5ODk3ODQ4YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bvj9pVHbgf2EV009bseL1_lV-oBEY2fUQqzOUqNXaXs",
       },
     };
-    // Fetch de l'api
     fetch(
       `https://api.themoviedb.org/3/search/multi?query=${searchQuery}&include_adult=false&language=fr-FR&page=1`,
       options
     )
-      // Si il y a une reponse
       .then((response) => response.json())
       .then((response) => {
-        // Si il y'a des résultats
         if (response.results) {
-          // Slice pour en avoir que 8 + Map des résultats pour montrer chaque résultats
-          response.results.slice(0, 8).map((result) => {
-            // console.log(result);
-            console.info("Nom:", result.name || result.title);
-            console.info("ID:", result.id);
-            console.info("Poster:", result.poster_path);
-            console.info("Synopsis:", result.overview);
-            console.info("---------------------");
-            return null;
-          });
-          // Si ça ne trouve pas
+          setSearchResults(response.results.slice(0, 8));
+          console.info("Search Results:", response.results.slice(0, 8));
         } else {
-          console.error("Aucun résultat trouvé.");
+          setSearchResults([]);
+          console.error("No results found.");
         }
       })
-      // Log l'erreur si y'a une erreur
       .catch((err) => console.error(err));
   };
-  // Si la touche "Entrée" est pressé => function handleKeyPress
+
+  useEffect(() => {
+    const delaySearch = setTimeout(() => {
+      handleSearch();
+    }, 100);
+
+    return () => clearTimeout(delaySearch);
+  }, [searchQuery]);
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
-      handleSearch();
+      window.location.href = `/gallery/${searchQuery}`;
     }
   };
-
   return (
     <div className="Home">
       <main>
-        {/* Logo à mettre */}
         <div className="search">
-          <input
-            type="text"
-            id="searchBar"
-            placeholder="Tapez votre recherche"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            onKeyPress={handleKeyPress}
-          />
-          <span className="line" />
-          {/* dé à mettre */}
-          {/* Sugestion à mettre  */}
+          <div className="searchbar-container">
+            <input
+              type="text"
+              id="searchBar"
+              placeholder="Tapez votre recherche"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              autoComplete="off"
+              onKeyPress={handleKeyPress}
+            />
+            <span className="line" />
+          </div>
+          <div className="suggests">
+            {searchResults && searchResults.length > 0 ? (
+              searchResults.map((result) => (
+                <div className="suggest" key={result.id}>
+                  <Link to={`/gallery/${result.name}`}>
+                    <p>{result.title || result.name}</p>
+                  </Link>
+                </div>
+              ))
+            ) : (
+              <p className="errorcode">
+                {searchResults.length === 0 && searchQuery !== ""
+                  ? "Aucun résultat"
+                  : ""}
+              </p>
+            )}
+          </div>
         </div>
-        {/* Navbar à mettre */}
         <div className="color" />
       </main>
     </div>
