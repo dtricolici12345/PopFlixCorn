@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import MyRandom from "../components/Random";
+import Random from "../components/Random";
+import Menu from "../components/Menu/Menu";
+import Logo from "../components/Logo/Logo";
 import "../styles/Home.css";
 
 function Home() {
@@ -49,6 +51,7 @@ function Home() {
     <div className="Home">
       <main>
         <div className="search">
+          <Logo />
           <div className="searchbar-container">
             <input
               type="text"
@@ -60,7 +63,7 @@ function Home() {
               onKeyPress={handleKeyPress}
             />
             <span className="line" />
-            <MyRandom className="dice" />
+            <Random className="dice" />
           </div>
           <div className="suggests">
             {searchResults && searchResults.length > 0 ? (
@@ -81,6 +84,7 @@ function Home() {
           </div>
         </div>
         <div className="color" />
+        <Menu />
       </main>
     </div>
   );
