@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Menu.css";
@@ -22,8 +23,8 @@ function Menu() {
         onChange={toggleMenu}
       />
       <label id="show-menu" htmlFor="toggle">
-       <div 
-         className={`btn ${isMenuOpen ? "active" : ""}`}
+        <div
+          className={`btn ${isMenuOpen ? "active" : ""}`}
           id="menuclose"
           onClick={handleMenuClick}
         >

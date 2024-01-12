@@ -8,7 +8,7 @@ function App() {
       <Logo />
       <Menu />
     </div>
-);
+  );
 }
 
 export default App;

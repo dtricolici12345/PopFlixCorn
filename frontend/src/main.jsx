@@ -11,16 +11,20 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <App />,
-      }, {
+      },
+      {
         path: "/filter",
         element: <App />,
-      }, {
+      },
+      {
         path: "/checklist",
         element: <App />,
-      }, {
+      },
+      {
         path: "/game",
         element: <App />,
-      }, {
+      },
+      {
         path: "/shope",
         element: <App />,
       },
@@ -28,8 +32,7 @@ const router = createBrowserRouter([
         path: "/aboutus",
         element: <App />,
       },
-
-    ]
+    ],
   },
 ]);
 

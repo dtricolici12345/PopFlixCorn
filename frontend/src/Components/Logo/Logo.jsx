@@ -14,7 +14,7 @@ function Logo() {
         </h2>
       </NavLink>
     </div>
-);
+  );
 }
 
 export default Logo;
