@@ -3,9 +3,6 @@ import "./CarteActeur.css";
 
 function CarteActeur() {
   const [acteursInfos, setActeursInfos] = useState([]);
-  // const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-  // const slicedArray = array.slice(0, 10);
-  // console.log(slicedArray);
 
   useEffect(() => {
     const options = {
@@ -17,7 +14,7 @@ function CarteActeur() {
       },
     };
     fetch(
-      "https://api.themoviedb.org/3/movie/550/credits?language=en-US",
+      "https://api.themoviedb.org/3/movie/181808/credits?language=en-US",
       options
     )
       .then((res) => res.json())

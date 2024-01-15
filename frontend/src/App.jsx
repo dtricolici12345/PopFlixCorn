@@ -1,5 +1,5 @@
 import "./App.css";
-import CarteActeur from "./Components/CarteActeur";
+import CarteActeur from "./components/CarteActeur";
 
 function App() {
   return (
