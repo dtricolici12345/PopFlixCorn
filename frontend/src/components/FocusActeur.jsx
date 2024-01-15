@@ -23,12 +23,7 @@ function FocusActeur({ user }) {
           <br />
           <p className="biography">{user.biography}</p>
         </div>
-        <div className="partie film">
-          <div className="card1">
-            {/* <img src={`https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`}
-                            alt={movieDetail.title}/> */}
-          </div>
-        </div>
+        <div className="partie film" />
       </div>
     )
   );

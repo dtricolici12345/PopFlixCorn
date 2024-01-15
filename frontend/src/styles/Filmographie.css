@@ -1,0 +1,41 @@
+.title_film {
+  padding: 40px 0 0 70px;
+}
+
+.card {
+  box-sizing: border-box;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #282a36;
+  border-radius: 10px;
+  width: 248.02px;
+  margin: 20px;
+}
+/* display: flex;
+  width: 8rem;
+  height: 20rem;
+  margin: 10px;
+  list-style: none; */
+
+.img {
+  border-radius: 10px;
+}
+
+.card2 {
+  display: flex;
+  margin: 70px;
+  border: 2px solid #ffa00b;
+  border-radius: 10px;
+  color: white;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.poster_path {
+  border-radius: 10px;
+  height: 20rem;
+}
