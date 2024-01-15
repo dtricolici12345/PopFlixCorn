@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import Logo from "../components/Logo/Logo";
 import Menu from "../components/Menu/Menu";
 
@@ -46,7 +46,7 @@ function Focus() {
 
   // console.info(movieDetail);
   // console.info(movieCertification);
-  // console.info(tvDetail);
+  console.info(tvDetail);
   // console.info(tvCertification);
 
   const getBorderColor = () => {
@@ -115,12 +115,7 @@ function Focus() {
               )) ||
             (mediaType === "tv" &&
               tvCertification?.length > 0 &&
-              tvCertification.some(
-                (rating) =>
-                  rating.iso_3166_1 === "FR" &&
-                  rating.release_dates.length > 0 &&
-                  rating.release_dates.some((date) => date.certification !== "")
-              )) ? (
+              tvCertification.some((rating) => rating.iso_3166_1 === "FR")) ? (
               <span className="mfocus-certification">
                 {mediaType === "movie" &&
                   movieCertification
@@ -129,10 +124,8 @@ function Focus() {
                     ?.certification}
 
                 {mediaType === "tv" &&
-                  tvCertification
-                    .find((rating) => rating.iso_3166_1 === "FR")
-                    .release_dates.find((date) => date.certification !== "")
-                    ?.certification}
+                  tvCertification.find((rating) => rating.iso_3166_1 === "FR")
+                    ?.rating}
               </span>
             ) : null}
             <span className="mfocus-genre">
@@ -173,8 +166,10 @@ function Focus() {
           </div>
         </div>
       </div>
+      {/* <CarteActeur movieId={id} /> */}
       <Menu />
       <div />
+      <Outlet />
     </div>
   );
 }
