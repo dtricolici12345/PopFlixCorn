@@ -1,9 +1,8 @@
 import "./App.css";
 import "./components/Gallery.css";
-import Gallery from "./components/Gallery";
 
 function App() {
-  return <Gallery />;
+  return <div className="App" />;
 }
 
 export default App;
