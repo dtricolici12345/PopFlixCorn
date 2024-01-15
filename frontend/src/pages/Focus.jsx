@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import Logo from "../components/Logo/Logo";
 import Menu from "../components/Menu/Menu";
+import CarteActeur from "../components/CarteActeur";
 
 import "../components/Logo/Logo.css";
 import "../styles/Focus.css";
@@ -166,7 +167,7 @@ function Focus() {
           </div>
         </div>
       </div>
-      {/* <CarteActeur movieId={id} /> */}
+      <CarteActeur movieId={id} />
       <Menu />
       <div />
       <Outlet />

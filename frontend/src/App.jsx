@@ -1,7 +1,6 @@
 import { React, useEffect } from "react";
-import "./App.css";
-
 import { Outlet, useNavigate } from "react-router-dom";
+import "./App.css";
 
 function App() {
   const navigate = useNavigate();
@@ -13,6 +12,7 @@ function App() {
 
     return () => clearTimeout(timeoutId);
   }, [navigate]);
+
   return (
     <div className="App">
       <Outlet />

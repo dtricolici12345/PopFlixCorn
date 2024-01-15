@@ -3,7 +3,7 @@
 }
 
 .container_banner {
-  margin: 0 5% 0 5%;
+  margin: 2rem 8rem 2rem 5rem;
 }
 
 .title_acteurs {
@@ -14,7 +14,7 @@
 .container_card {
   display: flex;
   justify-content: flex-start;
-  max-width: 60em;
+  max-width: 80rem;
   overflow-x: auto;
   z-index: 1;
 }
@@ -57,4 +57,10 @@
   font-family: "Open Sans", sans-serif;
   padding: 10px 5px 10px 10px;
   font-size: 0.6em;
+}
+
+@media screen and (max-width: 768px) {
+  .container_banner {
+    margin: 2rem 2rem 2rem 2rem;
+  }
 }
