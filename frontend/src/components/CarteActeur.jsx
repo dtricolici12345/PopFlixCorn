@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import "./CarteActeur.css";
+import PropTypes from "prop-types";
 
-function CarteActeur() {
+function CarteActeur({ movieId }) {
+  CarteActeur.propTypes = {
+    movieId: PropTypes.number.isRequired,
+  };
   const [acteursInfos, setActeursInfos] = useState([]);
 
   useEffect(() => {
@@ -14,7 +18,7 @@ function CarteActeur() {
       },
     };
     fetch(
-      "https://api.themoviedb.org/3/movie/181808/credits?language=en-US",
+      `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
       options
     )
       .then((res) => res.json())
