@@ -1,12 +1,22 @@
+import { React, useEffect } from "react";
 import "./App.css";
-import CarteActeur from "./components/CarteActeur";
+
+import { Outlet, useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      navigate("/home");
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
+  }, [navigate]);
   return (
-    <div>
-      <CarteActeur />
+    <div className="App">
+      <Outlet />
     </div>
   );
 }
-
 export default App;
