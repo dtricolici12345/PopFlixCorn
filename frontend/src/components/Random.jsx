@@ -38,7 +38,8 @@ function Random() {
             if (movieData.movie_results && movieData.movie_results.length > 0) {
               const firstMovie = movieData.movie_results[0];
               if (firstMovie.title) {
-                console.info(firstMovie.title);
+                console.info(firstMovie.id);
+                window.location.href = `/focus/movie/${firstMovie.id}`;
               } else {
                 console.warn("No title found for the movie.");
               }
