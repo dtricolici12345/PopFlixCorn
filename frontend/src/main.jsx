@@ -3,12 +3,17 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
+import Gallery from "./components/Gallery";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <App />,
     children: [
+      {
+        path: "/home",
+        element: <Home />,
+      },
       {
         path: "/filter",
         element: <App />,
@@ -28,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <App />,
+      },
+      {
+        path: "/gallery/:query",
+        element: <Gallery />,
       },
     ],
   },

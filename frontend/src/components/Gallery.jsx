@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import CreateGallery from "./CreateGallery";
 
 function Gallery() {
   const [searchResults, setSearchResults] = useState([]);
+  const { query } = useParams();
 
   useEffect(() => {
     const options = {
@@ -15,7 +17,7 @@ function Gallery() {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/search/multi?query=fight&include_adult=false&language=fr-FR&page=1`,
+      `https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=fr-FR&page=1`,
       options
     )
       .then((response) => response.json())
@@ -23,7 +25,7 @@ function Gallery() {
       .catch((err) => console.error(err));
   }, []);
 
-  const researchListGallery = searchResults.slice(0, 8);
+  const researchListGallery = searchResults.slice(0, 14);
 
   return (
     <div className="A4cards">
