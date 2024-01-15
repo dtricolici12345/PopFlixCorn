@@ -3,15 +3,16 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Home from "./pages/Home";
+import Focus from "./pages/Focus";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <App />,
     children: [
       {
-        path: "/filter",
-        element: <App />,
+        path: "/home",
+        element: <Home />,
       },
       {
         path: "/checklist",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <App />,
+      },
+      {
+        path: "/focus/:mediaType/:id",
+        element: <Focus />,
       },
     ],
   },

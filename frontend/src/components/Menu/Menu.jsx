@@ -2,6 +2,11 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./Menu.css";
+import FilterIcon from "../../assets/filter.png";
+import ChecklistIcon from "../../assets/checklist.png";
+import GameIcon from "../../assets/game.png";
+import ShopeIcon from "../../assets/shope.png";
+import AboutUsIcon from "../../assets/aboutus.png";
 
 function Menu() {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -33,39 +38,23 @@ function Menu() {
           <div className="bar" />
         </div>
         <NavLink to="/filter" className="btn">
-          <img
-            src="src\assets\filter.png"
-            className="material-icons "
-            alt="Filter"
-          />
+          <img src={FilterIcon} className="material-icons " alt="Filter" />
         </NavLink>
         <NavLink to="/checklist" className="btn">
           <img
-            src="src\assets\checklist.png"
+            src={ChecklistIcon}
             alt="CheckList"
             className="material-icons "
           />
         </NavLink>
         <NavLink to="/game" className="btn">
-          <img
-            src="src\assets\game.png"
-            alt="Game"
-            className="material-icons"
-          />
+          <img src={GameIcon} alt="Game" className="material-icons" />
         </NavLink>
         <NavLink to="/shope" className="btn">
-          <img
-            src="src\assets\shope.png"
-            alt="Shope"
-            className="material-icons"
-          />
+          <img src={ShopeIcon} alt="Shope" className="material-icons" />
         </NavLink>
         <NavLink to="/aboutus" className="btn">
-          <img
-            src="src\assets\aboutus.png"
-            alt="AboutUs"
-            className="material-icons "
-          />
+          <img src={AboutUsIcon} alt="AboutUs" className="material-icons " />
         </NavLink>
       </label>
     </div>
