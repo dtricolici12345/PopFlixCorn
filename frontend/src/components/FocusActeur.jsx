@@ -10,6 +10,7 @@ function FocusActeur({ user }) {
     user && (
       <div className="FocusActeur">
         <img
+          className="imgActeur"
           src={`https://image.tmdb.org/t/p/w500/${user.profile_path}`}
           alt={user.name}
         />

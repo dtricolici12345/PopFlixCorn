@@ -28,7 +28,7 @@ function Filmographie() {
         {console.info("je suis dans le return", acteurfilm)}
         {acteurfilm.map((filmPlayActeur) => (
           <div key={filmPlayActeur.id}>
-            <li className="film">
+            <div className="filmPoster">
               <img
                 className="poster_path"
                 src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.media.poster_path}`}
@@ -38,7 +38,7 @@ function Filmographie() {
                 <p className="title">{filmPlayActeur.media.original_title}</p>
                 <p className="overview">{filmPlayActeur.media.overview}</p>
               </div>
-            </li>
+            </div>
           </div>
         ))}
       </div>
