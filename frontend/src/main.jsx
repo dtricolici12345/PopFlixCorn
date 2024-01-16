@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Filter from "./pages/Filter";
 import FilterGallery from "./pages/FilterGallery";
+import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
 import Focus from "./pages/Focus";
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         element: <Focus />,
       },
     ],
+  },
+  {
+    path: "/FocusFilmActeur",
+    element: <FocusFilmActeur />,
   },
 ]);
 
