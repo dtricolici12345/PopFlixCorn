@@ -1,0 +1,67 @@
+* {
+  background-color: #282a36;
+}
+
+.FocusActeur {
+  display: flex;
+  justify-content: space-between;
+}
+
+.partie {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.partie1 {
+  display: flex;
+}
+
+.imgActeur {
+  border-radius: 10px;
+  height: 20rem;
+  padding-left: 70px;
+}
+
+h1 {
+  color: #ffa00b;
+  text-decoration: underline;
+}
+
+h2 {
+  color: #ffa00b;
+}
+
+.age {
+  font-size: 2em;
+  color: #727272;
+}
+
+.biography {
+  color: white;
+  padding-right: 200px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 768px) {
+  .FocusActeur {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  img {
+    display: block;
+    margin: auto;
+    width: 10;
+    height: 20rem;
+  }
+  .partie1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .biography {
+    padding: 0px;
+    text-align: center;
+  }
+}
