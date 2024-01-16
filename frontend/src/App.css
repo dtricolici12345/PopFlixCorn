@@ -1,13 +1,16 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* .App {
+  display: flex;
+} */
 
 /* media query */
 /* Petit écran (mobile) */
-@media screen  and (max-width: 768px) {
+@media screen and (max-width: 768px) {
 }
 
 /* Ecran moyen (Tablettes) */
