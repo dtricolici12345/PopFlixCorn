@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 // import Loading from "./components/Loading";
 import Home from "./pages/Home";
+import Focus from "./pages/Focus";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/aboutus",
         element: <App />,
+      },
+      {
+        path: "/focus/:mediaType/:id",
+        element: <Focus />,
       },
     ],
   },

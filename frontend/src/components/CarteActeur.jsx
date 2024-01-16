@@ -22,7 +22,7 @@ function CarteActeur({ movieId }) {
       options
     )
       .then((res) => res.json())
-      .then((data) => setActeursInfos(data.cast.slice(0, 10)));
+      .then((data) => setActeursInfos(data.cast.slice(0, 15)));
   }, []);
 
   return (
