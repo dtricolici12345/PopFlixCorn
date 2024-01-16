@@ -34,13 +34,13 @@ function CarteActeur({ movieId }) {
         {acteursInfos.map((acteurInfo) => (
           <div key={acteurInfo.id}>
             <li className="card">
-              {/* <link key={acteurInfo.id} to={`/chemin/${acteurInfo.id}`}> */}
+              {/* <Link key={acteurInfo.id} to={`/chemin/${acteurInfo.id}`}> */}
               <img
                 className="profile_path"
                 src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
                 alt="Picture_acteur"
               />
-              {/* </link> */}
+              {/* </Link> */}
               <p className="original_name">{acteurInfo.original_name}</p>
               <p className="character">{acteurInfo.character}</p>
             </li>

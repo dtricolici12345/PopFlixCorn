@@ -5,6 +5,7 @@ import App from "./App";
 // import Loading from "./components/Loading";
 import Home from "./pages/Home";
 import Focus from "./pages/Focus";
+import Shop from "./pages/Shop";
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,8 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "/shope",
-        element: <App />,
+        path: "/shop",
+        element: <Shop />,
       },
       {
         path: "/aboutus",
