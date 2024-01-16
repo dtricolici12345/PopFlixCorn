@@ -1,11 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function CreateGallery({ title, imageUrl, details }) {
+function CreateGallery({ title, imageUrl, details, mediaType, id }) {
   CreateGallery.propTypes = {
     title: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
     details: PropTypes.string.isRequired,
+    mediaType: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
   };
   const maxDetailsLength = 64;
   const truncatedDetails =
@@ -14,7 +16,7 @@ function CreateGallery({ title, imageUrl, details }) {
       : details;
 
   const handleClick = () => {
-    window.location.href = "/home";
+    window.location.href = `/focus/${mediaType}/${id}`;
   };
 
   return (

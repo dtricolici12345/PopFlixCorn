@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CreateGallery from "./CreateGallery";
+import "./Gallery.css";
 
 function Gallery() {
   const [searchResults, setSearchResults] = useState([]);
@@ -31,10 +32,11 @@ function Gallery() {
     <div className="A4cards">
       {researchListGallery.map((item) => (
         <CreateGallery
-          key={item.id}
+          id={item.id}
           title={item.name}
           imageUrl={item.poster_path}
           details={item.overview}
+          mediaType={item.media_type}
         />
       ))}
     </div>
