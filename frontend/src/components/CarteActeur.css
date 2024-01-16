@@ -14,7 +14,7 @@
 .container_card {
   display: flex;
   justify-content: flex-start;
-  max-width: 80rem;
+  max-width: 90rem;
   overflow-x: auto;
   z-index: 1;
 }
