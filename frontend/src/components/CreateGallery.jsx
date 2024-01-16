@@ -13,8 +13,13 @@ function CreateGallery({ title, imageUrl, details }) {
       ? `${details.slice(0, maxDetailsLength)}...`
       : details;
 
+  const handleClick = () => {
+    window.location.href = "/home";
+  };
+
   return (
-    <div className="A4card">
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className="A4card" onClick={handleClick} style={{ cursor: "pointer" }}>
       <div className="A4card-header">
         <div
           className="A4card-img"
