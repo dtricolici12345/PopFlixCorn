@@ -7,7 +7,6 @@ import CarteActeur from "../components/CarteActeur";
 import "../components/Logo/Logo.css";
 import "../styles/Focus.css";
 import watch from "../assets/watch.png";
-import FocusButtons from "../components/FocusButtons";
 
 function Focus() {
   const { id, mediaType } = useParams();
@@ -158,16 +157,13 @@ function Focus() {
           <div className="mfocus-overview">
             {mediaType === "movie" ? movieDetail.overview : tvDetail.overview}
           </div>
-          {/* <div className="mfocus-wrap-btn">
+          <div className="mfocus-wrap-btn">
             <button type="button" className="mfocus-button">
               A voir
             </button>
             <button type="button" className="mfocus-button">
               Vu
             </button>
-          </div> */}
-          <div className="mfocus-wrap-btn">
-            <FocusButtons />
           </div>
         </div>
       </div>
