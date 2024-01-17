@@ -1,40 +1,28 @@
-import Counter from "./components/Counter";
-import logo from "./assets/logo.svg";
-
+import React, { useEffect } from "react";
 import "./App.css";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname === "/") {
+      const timeoutId = setTimeout(() => {
+        navigate("/home");
+      }, 1000);
+
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+
+    return undefined;
+  }, [location, navigate]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React !</p>
-
-        <Counter />
-
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {" | "}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <Outlet />
     </div>
   );
 }

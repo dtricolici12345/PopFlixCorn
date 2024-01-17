@@ -1,0 +1,76 @@
+@media screen and (max-width: 768px) {
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 5rem;
+  }
+
+  .mfocus-logo {
+    position: relative;
+    top: 2rem;
+  }
+
+  .logo img {
+    height: 4.5rem;
+    margin-right: 10px;
+  }
+
+  .title {
+    margin: 0;
+    padding-top: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .word-pop {
+    color: #f8f8f2;
+  }
+
+  .word-flix {
+    color: #ffa00b;
+  }
+
+  .word-corn {
+    color: #f8f8f2;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 5rem;
+  }
+
+  .mfocus-logo {
+    position: relative;
+  }
+
+  .logo img {
+    height: 10rem;
+    margin-right: 10px;
+  }
+
+  .title {
+    margin: 0;
+    padding-top: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 4.5rem;
+  }
+
+  .word-pop {
+    color: #f8f8f2;
+  }
+
+  .word-flix {
+    color: #ffa00b;
+  }
+
+  .word-corn {
+    color: #f8f8f2;
+  }
+}
