@@ -6,6 +6,7 @@ import Filter from "./pages/Filter";
 import FilterGallery from "./pages/FilterGallery";
 import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
+import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
 
 const router = createBrowserRouter([
@@ -42,14 +43,18 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
+        path: "/gallery/:query",
+        element: <Gallery />,
+      },
+      {
         path: "/focus/:mediaType/:id",
         element: <Focus />,
       },
+      {
+        path: "/acteur/:acteurId",
+        element: <FocusFilmActeur />,
+      },
     ],
-  },
-  {
-    path: "/FocusFilmActeur",
-    element: <FocusFilmActeur />,
   },
 ]);
 
