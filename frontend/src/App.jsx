@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import Menu from "./components/Menu/Menu";
+import Logo from "./components/Logo/Logo";
 
 function App() {
   const navigate = useNavigate();
@@ -22,6 +24,8 @@ function App() {
 
   return (
     <div className="App">
+      <Logo />
+      <Menu />
       <Outlet />
     </div>
   );
