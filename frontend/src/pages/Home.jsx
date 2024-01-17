@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Random from "../components/Random";
-import Menu from "../components/Menu/Menu";
-import Logo from "../components/Logo/Logo";
+// import Menu from "../components/Menu/Menu";
+// import Logo from "../components/Logo/Logo";
 import "../styles/Home.css";
 
 function Home() {
@@ -51,7 +51,7 @@ function Home() {
     <div className="Home">
       <main>
         <div className="search">
-          <Logo />
+          {/* <Logo /> */}
           <div className="searchbar-container">
             <input
               type="text"
@@ -84,7 +84,7 @@ function Home() {
           </div>
         </div>
         <div className="color" />
-        <Menu />
+        {/* <Menu /> */}
       </main>
     </div>
   );

@@ -9,7 +9,9 @@
 .mfocus {
   background-color: var(--main-color);
   position: absolute;
-  height: 100%;
+  /* To add : top : -2rem */
+  top: -2rem;
+  /* height: 100%; */
   width: 100%;
 }
 

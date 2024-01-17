@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Logo from "../components/Logo/Logo";
-import Menu from "../components/Menu/Menu";
+// import Logo from "../components/Logo/Logo";
+// import Menu from "../components/Menu/Menu";
 import CarteActeur from "../components/CarteActeur";
 
 import "../components/Logo/Logo.css";
@@ -71,7 +71,7 @@ function Focus() {
 
   return (
     <div className="mfocus">
-      <Logo isFocus />
+      {/* <Logo isFocus /> */}
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
           <img
@@ -168,7 +168,7 @@ function Focus() {
         </div>
       </div>
       <CarteActeur movieId={id} />
-      <Menu />
+      {/* <Menu /> */}
       <div />
     </div>
   );
