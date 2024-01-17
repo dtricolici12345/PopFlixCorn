@@ -10,11 +10,11 @@ import Focus from "./pages/Focus";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    // path: "/",
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
