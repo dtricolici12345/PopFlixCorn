@@ -30,11 +30,21 @@
 .A4card-body {
   padding: 10px 20px;
   border: 6px solid #ffa00b;
-  height: 100%;
+  height: 15rem;
   border-radius: 10px;
   color: #f8f8f2;
+  overflow: hidden;
+  padding-bottom: 1rem;
 }
 
 .A4card-title {
   font-weight: bold;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.A4card-detail {
+  text-overflow: ellipsis;
+  margin-top: 10px;
+  text-justify: auto;
 }
