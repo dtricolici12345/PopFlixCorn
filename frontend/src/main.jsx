@@ -44,11 +44,11 @@ const router = createBrowserRouter([
         path: "/focus/:mediaType/:id",
         element: <Focus />,
       },
+      {
+        path: "/acteur/:acteurId",
+        element: <FocusFilmActeur />,
+      },
     ],
-  },
-  {
-    path: "/FocusFilmActeur",
-    element: <FocusFilmActeur />,
   },
 ]);
 

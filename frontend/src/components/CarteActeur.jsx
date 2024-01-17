@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./CarteActeur.css";
 import PropTypes from "prop-types";
 
@@ -34,13 +35,13 @@ function CarteActeur({ movieId }) {
         {acteursInfos.map((acteurInfo) => (
           <div key={acteurInfo.id}>
             <li className="card">
-              {/* <link key={acteurInfo.id} to={`/chemin/${acteurInfo.id}`}> */}
-              <img
-                className="profile_path"
-                src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
-                alt="Picture_acteur"
-              />
-              {/* </link> */}
+              <Link key={acteurInfo.id} to={`/acteur/${acteurInfo.id}`}>
+                <img
+                  className="profile_path"
+                  src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
+                  alt="Picture_acteur"
+                />
+              </Link>
               <p className="original_name">{acteurInfo.original_name}</p>
               <p className="character">{acteurInfo.character}</p>
             </li>
