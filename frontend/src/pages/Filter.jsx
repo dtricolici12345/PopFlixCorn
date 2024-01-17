@@ -6,6 +6,7 @@ function Filter() {
   const [filmType, setFilmType] = useState("");
   const [genre, setGenre] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  console.info(genre);
 
   const handleFilmTypeChange = (type) => {
     setFilmType(type);
@@ -14,7 +15,6 @@ function Filter() {
 
   const handleGenreChange = (selectedGenre) => {
     setGenre(selectedGenre);
-    // Ici, vous pourriez effectuer d'autres actions avec le genre sélectionné si nécessaire.
   };
 
   const handlePageChange = (newPage) => {
@@ -22,19 +22,17 @@ function Filter() {
   };
 
   return (
-    genre && (
-      <div>
-        {currentPage === 1 ? (
-          <TypePage onFilmTypeChange={handleFilmTypeChange} />
-        ) : (
-          <GenrePage
-            filmType={filmType}
-            onGenreChange={handleGenreChange}
-            onPageChange={handlePageChange}
-          />
-        )}
-      </div>
-    )
+    <div>
+      {currentPage === 1 ? (
+        <TypePage onFilmTypeChange={handleFilmTypeChange} />
+      ) : (
+        <GenrePage
+          filmType={filmType}
+          onGenreChange={handleGenreChange}
+          onPageChange={handlePageChange}
+        />
+      )}
+    </div>
   );
 }
 
