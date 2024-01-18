@@ -131,10 +131,10 @@
   .menu {
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
+    /* position: fixed; */
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    /* right: 0; */
   }
 
   .btn {

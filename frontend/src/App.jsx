@@ -7,8 +7,10 @@ function App() {
   return (
     <div className="App">
       <Logo />
-      <Outlet />
-      <Menu />
+      <div className="globalview" style={{ display: "flex" }}>
+        <Outlet />
+        <Menu />
+      </div>
     </div>
   );
 }

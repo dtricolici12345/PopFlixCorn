@@ -48,7 +48,15 @@ function Home() {
     }
   };
   return (
-    <div className="Home">
+    <div
+      className="Home"
+      style={{
+        height: "100vh",
+        width: "100vw",
+        position: "absolute",
+        top: "0px",
+      }}
+    >
       <main>
         <div className="search">
           {/* <Logo /> */}

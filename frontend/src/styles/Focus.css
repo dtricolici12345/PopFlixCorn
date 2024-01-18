@@ -1,26 +1,23 @@
-:root {
-  --main-color: #282a36;
-  --secondary-color: #ffa00b;
-  --accent-color: #b50101;
-  --light-color: #f8f8f2;
-  --darkerlight-color: #b8b8b6;
-}
-
 .mfocus {
   background-color: var(--main-color);
-  position: absolute;
+  /* position: absolute; */
   /* To add : top : -2rem */
   /* top: -2rem; */
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 .mfocus-card {
   display: flex;
-  margin: 12rem 8rem 2rem 5rem;
   gap: 1.5rem;
   font-family: "Inter", sans-serif;
   max-width: 60rem;
+  margin-bottom: 6rem;
 }
 
 .mfocus-card-bloc-image {
@@ -147,7 +144,8 @@
   .mfocus-card {
     flex-direction: column;
     align-items: center;
-    margin: 10rem 2rem 2rem 2rem;
+    /* margin: 10rem 2rem 2rem 2rem; */
+    padding: 20px;
     height: auto;
   }
 

@@ -12,7 +12,15 @@ function Logo() {
   return (
     // <div className={`logo ${isFocus ? "mfocus-logo" : " "}`}>
     <div className="logo">
-      <NavLink to="/" className="Home">
+      <NavLink
+        to="/"
+        className="Home"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          textDecoration: "none",
+        }}
+      >
         <img src={LogoIcon} alt="Logo" />
         <h2 className="title">
           <span className="word-pop">POP</span>
