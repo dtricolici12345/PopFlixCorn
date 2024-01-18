@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Filmographie.css";
+import "../styles/FocusActeur.css";
+import { useParams } from "react-router-dom";
 
 function Filmographie() {
+  const { acteurId } = useParams();
   const [acteurfilm, setActeurfilm] = useState([]);
 
   useEffect(() => {
@@ -14,29 +17,30 @@ function Filmographie() {
       },
     };
     fetch(
-      "https://api.themoviedb.org/3/person/31/tagged_images?page=1",
+      `https://api.themoviedb.org/3/person/${acteurId}/movie_credits?language=en-US`,
       options
     )
       .then((response) => response.json())
-      .then((data) => setActeurfilm(data.results.slice(0, 10)));
+      .then((response) => setActeurfilm(response.cast.slice(0, 10)));
   }, []);
 
+  console.info("acteur film", acteurfilm);
   return (
     <div className="film">
       <h2 className="title_film">Filmographie :</h2>
-      <div className="card">
+      <div className="cards">
         {console.info("je suis dans le return", acteurfilm)}
         {acteurfilm.map((filmPlayActeur) => (
-          <div key={filmPlayActeur.id}>
+          <div className="BlocCard" key={filmPlayActeur.id}>
             <div className="filmPoster">
               <img
-                className="poster_path"
-                src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.media.poster_path}`}
+                className="poster_paths"
+                src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.poster_path}`}
                 alt="Poster_film"
               />
               <div className="card2">
-                <p className="title">{filmPlayActeur.media.original_title}</p>
-                <p className="overview">{filmPlayActeur.media.overview}</p>
+                <p className="titles">{filmPlayActeur.title}</p>
+                <p className="overview">{filmPlayActeur.overview}</p>
               </div>
             </div>
           </div>

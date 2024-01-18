@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Random from "../components/Random";
-import Menu from "../components/Menu/Menu";
-import Logo from "../components/Logo/Logo";
+// import Menu from "../components/Menu/Menu";
+// import Logo from "../components/Logo/Logo";
 import "../styles/Home.css";
 
 function Home() {
@@ -48,10 +48,18 @@ function Home() {
     }
   };
   return (
-    <div className="Home">
+    <div
+      className="Home"
+      style={{
+        height: "100vh",
+        width: "100vw",
+        position: "absolute",
+        top: "0px",
+      }}
+    >
       <main>
         <div className="search">
-          <Logo />
+          {/* <Logo /> */}
           <div className="searchbar-container">
             <input
               type="text"
@@ -66,10 +74,10 @@ function Home() {
             <Random className="dice" />
           </div>
           <div className="suggests">
-            {searchResults && searchResults.length > 0 ? (
+            {searchResults ? (
               searchResults.map((result) => (
                 <div className="suggest" key={result.id}>
-                  <Link to={`/gallery/${result.name}`}>
+                  <Link to={`/gallery/${result.title || result.name}`}>
                     <p>{result.title || result.name}</p>
                   </Link>
                 </div>
@@ -84,7 +92,7 @@ function Home() {
           </div>
         </div>
         <div className="color" />
-        <Menu />
+        {/* <Menu /> */}
       </main>
     </div>
   );

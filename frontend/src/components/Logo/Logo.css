@@ -1,19 +1,16 @@
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 769px) {
   .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 5rem;
-  }
-
-  .mfocus-logo {
     position: relative;
-    top: 2rem;
+    /* top: 2rem; */
+    z-index: 1;
+    padding-top: 2rem;
   }
 
   .logo img {
-    height: 4.5rem;
+    height: 5rem;
     margin-right: 10px;
   }
 
@@ -36,30 +33,29 @@
     color: #f8f8f2;
   }
 }
-
-@media screen and (min-width: 769px) {
+@media screen and (max-width: 768px) {
   .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 5rem;
-  }
-
-  .mfocus-logo {
     position: relative;
+    /* Added z-index: 1 */
+    z-index: 1;
+    padding-top: 2rem;
+    /* margin-bottom: 20rem; */
   }
 
   .logo img {
-    height: 5rem;
+    height: 4.5rem;
     margin-right: 10px;
+    /* margin-bottom: 20rem; */
   }
 
   .title {
     margin: 0;
     padding-top: 10px;
     font-family: "Bebas Neue", sans-serif;
-    font-size: 4.5rem;
+    font-size: 2.5rem;
   }
 
   .word-pop {
