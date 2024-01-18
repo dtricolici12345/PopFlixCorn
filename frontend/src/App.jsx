@@ -1,28 +1,16 @@
-import React, { useEffect } from "react";
 import "./App.css";
-import { Outlet, useNavigate, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Logo from "./components/Logo/Logo";
+import Menu from "./components/Menu/Menu";
 
 function App() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      const timeoutId = setTimeout(() => {
-        navigate("/home");
-      }, 1000);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
-    }
-
-    return undefined;
-  }, [location, navigate]);
-
   return (
     <div className="App">
-      <Outlet />
+      <Logo />
+      <div className="globalview" style={{ display: "flex" }}>
+        <Outlet />
+        <Menu />
+      </div>
     </div>
   );
 }

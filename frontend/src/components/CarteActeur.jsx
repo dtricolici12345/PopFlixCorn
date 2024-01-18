@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./CarteActeur.css";
 import PropTypes from "prop-types";
 
+import NoPopCorn from "../assets/NoPopCorn.png";
+
 function CarteActeur({ movieId }) {
   CarteActeur.propTypes = {
     movieId: PropTypes.number.isRequired,
@@ -30,17 +32,27 @@ function CarteActeur({ movieId }) {
     <div className="container_banner">
       <h2 className="title_acteurs">Acteurs :</h2>
 
-      <div className="container_card">
-        {/* {console.info("je suis dans le return", acteursInfos)} */}
+      <div className="container_card_acteur">
+        {console.info("je suis dans le return", acteursInfos)}
         {acteursInfos.map((acteurInfo) => (
           <div key={acteurInfo.id}>
             <li className="card">
               <Link key={acteurInfo.id} to={`/acteur/${acteurInfo.id}`}>
-                <img
-                  className="profile_path"
-                  src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
-                  alt="Picture_acteur"
-                />
+                <div>
+                  {acteurInfo.profile_path ? (
+                    <img
+                      className="profile_path"
+                      src={`https://image.tmdb.org/t/p/w500/${acteurInfo.profile_path}`}
+                      alt="Picture_acteur"
+                    />
+                  ) : (
+                    <img
+                      className="profile_path"
+                      src={NoPopCorn}
+                      alt="No_Picture"
+                    />
+                  )}
+                </div>
               </Link>
               <p className="original_name">{acteurInfo.original_name}</p>
               <p className="character">{acteurInfo.character}</p>
