@@ -40,10 +40,10 @@ function Menu() {
         <NavLink to="/filter" className="btn">
           <img src={FilterIcon} className="material-icons " alt="Filter" />
         </NavLink>
-        <NavLink to="/checklist" className="btn">
+        <NavLink to="/watchlist" className="btn">
           <img
             src={ChecklistIcon}
-            alt="CheckList"
+            alt="Watchlist"
             className="material-icons "
           />
         </NavLink>

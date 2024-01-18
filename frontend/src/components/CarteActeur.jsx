@@ -31,7 +31,7 @@ function CarteActeur({ movieId }) {
       <h2 className="title_acteurs">Acteurs :</h2>
 
       <div className="container_card">
-        {console.info("je suis dans le return", acteursInfos)}
+        {/* {console.info("je suis dans le return", acteursInfos)} */}
         {acteursInfos.map((acteurInfo) => (
           <div key={acteurInfo.id}>
             <li className="card">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Logo from "../components/Logo/Logo";
 import Menu from "../components/Menu/Menu";
 import CarteActeur from "../components/CarteActeur";
@@ -10,14 +10,40 @@ import watch from "../assets/watch.png";
 
 function Focus() {
   const { id, mediaType } = useParams();
-  console.info("ID:", id);
-  console.info("mediaType:", mediaType);
+  // console.info("ID:", id);
+  // console.info("mediaType:", mediaType);
 
+  // States needed to display required informations on videos
   const [movieDetail, setMovieDetail] = useState([]);
   const [movieCertification, setMovieCertification] = useState([]);
   const [tvDetail, setTvDetail] = useState([]);
   const [tvCertification, setTvCertification] = useState([]);
 
+  // States needed to store data in local Storage, needed for the watchlist component
+  const [toWatchList, setToWatchList] = useState([]);
+
+  // Function needed to define the border color around the note of the video
+  const getBorderColor = () => {
+    const note =
+      mediaType === "movie"
+        ? Math.round(movieDetail.vote_average * 10)
+        : Math.round(tvDetail.vote_average * 10);
+    if (note < 50) return "border-red";
+    if (note < 70) return "border-orange";
+    return "border-green";
+  };
+
+  // Function needed to display videos' runtimes in a days/hours/minutes format
+  const toDaysHoursAndMinutes = (totalMinutes) => {
+    const days = Math.floor(totalMinutes / 1440);
+    const remainingMinutes = totalMinutes - days * 1440;
+    const hours = Math.floor(remainingMinutes / 60);
+    const minutes = Math.floor(remainingMinutes - hours * 60);
+    if (days >= 1) return `${days}j ${hours}h ${minutes}min`;
+    return `${hours}h ${minutes}min`;
+  };
+
+  // Fetching data from TMDB API
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=1e2adaf19241184adaa1b536aeb00db8&language=fr-FR&region=FR`
@@ -47,27 +73,28 @@ function Focus() {
 
   // console.info(movieDetail);
   // console.info(movieCertification);
-  console.info(tvDetail);
+  // console.info(tvDetail);
   // console.info(tvCertification);
 
-  const getBorderColor = () => {
-    const note =
-      mediaType === "movie"
-        ? Math.round(movieDetail.vote_average * 10)
-        : Math.round(tvDetail.vote_average * 10);
-    if (note < 50) return "border-red";
-    if (note < 70) return "border-orange";
-    return "border-green";
+  // Functions handling the click on "To watch" and "Watched" buttons, updating the local storage
+  const handleToWatchClick = () => {
+    const newToWatchItem = movieDetail.id || tvDetail.id;
+    if (!toWatchList.includes(newToWatchItem)) {
+      setToWatchList([newToWatchItem, ...toWatchList]);
+    }
   };
 
-  const toDaysHoursAndMinutes = (totalMinutes) => {
-    const days = Math.floor(totalMinutes / 1440);
-    const remainingMinutes = totalMinutes - days * 1440;
-    const hours = Math.floor(remainingMinutes / 60);
-    const minutes = Math.floor(remainingMinutes - hours * 60);
-    if (days >= 1) return `${days}j ${hours}h ${minutes}min`;
-    return `${hours}h ${minutes}min`;
-  };
+  useEffect(() => {
+    const storedToWatchList = JSON.parse(localStorage.getItem("toWatchList"));
+    if (storedToWatchList) {
+      setToWatchList(storedToWatchList);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("toWatchList", JSON.stringify(toWatchList));
+    console.info(toWatchList);
+  }, [toWatchList]);
 
   return (
     <div className="mfocus">
@@ -158,10 +185,18 @@ function Focus() {
             {mediaType === "movie" ? movieDetail.overview : tvDetail.overview}
           </div>
           <div className="mfocus-wrap-btn">
-            <button type="button" className="mfocus-button">
+            <button
+              type="button"
+              className="mfocus-button"
+              onClick={handleToWatchClick}
+            >
               A voir
             </button>
-            <button type="button" className="mfocus-button">
+            <button
+              type="button"
+              className="mfocus-button"
+              // onClick={handleWatchedClick}
+            >
               Vu
             </button>
           </div>
@@ -170,7 +205,6 @@ function Focus() {
       <CarteActeur movieId={id} />
       <Menu />
       <div />
-      <Outlet />
     </div>
   );
 }
