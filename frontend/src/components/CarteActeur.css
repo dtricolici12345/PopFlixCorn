@@ -1,5 +1,6 @@
 .container_banner {
-  margin: 2rem 8rem 2rem 5rem;
+  /* margin: 2rem 8rem 2rem 5rem; */
+  max-width: 60rem;
 }
 
 .title_acteurs {
@@ -10,7 +11,6 @@
 .container_card_acteur {
   display: flex;
   justify-content: flex-start;
-  max-width: 90rem;
   overflow-x: auto;
   z-index: 1;
 }
@@ -65,6 +65,7 @@
 
 @media screen and (max-width: 768px) {
   .container_banner {
-    margin: 2rem 2rem 2rem 2rem;
+    /* margin: 2rem 2rem 2rem 2rem; */
+    max-width: 36rem;
   }
 }

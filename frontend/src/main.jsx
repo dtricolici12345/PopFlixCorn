@@ -12,11 +12,10 @@ import Shop from "./pages/Shop";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
