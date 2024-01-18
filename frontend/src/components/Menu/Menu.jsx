@@ -50,8 +50,8 @@ function Menu() {
         <NavLink to="/game" className="btn">
           <img src={GameIcon} alt="Game" className="material-icons" />
         </NavLink>
-        <NavLink to="/shope" className="btn">
-          <img src={ShopeIcon} alt="Shope" className="material-icons" />
+        <NavLink to="/shop" className="btn">
+          <img src={ShopeIcon} alt="Shop" className="material-icons" />
         </NavLink>
         <NavLink to="/aboutus" className="btn">
           <img src={AboutUsIcon} alt="AboutUs" className="material-icons " />

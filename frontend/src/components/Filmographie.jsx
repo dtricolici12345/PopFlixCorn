@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Filmographie.css";
+import "../styles/FocusActeur.css";
 import { useParams } from "react-router-dom";
 
 function Filmographie() {
@@ -39,7 +40,6 @@ function Filmographie() {
               />
               <div className="card2">
                 <p className="titles">{filmPlayActeur.title}</p>
-                <br />
                 <p className="overview">{filmPlayActeur.overview}</p>
               </div>
             </div>

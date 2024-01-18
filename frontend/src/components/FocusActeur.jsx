@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 // import PropTypes from "prop-types";
 import "../styles/FocusActeur.css";
+import "../styles/Filmographie.css";
 import { useParams } from "react-router-dom";
 
 function FocusActeur() {

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CreateGallery from "../components/CreateGallery";
 
 function FilterGallery() {
   const { filmType, selectedGenres } = useParams();
@@ -49,15 +50,15 @@ function FilterGallery() {
       ) : (
         <div style={{ display: "flex", flexWrap: "wrap" }}>
           {searchResults && searchResults.length > 0 ? (
-            searchResults.map((result) => (
-              <div key={result.id} style={{ margin: "10px", width: "200px" }}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
-                  alt={result.title || result.name}
-                  style={{ width: "100%", height: "auto" }}
-                />
-                <p>{result.title || result.name}</p>
-              </div>
+            searchResults.map((item) => (
+              <CreateGallery
+                key={item.id}
+                id={item.id}
+                title={item.name || item.title}
+                imageUrl={item.poster_path || item.profile_path}
+                details={item.overview}
+                mediaType={item.media_type}
+              />
             ))
           ) : (
             <p>Aucun résultat trouvé.</p>
