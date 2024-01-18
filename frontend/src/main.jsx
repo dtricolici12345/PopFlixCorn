@@ -2,8 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-// import Loading from "./components/Loading";
+import Filter from "./pages/Filter";
+import FilterGallery from "./pages/FilterGallery";
+import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
+import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
 import Shop from "./pages/Shop";
 
@@ -15,6 +18,14 @@ const router = createBrowserRouter([
       {
         path: "/home",
         element: <Home />,
+      },
+      {
+        path: "/filter",
+        element: <Filter />,
+      },
+      {
+        path: "/filter/gallery/:filmType/:selectedGenres",
+        element: <FilterGallery />,
       },
       {
         path: "/checklist",
@@ -33,8 +44,16 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
+        path: "/gallery/:query",
+        element: <Gallery />,
+      },
+      {
         path: "/focus/:mediaType/:id",
         element: <Focus />,
+      },
+      {
+        path: "/acteur/:acteurId",
+        element: <FocusFilmActeur />,
       },
     ],
   },

@@ -66,10 +66,10 @@ function Home() {
             <Random className="dice" />
           </div>
           <div className="suggests">
-            {searchResults && searchResults.length > 0 ? (
+            {searchResults ? (
               searchResults.map((result) => (
                 <div className="suggest" key={result.id}>
-                  <Link to={`/gallery/${result.name}`}>
+                  <Link to={`/gallery/${result.title || result.name}`}>
                     <p>{result.title || result.name}</p>
                   </Link>
                 </div>
