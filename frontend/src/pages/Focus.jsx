@@ -98,7 +98,6 @@ function Focus() {
 
   return (
     <div className="mfocus">
-      {/* <Logo isFocus /> */}
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
           <img
@@ -203,7 +202,6 @@ function Focus() {
         </div>
       </div>
       <CarteActeur movieId={id} />
-      {/* <Menu /> */}
       <div />
     </div>
   );
