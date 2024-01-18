@@ -7,7 +7,7 @@
   margin: 10px;
 }
 
-.container_card {
+.container_card_acteur {
   display: flex;
   justify-content: flex-start;
   max-width: 90rem;
@@ -36,7 +36,15 @@
 
 .profile_path {
   width: 8rem;
-  height: auto;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.no_profile_path {
+  width: 8rem;
+  height: 8rem;
+
   border-radius: 10px 10px 0 0;
 }
 
