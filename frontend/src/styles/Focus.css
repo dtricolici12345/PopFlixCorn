@@ -10,8 +10,8 @@
   background-color: var(--main-color);
   position: absolute;
   /* To add : top : -2rem */
-  top: -2rem;
-  /* height: 100%; */
+  /* top: -2rem; */
+  height: 100%;
   width: 100%;
 }
 
@@ -20,7 +20,7 @@
   margin: 12rem 8rem 2rem 5rem;
   gap: 1.5rem;
   font-family: "Inter", sans-serif;
-  max-width: 90rem;
+  max-width: 60rem;
 }
 
 .mfocus-card-bloc-image {
@@ -147,7 +147,7 @@
   .mfocus-card {
     flex-direction: column;
     align-items: center;
-    margin: 5rem 2rem 2rem 2rem;
+    margin: 10rem 2rem 2rem 2rem;
     height: auto;
   }
 
