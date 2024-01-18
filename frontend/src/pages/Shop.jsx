@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import Menu from "../components/Menu/Menu";
+// import Menu from "../components/Menu/Menu";
 import Peignoir from "../assets/shop-peignoir.jpeg";
 import Mug from "../assets/shop-mug.png";
 import Tshirt from "../assets/shop-t-shirt.jpg";
@@ -51,7 +51,7 @@ function Shop() {
 
   return (
     <div>
-      <Menu />
+      {/* <Menu /> */}
       <div className="listeArticle">
         <div className="container-article-shop">
           <img className="shopPeignoir" src={Peignoir} alt="peignoir" />
