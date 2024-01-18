@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --main-color: #282a36;
+  --secondary-color: #ffa00b;
+  --accent-color: #b50101;
+  --light-color: #f8f8f2;
+  --darkerlight-color: #b8b8b6;
+  background-color: var(--main-color);
+}
+
 /* .App {
   display: flex;
 } */

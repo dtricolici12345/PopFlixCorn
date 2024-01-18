@@ -73,8 +73,7 @@
     width: 70%;
   }
 
-  .suggest,
-  a {
+  .suggest a {
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: #b8b8b6;
@@ -166,8 +165,7 @@
     width: 100%;
   }
 
-  .suggest,
-  a {
+  .suggest a {
     padding-top: 1rem;
     padding-bottom: 1rem;
     color: #b8b8b6;
