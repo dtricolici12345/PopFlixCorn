@@ -7,7 +7,7 @@
   margin: 10px;
 }
 
-.container_card {
+.container_card_acteur {
   display: flex;
   justify-content: flex-start;
   max-width: 90rem;
