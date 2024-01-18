@@ -36,7 +36,15 @@
 
 .profile_path {
   width: 8rem;
-  height: auto;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.no_profile_path {
+  width: 8rem;
+  height: 8rem;
+
   border-radius: 10px 10px 0 0;
 }
 
