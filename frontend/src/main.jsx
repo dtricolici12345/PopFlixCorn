@@ -8,14 +8,14 @@ import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
 import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
+import Shop from "./pages/Shop";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
@@ -35,8 +35,8 @@ const router = createBrowserRouter([
         element: <App />,
       },
       {
-        path: "/shope",
-        element: <App />,
+        path: "/shop",
+        element: <Shop />,
       },
       {
         path: "/aboutus",
