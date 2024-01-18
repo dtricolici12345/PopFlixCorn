@@ -6,8 +6,7 @@
   display: flex;
   background-color: #282a36;
   color: #f8f8f2;
-  min-height: 100vh;
-  min-width: 100vw;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -40,12 +39,12 @@
   .GenrePageNav {
     background: rgb(0, 0, 0);
     background: linear-gradient(
-      356deg,
+      360deg,
       rgba(0, 0, 0, 0.46) 0%,
       rgba(252, 255, 142, 0) 100%
     );
   }
-  .GenrePageNav DIV {
+  .GenrePageNav div {
     color: #f8f8f2;
   }
 }

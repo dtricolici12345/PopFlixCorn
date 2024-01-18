@@ -1,6 +1,13 @@
 .TypeFilter {
   text-align: center;
+  width: 100%;
+  min-width: 90vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
+
 .TypeFilter .Buttons {
   height: 110px;
   display: flex;
@@ -36,10 +43,18 @@
 
 /* Petit */
 @media screen and (max-width: 768px) {
+  .TypeFilter {
+    width: 100%;
+    min-width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
   .TypeFilter h2 {
     text-transform: uppercase;
     font-size: 2rem;
     text-align: center;
+    margin: 2rem;
   }
   .TypeFilter .Buttons {
     flex-direction: column;
@@ -47,6 +62,7 @@
 
   .TypeFilter .Buttons label {
     margin: 10px;
+    width: 10rem;
   }
 }
 

@@ -2,7 +2,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  /* width: 70%; */
+  width: 100%;
   height: 100vh;
 }
 .GenreFilter .Buttons {
@@ -47,6 +47,7 @@
   .GenreFilter h2 {
     text-transform: uppercase;
     font-size: 2rem;
+    margin: 2rem;
     text-align: center;
   }
   .GenreFilter .Buttons {
@@ -56,7 +57,7 @@
   }
 
   .GenreFilter .Buttons label {
-    margin: 10px;
+    margin: 20px;
     width: 100%;
     height: 100px;
     background-color: #ffa00b;
