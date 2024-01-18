@@ -1,31 +1,67 @@
 .listeArticle {
-  margin-top: 15%;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100rem;
+  margin-left: 5rem;
+  margin-right: 8rem;
 }
 
 .shopPeignoir {
-  margin-left: 5%;
   width: 15rem;
   height: auto;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .shopMug {
-  margin-left: 5%;
   width: 15rem;
-  height: auto;
-  border-radius: 10px 10px 0 0;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .shopTShirt {
-  margin-left: 5%;
   width: 15rem;
   height: auto;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .shopBol {
-  margin-left: 5%;
   width: 15rem;
   height: auto;
-  border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 10px 10px;
+}
+
+.container-descriptif {
+  padding: 5%;
+  width: 15rem;
+  height: 10rem;
+  border-radius: 10px 10px 10px 10px;
+  background-color: #b8b8b6;
+}
+
+.title-article {
+  font-size: 1.5em;
+  padding: 0 0 5% 0;
+}
+
+.description-article {
+  font-size: 0.8em;
+}
+
+.tarif-bouton {
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 5%;
+  justify-content: space-between;
+  align-items: center;
+}
+.bouton-quantité {
+  display: flex;
+  align-items: center;
+}
+.quantité {
+  width: 2rem;
+  text-align: center;
 }
