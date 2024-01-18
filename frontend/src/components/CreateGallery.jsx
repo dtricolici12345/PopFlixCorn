@@ -31,7 +31,7 @@ function CreateGallery({ title, imageUrl, details, mediaType, id }) {
         <div
           className="A4card-img"
           style={{
-            background: `url(https://image.tmdb.org/t/p/w500${imageUrl})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/w500${imageUrl})`,
           }}
         />
       </div>
