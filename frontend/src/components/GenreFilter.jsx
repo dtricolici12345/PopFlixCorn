@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "../styles/GenreFilter.css";
 
 function GenreFilter({ filmType, onGenresChange }) {
   const getGenres = () => {
@@ -86,7 +87,7 @@ function GenreFilter({ filmType, onGenresChange }) {
     const tvGenres = [
       {
         id: 10759,
-        name: "Action & Aventure",
+        name: "Action",
       },
       {
         id: 16,
@@ -130,7 +131,7 @@ function GenreFilter({ filmType, onGenresChange }) {
       },
       {
         id: 10765,
-        name: "Science-Fiction & Fantastique",
+        name: "Science-Fiction ",
       },
       {
         id: 10766,
@@ -142,7 +143,7 @@ function GenreFilter({ filmType, onGenresChange }) {
       },
       {
         id: 10768,
-        name: "Guerre & Politique",
+        name: "Guerre ",
       },
       {
         id: 37,
@@ -171,16 +172,22 @@ function GenreFilter({ filmType, onGenresChange }) {
   };
 
   return (
-    <div>
+    <div className="GenreFilter">
       <h2>Sélectionnez les genres</h2>
-      <div>
+      <div className="Buttons">
         {genres.map((genre) => (
-          <label key={genre.id}>
+          <label
+            key={genre.id}
+            className={
+              selectedGenres.includes(genre.id) ? "SelectedGenreLabel" : ""
+            }
+          >
             <input
-              type="checkbox"
+              type="radio"
               value={genre.id}
               checked={selectedGenres.includes(genre.id)}
               onChange={() => handleGenreChange(genre)}
+              className="GenreButton"
             />
             {genre.name}
           </label>
