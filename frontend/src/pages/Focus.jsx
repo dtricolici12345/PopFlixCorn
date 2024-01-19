@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 // import Logo from "../components/Logo/Logo";
 // import Menu from "../components/Menu/Menu";
 import CarteActeur from "../components/CarteActeur";
+import NoPopCorn from "../assets/NoPopCorn.png";
 
 import "../components/Logo/Logo.css";
 import "../styles/Focus.css";
@@ -74,14 +75,18 @@ function Focus() {
       {/* <Logo isFocus /> */}
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
-          <img
-            src={
-              mediaType === "movie"
-                ? `https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`
-                : `https://image.tmdb.org/t/p/w500${tvDetail.poster_path}`
-            }
-            alt={mediaType === "movie" ? movieDetail.title : tvDetail.name}
-          />
+          {movieDetail.poster_path || tvDetail.poster_path ? (
+            <img
+              src={
+                mediaType === "movie"
+                  ? `https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`
+                  : `https://image.tmdb.org/t/p/w500${tvDetail.poster_path}`
+              }
+              alt={mediaType === "movie" ? movieDetail.title : tvDetail.name}
+            />
+          ) : (
+            <img src={NoPopCorn} alt="Void" />
+          )}
           <div className={`mfocus-note ${getBorderColor()}`}>
             {mediaType === "movie"
               ? Math.round(movieDetail.vote_average * 10)

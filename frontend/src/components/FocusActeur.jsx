@@ -26,7 +26,7 @@ function FocusActeur() {
     };
 
     fetch(
-      `https://api.themoviedb.org/3/person/${acteurId}?language=en-US`,
+      `https://api.themoviedb.org/3/person/${acteurId}?language=fr-FR&region=FR`,
       options
     )
       .then((response) => response.json())
