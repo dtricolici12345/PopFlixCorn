@@ -1,15 +1,15 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
-// import Logo from "./components/Logo/Logo";
-// import Menu from "./components/Menu/Menu";
+import Logo from "./components/Logo/Logo";
+import Menu from "./components/Menu/Menu";
 
 function App() {
   return (
     <div className="App">
-      {/* <Logo /> */}
+      <Logo />
       <div className="globalview" style={{ display: "flex" }}>
         <Outlet />
-        {/* <Menu /> */}
+        <Menu />
       </div>
     </div>
   );
