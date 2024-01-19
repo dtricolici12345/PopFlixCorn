@@ -26,20 +26,22 @@ function Gallery() {
       .catch((err) => console.error(err));
   }, []);
 
-  const researchListGallery = searchResults.slice(0, 14);
+  const researchListGallery = searchResults.slice(0, 8);
 
   return (
-    <div className="A4cards">
-      {researchListGallery.map((item) => (
-        <CreateGallery
-          key={item.id}
-          id={item.id}
-          title={item.name || item.title}
-          imageUrl={item.poster_path || item.profile_path}
-          details={item.overview}
-          mediaType={item.media_type}
-        />
-      ))}
+    <div className="GalleryBody">
+      <div className="A4cards">
+        {researchListGallery.map((item) => (
+          <CreateGallery
+            key={item.id}
+            id={item.id}
+            title={item.name || item.title}
+            imageUrl={item.poster_path || item.profile_path}
+            details={item.overview}
+            mediaType={item.media_type}
+          />
+        ))}
+      </div>
     </div>
   );
 }

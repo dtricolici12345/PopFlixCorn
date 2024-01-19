@@ -1,6 +1,5 @@
 .container_banner {
-  /* margin: 2rem 8rem 2rem 5rem; */
-  max-width: 60rem;
+  margin: 2rem 8rem 2rem 5rem;
 }
 
 .title_acteurs {
@@ -11,6 +10,7 @@
 .container_card_acteur {
   display: flex;
   justify-content: flex-start;
+  max-width: 90rem;
   overflow-x: auto;
   z-index: 1;
 }
@@ -36,18 +36,10 @@
 
 .profile_path {
   width: 8rem;
-  height: 10rem;
+  height: 11rem;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
-
-.no_profile_path {
-  width: 8rem;
-  height: 8rem;
-
-  border-radius: 10px 10px 0 0;
-}
-
 .original_name {
   color: #f8f8f2;
   font-family: "Open Sans", sans-serif;
@@ -65,7 +57,6 @@
 
 @media screen and (max-width: 768px) {
   .container_banner {
-    /* margin: 2rem 2rem 2rem 2rem; */
-    max-width: 36rem;
+    margin: 2rem 2rem 2rem 2rem;
   }
 }

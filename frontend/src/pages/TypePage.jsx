@@ -6,7 +6,6 @@ import "../styles/TypePage.css";
 function TypePage({ onFilmTypeChange }) {
   return (
     <div className="TypePage">
-      <h1>Page de choix entre Film et Série</h1>
       <TypeFilter onFilmTypeChange={onFilmTypeChange} />
     </div>
   );
