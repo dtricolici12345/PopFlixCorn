@@ -29,7 +29,7 @@ function Filmographie() {
     <div className="film">
       <h2 className="title_film">Filmographie :</h2>
       <div className="cards">
-        {/* {console.info("je suis dans le return", acteurfilm)} */}
+        {console.info("je suis dans le return", acteurfilm)}
         {acteurfilm.map((filmPlayActeur) => (
           <div className="BlocCard" key={filmPlayActeur.id}>
             <div className="filmPoster">

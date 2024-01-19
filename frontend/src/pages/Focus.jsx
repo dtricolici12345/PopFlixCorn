@@ -7,6 +7,7 @@ import CarteActeur from "../components/CarteActeur";
 import "../components/Logo/Logo.css";
 import "../styles/Focus.css";
 import watch from "../assets/watch.png";
+import NoPopCorn from "../assets/NoPopCorn.png";
 
 function Focus() {
   const { id, mediaType } = useParams();
@@ -20,7 +21,12 @@ function Focus() {
   const [tvCertification, setTvCertification] = useState([]);
 
   // States needed to store data in local Storage, needed for the watchlist component
-  const [toWatchList, setToWatchList] = useState([]);
+  const [toWatchList, setToWatchList] = useState(() => {
+    return JSON.parse(localStorage.getItem("toWatchList")) || [];
+  });
+  const [watchedList, setWatchedList] = useState(() => {
+    return JSON.parse(localStorage.getItem("watchedList")) || [];
+  });
 
   // Function needed to define the border color around the note of the video
   const getBorderColor = () => {
@@ -76,38 +82,75 @@ function Focus() {
   // console.info(tvDetail);
   // console.info(tvCertification);
 
-  // Functions handling the click on "To watch" and "Watched" buttons, updating the local storage
+  // Function handling the click on "To watch" and "Watched" buttons
   const handleToWatchClick = () => {
+    // const newToWatchItem = {
+    //   id: movieDetail.id || tvDetail.id,
+    //   title: movieDetail.title || tvDetail.name,
+    //   poster: movieDetail.poster_path || tvDetail.poster_path,
+    //   note: movieDetail.vote_average || tvDetail.vote_average,
+    // };
     const newToWatchItem = movieDetail.id || tvDetail.id;
     if (!toWatchList.includes(newToWatchItem)) {
       setToWatchList([newToWatchItem, ...toWatchList]);
     }
+    if (watchedList.includes(newToWatchItem)) {
+      setWatchedList(watchedList.filter((item) => item !== newToWatchItem));
+    }
+    console.info("Clic sur A voir : WatchedList", watchedList);
+    console.info("Clic sur A voir : toWatchList", toWatchList);
   };
 
-  useEffect(() => {
-    const storedToWatchList = JSON.parse(localStorage.getItem("toWatchList"));
-    if (storedToWatchList) {
-      setToWatchList(storedToWatchList);
+  const handleWatchedClick = () => {
+    // const newWatchedItem = {
+    //   id: movieDetail.id || tvDetail.id,
+    //   title: movieDetail.title || tvDetail.poster_path,
+    //   poster: movieDetail.poster_path || tvDetail.name,
+    //   note: movieDetail.vote_average || tvDetail.vote_average,
+    // };
+    const newWatchedItem = movieDetail.id || tvDetail.id;
+    if (!watchedList.includes(newWatchedItem)) {
+      setWatchedList([newWatchedItem, ...watchedList]);
     }
-  }, []);
+    if (toWatchList.includes(newWatchedItem)) {
+      setToWatchList(toWatchList.filter((item) => item !== newWatchedItem));
+    }
+    console.info("Clic sur Vu : WatchedList", watchedList);
+    console.info("Clic sur Vu : toWatchList", toWatchList);
+  };
 
+  // UseEffects handling the storing of new elements in local storage
   useEffect(() => {
     localStorage.setItem("toWatchList", JSON.stringify(toWatchList));
-    console.info(toWatchList);
+    // console.info(toWatchList);
   }, [toWatchList]);
+
+  useEffect(() => {
+    localStorage.setItem("watchedList", JSON.stringify(watchedList));
+    // console.info(watchedList);
+  }, [watchedList]);
+
+  // useEffect(() => {
+  //   localStorage.clear();
+  //   // console.info(watchedList);
+  // }, []);
 
   return (
     <div className="mfocus">
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
-          <img
-            src={
-              mediaType === "movie"
-                ? `https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`
-                : `https://image.tmdb.org/t/p/w500${tvDetail.poster_path}`
-            }
-            alt={mediaType === "movie" ? movieDetail.title : tvDetail.name}
-          />
+          {movieDetail.poster_path || tvDetail.poster_path ? (
+            <img
+              src={
+                mediaType === "movie"
+                  ? `https://image.tmdb.org/t/p/w500${movieDetail.poster_path}`
+                  : `https://image.tmdb.org/t/p/w500${tvDetail.poster_path}`
+              }
+              alt={mediaType === "movie" ? movieDetail.title : tvDetail.name}
+            />
+          ) : (
+            <img src={NoPopCorn} alt="Void" />
+          )}
           <div className={`mfocus-note ${getBorderColor()}`}>
             {mediaType === "movie"
               ? Math.round(movieDetail.vote_average * 10)
@@ -194,7 +237,7 @@ function Focus() {
             <button
               type="button"
               className="mfocus-button"
-              // onClick={handleWatchedClick}
+              onClick={handleWatchedClick}
             >
               Vu
             </button>

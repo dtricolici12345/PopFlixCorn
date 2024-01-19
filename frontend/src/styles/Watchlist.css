@@ -1,0 +1,10 @@
+.watchlist-container h1 {
+  color: var(--secondary-color);
+}
+
+.watchlist-container h2 {
+  color: var(--light-color);
+}
+.watchlist-container img {
+  height: 5rem;
+}
