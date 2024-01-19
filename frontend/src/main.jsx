@@ -12,6 +12,8 @@ import Shop from "./pages/Shop";
 import GameHello from "./pages/GameHello/GameHello";
 import GameRomantique from "./pages/GameHello/GameRomantique/GameRomantique";
 import GameHorreur from "./pages/GameHello/GameHorreur/GameHorreur";
+import GameAnime from "./pages/GameHello/GameAnime/GameAnime";
+import GameSerie from "./pages/GameHello/GameSerie/GameSerie";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/game/horreur",
         element: <GameHorreur />,
+      },
+      {
+        path: "/game/anime",
+        element: <GameAnime />,
+      },
+      {
+        path: "/game/seria",
+        element: <GameSerie />,
       },
       {
         path: "/shop",

@@ -17,7 +17,7 @@ function GameHello() {
           <Link to="/game/anime" className="quiz-option">
             Animé
           </Link>
-          <Link to="/game/serial" className="quiz-option">
+          <Link to="/game/seria" className="quiz-option">
             Série
           </Link>
         </div>
