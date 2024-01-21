@@ -82,58 +82,54 @@ function Focus() {
   // console.info(tvDetail);
   // console.info(tvCertification);
 
+  // Function to check if two selected videos are the same
+  const isEqual = (obj1, obj2) => {
+    return obj1.id === obj2.id;
+  };
+
   // Function handling the click on "To watch" and "Watched" buttons
   const handleToWatchClick = () => {
-    // const newToWatchItem = {
-    //   id: movieDetail.id || tvDetail.id,
-    //   title: movieDetail.title || tvDetail.name,
-    //   poster: movieDetail.poster_path || tvDetail.poster_path,
-    //   note: movieDetail.vote_average || tvDetail.vote_average,
-    // };
-    const newToWatchItem = movieDetail.id || tvDetail.id;
-    if (!toWatchList.includes(newToWatchItem)) {
-      setToWatchList([newToWatchItem, ...toWatchList]);
+    const newItem = {
+      id: movieDetail.id || tvDetail.id,
+      title: movieDetail.title || tvDetail.name,
+      poster: movieDetail.poster_path || tvDetail.poster_path,
+      note: movieDetail.vote_average || tvDetail.vote_average,
+    };
+    const checktoWatchList = toWatchList.map((item) => isEqual(newItem, item));
+    if (!checktoWatchList.includes(true)) {
+      setToWatchList([newItem, ...toWatchList]);
     }
-    if (watchedList.includes(newToWatchItem)) {
-      setWatchedList(watchedList.filter((item) => item !== newToWatchItem));
+    const checkWatchedList = watchedList.map((item) => isEqual(newItem, item));
+    if (checkWatchedList.includes(true)) {
+      setWatchedList(watchedList.filter((item) => item.id !== newItem.id));
     }
-    console.info("Clic sur A voir : WatchedList", watchedList);
-    console.info("Clic sur A voir : toWatchList", toWatchList);
   };
 
   const handleWatchedClick = () => {
-    // const newWatchedItem = {
-    //   id: movieDetail.id || tvDetail.id,
-    //   title: movieDetail.title || tvDetail.poster_path,
-    //   poster: movieDetail.poster_path || tvDetail.name,
-    //   note: movieDetail.vote_average || tvDetail.vote_average,
-    // };
-    const newWatchedItem = movieDetail.id || tvDetail.id;
-    if (!watchedList.includes(newWatchedItem)) {
-      setWatchedList([newWatchedItem, ...watchedList]);
+    const newItem = {
+      id: movieDetail.id || tvDetail.id,
+      title: movieDetail.title || tvDetail.poster_path,
+      poster: movieDetail.poster_path || tvDetail.name,
+      note: movieDetail.vote_average || tvDetail.vote_average,
+    };
+    const checkWatchedList = watchedList.map((item) => isEqual(newItem, item));
+    if (!checkWatchedList.includes(true)) {
+      setWatchedList([newItem, ...watchedList]);
     }
-    if (toWatchList.includes(newWatchedItem)) {
-      setToWatchList(toWatchList.filter((item) => item !== newWatchedItem));
+    const checktoWatchList = toWatchList.map((item) => isEqual(newItem, item));
+    if (checktoWatchList.includes(true)) {
+      setToWatchList(toWatchList.filter((item) => item.id !== newItem.id));
     }
-    console.info("Clic sur Vu : WatchedList", watchedList);
-    console.info("Clic sur Vu : toWatchList", toWatchList);
   };
 
   // UseEffects handling the storing of new elements in local storage
   useEffect(() => {
     localStorage.setItem("toWatchList", JSON.stringify(toWatchList));
-    // console.info(toWatchList);
   }, [toWatchList]);
 
   useEffect(() => {
     localStorage.setItem("watchedList", JSON.stringify(watchedList));
-    // console.info(watchedList);
   }, [watchedList]);
-
-  // useEffect(() => {
-  //   localStorage.clear();
-  //   // console.info(watchedList);
-  // }, []);
 
   return (
     <div className="mfocus">
