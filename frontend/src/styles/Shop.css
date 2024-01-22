@@ -1,32 +1,37 @@
 /* Grand écran (Ordi) */
+.container-shop {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
 .containerArticles {
   color: black;
   font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: space-around;
-  height: 100%;
-  width: 100%;
   margin-top: 5rem;
 }
 
 .shopImg {
   width: 12rem;
   height: auto;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
 }
 
 .shopMug {
   width: 12rem;
   height: 12rem;
   object-fit: cover;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
+  background-color: #b8b8b6;
 }
 
 .container-descriptif {
   padding: 5%;
   width: 12rem;
   height: 10rem;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 10px;
   background-color: #b8b8b6;
   display: flex;
   flex-direction: column;
@@ -59,6 +64,241 @@
   padding: 0 4px 0 4px;
   text-align: center;
   line-height: 20px;
+}
+
+.containerPanier {
+  color: #b8b8b6;
+  background-color: #282a36;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #b8b8b6;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+.contenuPanier {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
+}
+.titlePanier {
+  display: flex;
+  justify-content: center;
+}
+.displayGrid {
+  display: grid;
+  width: 70%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.one {
+  text-decoration: underline;
+}
+.two,
+.three,
+.four {
+  text-decoration: underline;
+  text-align: center;
+}
+.six,
+.ten,
+.fourteen,
+.eighteen {
+  text-align: center;
+}
+.seven,
+.eleven,
+.fifteen,
+.nineteen {
+  text-align: center;
+}
+.eight,
+.twelve,
+.sixteen,
+.twenty {
+  text-align: center;
+}
+.containerValidation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@-webkit-keyframes extend {
+  0% {
+    width: 100%;
+    height: 3rem;
+    border-radius: 45px;
+  }
+  10% {
+    width: 100%;
+    height: 3rem;
+    background: #ffa00b;
+    /* margin-left: 5px;
+        margin-top: 5px; */
+  }
+  20% {
+    width: 70%;
+    height: 3rem;
+    background: #ffa00b;
+    /* margin-left: 0px;
+        margin-top: 0px; */
+  }
+  100% {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 45px;
+    margin-left: 30%;
+    margin-right: 50%;
+    background: #ffa00b;
+  }
+}
+@keyframes extend {
+  0% {
+    width: 100%;
+    height: 3rem;
+    border-radius: 45px;
+  }
+  10% {
+    width: 100%;
+    height: 3rem;
+    background: #ffa00b;
+    /* margin-left: 5px;
+          margin-top: 5px; */
+  }
+  20% {
+    width: 70%;
+    height: 3rem;
+    background: #ffa00b;
+    /* margin-left: 0px;
+          margin-top: 0px; */
+  }
+  100% {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 45px;
+    margin-left: 30%;
+    margin-right: 50%;
+    background: #ffa00b;
+  }
+}
+
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    color: #282a36;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    color: #282a36;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.buttonValid {
+  height: 3rem;
+  border-radius: 45px;
+  background-color: #ffa00b;
+  margin-top: 30%;
+}
+
+/* .buttonValid {
+      border-radius: 45px;
+      border-color: #282A36;
+      background-color: #FFA00B;
+      padding: 0.5rem;
+      margin-top: 20%;
+      height: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+.buttonValid > span {
+  font-size: 1rem;
+  color: black;
+}
+
+.ImgV {
+  position: absolute;
+  top: 95%;
+  left: 46.5%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  height: 2rem;
+  width: 2rem;
+}
+
+.buttonValid:focus {
+  /*animation*/
+  -webkit-animation: extend 1s ease-in-out;
+  -ms-animation: extend 1s ease-in-out;
+  animation: extend 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  /* Chrome, Safari, Opera */
+  animation-fill-mode: forwards;
+}
+
+.buttonValid:focus > span {
+  /*animation*/
+  -webkit-animation: disappear 1s ease-in-out;
+  -ms-animation: disappear 1s ease-in-out;
+  animation: disappear 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  /* Chrome, Safari, Opera */
+  animation-fill-mode: forwards;
+}
+
+.buttonValid:focus > .ImgV {
+  /*animation*/
+  -webkit-animation: appear 1s ease-in-out;
+  -ms-animation: appear 1s ease-in-out;
+  animation: appear 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+  /* Chrome, Safari, Opera */
+  animation-fill-mode: forwards;
 }
 
 /* Ecran moyen (Tablettes) */
