@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  overflow-x: hidden;
+}
 :root {
   --main-color: #282a36;
   --secondary-color: #ffa00b;
