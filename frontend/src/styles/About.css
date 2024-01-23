@@ -1,0 +1,209 @@
+:root {
+  background-color: #282a36;
+}
+
+/* Section Film */
+
+.film {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.affiche {
+  height: 400px;
+  width: 300px;
+  background-color: #282a36;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.soon {
+  height: 350px;
+  width: 250px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.play {
+  background-image: url(../assets/play.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  color: #ffffff;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 1.5rem;
+}
+
+.syno {
+  font-size: 1.1rem;
+}
+
+/* Section Acteur */
+.name {
+  display: flex;
+}
+
+.people {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.git {
+  background-image: url(../assets/git.png);
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.lin {
+  background-image: url(../assets/linkedin.png);
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 200px;
+  background-color: #282a36;
+  border-radius: 10px;
+  color: #ffffff;
+  border-style: none;
+  box-shadow: 0px 0px 4px #ffffff;
+}
+
+/* Photo profil */
+
+.imgr {
+  background-image: url(../assets/ryan.PNG);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.imgd {
+  background-image: url(../assets/daniela.PNG);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.imgs {
+  background-image: url(../assets/sabrina.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.imgc {
+  background-image: url(../assets/cedric.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.imgp {
+  background-image: url(../assets/pauline.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.imgy {
+  background-image: url(../assets/yohan.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.imge {
+  background-image: url(../assets/elise.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 170px;
+  width: 170px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 320px) {
+  /* Section Acteur */
+
+  .acteur {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* Section Acteur */
+
+  .acteur {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    margin-top: 70px;
+  }
+}

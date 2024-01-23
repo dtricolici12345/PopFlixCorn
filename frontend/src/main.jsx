@@ -5,10 +5,22 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
 
+import AboutUs from "./pages/AboutUs";
+import People from "./pages/People";
+
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/people/:id",
+        element: <People />,
+      },
+    ],
   },
 ]);
 
