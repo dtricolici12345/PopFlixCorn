@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/Filmographie.css";
 import "../styles/FocusActeur.css";
 import { useParams } from "react-router-dom";
+import NoPopCorn from "../assets/NoPopCorn.png";
 
 function Filmographie() {
   const { acteurId } = useParams();
@@ -47,11 +48,21 @@ function Filmographie() {
         {acteurfilm.map((filmPlayActeur) => (
           <div className="BlocCard" key={filmPlayActeur.id}>
             <div className="filmPoster">
-              <img
-                className="poster_paths"
-                src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.poster_path}`}
-                alt="Poster_film"
-              />
+              <div>
+                {filmPlayActeur.poster_path ? (
+                  <img
+                    className="poster_paths"
+                    src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.poster_path}`}
+                    alt="Poster_film"
+                  />
+                ) : (
+                  <img
+                    className="poster_paths"
+                    src={NoPopCorn}
+                    alt="No_Poster"
+                  />
+                )}
+              </div>
               <div className={`m-note ${getBorderColor()}`}>
                 {Math.round(filmPlayActeur.vote_average * 10)}%
               </div>
@@ -65,11 +76,21 @@ function Filmographie() {
         {acteurserie.map((seriePlayActeur) => (
           <div className="BlocCard" key={seriePlayActeur.id}>
             <div className="filmPoster">
-              <img
-                className="poster_paths"
-                src={`https://image.tmdb.org/t/p/w500/${seriePlayActeur.poster_path}`}
-                alt="Poster_serie"
-              />
+              <div>
+                {seriePlayActeur.poster_path ? (
+                  <img
+                    className="poster_paths"
+                    src={`https://image.tmdb.org/t/p/w500/${seriePlayActeur.poster_path}`}
+                    alt="Poster_serie"
+                  />
+                ) : (
+                  <img
+                    className="poster_paths"
+                    src={NoPopCorn}
+                    alt="No_Poster"
+                  />
+                )}
+              </div>
               <div className={`m-note ${getBorderColor()}`}>
                 {Math.round(seriePlayActeur.vote_average * 10)}%
               </div>
