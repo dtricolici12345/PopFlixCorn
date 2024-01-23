@@ -25,8 +25,11 @@ function CarteActeur({ movieId }) {
       options
     )
       .then((res) => res.json())
-      .then((data) => setActeursInfos(data.cast.slice(0, 15)));
-  }, []);
+      .then((data) => {
+        console.info("Acteurs Infos", data.cast);
+        setActeursInfos(data.cast.slice(0, 15));
+      });
+  }, [movieId]);
 
   return (
     <div className="container_banner">
