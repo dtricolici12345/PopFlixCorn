@@ -1,0 +1,11 @@
+.FilterGallery {
+  margin: 0;
+  overflow: hidden;
+}
+
+.FilterGallery .Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100% !important;
+}
