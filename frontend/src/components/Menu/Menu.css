@@ -16,6 +16,12 @@
     right: 55%;
     display: flex;
   }
+  .home-menu {
+    position: fixed;
+    bottom: 75px;
+    right: 55%;
+    display: flex;
+  }
 
   #menuclose {
     border-radius: 100%;
@@ -135,6 +141,14 @@
     /* top: 50%; */
     /* transform: translateY(-50%); */
     /* right: 0; */
+  }
+  .home-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
   }
 
   .btn {

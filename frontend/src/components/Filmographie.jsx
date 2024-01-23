@@ -17,14 +17,21 @@ function Filmographie() {
       },
     };
     fetch(
-      `https://api.themoviedb.org/3/person/${acteurId}/movie_credits?language=en-US`,
+      `https://api.themoviedb.org/3/person/${acteurId}/movie_credits?language=fr-FR&region=FR`,
       options
     )
       .then((response) => response.json())
       .then((response) => setActeurfilm(response.cast.slice(0, 10)));
   }, []);
 
-  // console.info("acteur film", acteurfilm);
+  const getBorderColor = () => {
+    const note = Math.round(acteurId.vote_average * 10);
+    if (note < 50) return "border-red";
+    if (note < 70) return "border-orange";
+    return "border-green";
+  };
+
+  console.info("acteur film", acteurfilm);
   return (
     <div className="film">
       <h2 className="title_film">Filmographie :</h2>
@@ -38,6 +45,9 @@ function Filmographie() {
                 src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.poster_path}`}
                 alt="Poster_film"
               />
+              <div className={`m-note ${getBorderColor()}`}>
+                {Math.round(filmPlayActeur.vote_average * 10)}%
+              </div>
               <div className="card2">
                 <p className="titles">{filmPlayActeur.title}</p>
                 <p className="overview">{filmPlayActeur.overview}</p>

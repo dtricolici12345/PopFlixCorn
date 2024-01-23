@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import Logo from "../components/Logo/Logo";
-// import Menu from "../components/Menu/Menu";
 import CarteActeur from "../components/CarteActeur";
-
 import "../components/Logo/Logo.css";
 import "../styles/Focus.css";
 import watch from "../assets/watch.png";
