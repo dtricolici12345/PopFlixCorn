@@ -9,6 +9,11 @@ import Home from "./pages/Home";
 import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
 import Shop from "./pages/Shop";
+import GameHello from "./pages/Game/GameHello";
+import GameRomantique from "./pages/Game/Categories/GameRomantique";
+import GameHorreur from "./pages/Game/Categories/GameHorreur";
+import GameAnime from "./pages/Game/Categories/GameAnime";
+import GameSerie from "./pages/Game/Categories/GameSerie";
 
 const router = createBrowserRouter([
   {
@@ -32,7 +37,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/game",
-        element: <App />,
+        element: <GameHello />,
+      },
+      {
+        path: "/game/romantique",
+        element: <GameRomantique />,
+      },
+      {
+        path: "/game/horreur",
+        element: <GameHorreur />,
+      },
+      {
+        path: "/game/anime",
+        element: <GameAnime />,
+      },
+      {
+        path: "/game/seria",
+        element: <GameSerie />,
       },
       {
         path: "/shop",
