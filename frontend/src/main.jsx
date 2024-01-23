@@ -9,11 +9,11 @@ import Home from "./pages/Home";
 import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
 import Shop from "./pages/Shop";
-import GameHello from "./pages/GameHello/GameHello";
-import GameRomantique from "./pages/GameHello/GameRomantique/GameRomantique";
-import GameHorreur from "./pages/GameHello/GameHorreur/GameHorreur";
-import GameAnime from "./pages/GameHello/GameAnime/GameAnime";
-import GameSerie from "./pages/GameHello/GameSerie/GameSerie";
+import GameHello from "./pages/Game/GameHello";
+import GameRomantique from "./pages/Game/Categories/GameRomantique";
+import GameHorreur from "./pages/Game/Categories/GameHorreur";
+import GameAnime from "./pages/Game/Categories/GameAnime";
+import GameSerie from "./pages/Game/Categories/GameSerie";
 
 const router = createBrowserRouter([
   {

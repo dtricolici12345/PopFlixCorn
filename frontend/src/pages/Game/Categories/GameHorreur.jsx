@@ -1,7 +1,7 @@
 /* eslint-disable import/no-useless-path-segments */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable no-plusplus */
-import "../../GameHello/GameRomantique/GameRomantique.css";
+import "./StyleCategories.css";
 import { useState } from "react";
 import Result from "../Result/Result";
 

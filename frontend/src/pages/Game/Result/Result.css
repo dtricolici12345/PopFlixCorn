@@ -14,6 +14,11 @@
   margin-top: 20px;
   cursor: pointer;
 }
+.result button:hover {
+  background-color: #f7f5f5;
+  color: #ffa00b;
+}
+
 .result h2 {
   font-family: "Open Sans", sans-serif;
   margin-bottom: 0;

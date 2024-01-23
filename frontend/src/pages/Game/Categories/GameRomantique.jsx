@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 // eslint-disable-next-line no-unused-vars
 // eslint-disable-next-line no-plusplus
-import "./GameRomantique.css";
+import "./StyleCategories.css";
 import { useState } from "react";
 import Result from "../Result/Result";
 
