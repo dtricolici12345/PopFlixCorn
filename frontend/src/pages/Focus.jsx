@@ -81,16 +81,25 @@ function Focus() {
 
   // Function to check if two selected videos are the same
   const isEqual = (obj1, obj2) => {
-    return obj1.id === obj2.id;
+    return obj1.id === obj2.id && obj1.media === obj2.media;
   };
 
   // Function handling the click on "To watch" and "Watched" buttons
   const handleToWatchClick = () => {
     const newItem = {
-      id: movieDetail.id || tvDetail.id,
-      title: movieDetail.title || tvDetail.name,
-      poster: movieDetail.poster_path || tvDetail.poster_path,
-      note: movieDetail.vote_average || tvDetail.vote_average,
+      media: mediaType,
+      id: mediaType === "movie" ? movieDetail.id : tvDetail.id,
+      title: mediaType === "movie" ? movieDetail.title : tvDetail.name,
+      poster:
+        mediaType === "movie" ? movieDetail.poster_path : tvDetail.poster_path,
+      note:
+        mediaType === "movie"
+          ? movieDetail.vote_average
+          : tvDetail.vote_average,
+      key:
+        mediaType === "movie"
+          ? mediaType + movieDetail.id
+          : mediaType + tvDetail.id,
     };
     const checktoWatchList = toWatchList.map((item) => isEqual(newItem, item));
     if (!checktoWatchList.includes(true)) {
@@ -98,16 +107,29 @@ function Focus() {
     }
     const checkWatchedList = watchedList.map((item) => isEqual(newItem, item));
     if (checkWatchedList.includes(true)) {
-      setWatchedList(watchedList.filter((item) => item.id !== newItem.id));
+      setWatchedList(
+        watchedList.filter(
+          (item) => !(item.id === newItem.id && item.media === newItem.media)
+        )
+      );
     }
   };
 
   const handleWatchedClick = () => {
     const newItem = {
+      media: mediaType,
       id: movieDetail.id || tvDetail.id,
-      title: movieDetail.title || tvDetail.poster_path,
-      poster: movieDetail.poster_path || tvDetail.name,
-      note: movieDetail.vote_average || tvDetail.vote_average,
+      title: mediaType === "movie" ? movieDetail.title : tvDetail.name,
+      poster:
+        mediaType === "movie" ? movieDetail.poster_path : tvDetail.poster_path,
+      note:
+        mediaType === "movie"
+          ? movieDetail.vote_average
+          : tvDetail.vote_average,
+      key:
+        mediaType === "movie"
+          ? mediaType + movieDetail.id
+          : mediaType + tvDetail.id,
     };
     const checkWatchedList = watchedList.map((item) => isEqual(newItem, item));
     if (!checkWatchedList.includes(true)) {
@@ -115,7 +137,11 @@ function Focus() {
     }
     const checktoWatchList = toWatchList.map((item) => isEqual(newItem, item));
     if (checktoWatchList.includes(true)) {
-      setToWatchList(toWatchList.filter((item) => item.id !== newItem.id));
+      setToWatchList(
+        toWatchList.filter(
+          (item) => !(item.id === newItem.id && item.media === newItem.media)
+        )
+      );
     }
   };
 

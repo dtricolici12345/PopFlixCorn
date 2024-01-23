@@ -23,7 +23,7 @@ function WatchList() {
 
   // Function to check if two selected videos are the same
   const isEqual = (obj1, obj2) => {
-    return obj1.id === obj2.id;
+    return obj1.id === obj2.id && obj1.media === obj2.media;
   };
 
   // Functions needed to mark movie as watched and to remove from watchlist
@@ -39,7 +39,12 @@ function WatchList() {
     );
     if (checktoWatchList.includes(true)) {
       setToWatchList(
-        toWatchList.filter((item) => item.id !== selectedVideo.id)
+        toWatchList.filter(
+          (item) =>
+            !(
+              item.id === selectedVideo.id && item.media === selectedVideo.media
+            )
+        )
       );
     }
   };
@@ -56,12 +61,18 @@ function WatchList() {
     );
     if (checkWatchedList.includes(true)) {
       setWatchedList(
-        watchedList.filter((item) => item.id !== selectedVideo.id)
+        watchedList.filter(
+          (item) =>
+            !(
+              item.id === selectedVideo.id && item.media === selectedVideo.media
+            )
+        )
       );
     }
   };
 
   const handleDelete = (selectedVideo) => {
+    console.info(selectedVideo);
     if (toWatchList.includes(selectedVideo)) {
       setToWatchList(
         toWatchList.filter((video) => video.id !== selectedVideo.id)
@@ -69,7 +80,13 @@ function WatchList() {
     }
     if (watchedList.includes(selectedVideo)) {
       setWatchedList(
-        watchedList.filter((video) => video.id !== selectedVideo.id)
+        watchedList.filter(
+          (video) =>
+            !(
+              video.id === selectedVideo.id &&
+              video.media === selectedVideo.media
+            )
+        )
       );
     }
   };
@@ -77,20 +94,20 @@ function WatchList() {
   // UseEffects handling the storing of new elements in local storage
   useEffect(() => {
     localStorage.setItem("toWatchList", JSON.stringify(toWatchList));
-  }, [toWatchList]);
+  }, [toWatchList, watchedList]);
 
   useEffect(() => {
     localStorage.setItem("watchedList", JSON.stringify(watchedList));
-  }, [watchedList]);
+  }, [watchedList, toWatchList]);
 
   return (
     <div className="container-watchlist">
       <h1>A voir</h1>
       <div className="container-watchlistcards">
         {toWatchList.map((video) => (
-          <div key={video.id} className="card-watchlist">
+          <div key={video.key} className="card-watchlist">
             <div className="card-watchlist-img">
-              <Link to={`/focus/movie/${video.id}`}>
+              <Link to={`/focus/${video.media}/${video.id}`}>
                 <img
                   src={`https://image.tmdb.org/t/p/w500${video.poster}`}
                   alt={video.title}
@@ -129,12 +146,14 @@ function WatchList() {
       <h1>Vu</h1>
       <div className="container-watchlistcards">
         {watchedList.map((video) => (
-          <div key={video.id} className="card-watchlist">
+          <div key={video.key} className="card-watchlist">
             <div className="card-watchlist-img">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${video.poster}`}
-                alt={video.title}
-              />
+              <Link to={`/focus/${video.media}/${video.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${video.poster}`}
+                  alt={video.title}
+                />
+              </Link>
               <div
                 className={`watchlist-note ${getBorderColor(
                   Math.round(video.note * 10)
