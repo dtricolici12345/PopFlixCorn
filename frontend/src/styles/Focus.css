@@ -1,8 +1,5 @@
 .mfocus {
   background-color: var(--main-color);
-  /* position: absolute; */
-  /* To add : top : -2rem */
-  /* top: -2rem; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -16,8 +13,8 @@
   display: flex;
   gap: 1.5rem;
   font-family: "Inter", sans-serif;
-  max-width: 60rem;
-  margin-bottom: 6rem;
+  max-width: 55rem;
+  margin: 0rem 1rem 2rem 1rem;
 }
 
 .mfocus-card-bloc-image {
@@ -140,13 +137,25 @@
   transform: scale(1.03);
 }
 
+@media screen and (min-width: 1600px) {
+  .mfocus-card {
+    max-width: 90rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .mfocus-card {
+    max-width: 38rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .mfocus-card {
     flex-direction: column;
     align-items: center;
-    /* margin: 10rem 2rem 2rem 2rem; */
-    padding: 20px;
+    /* padding: 20px; */
     height: auto;
+    max-width: 30rem;
   }
 
   .mfocus-card-bloc-image {
