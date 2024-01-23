@@ -84,16 +84,19 @@
   display: flex;
   justify-content: space-around;
   padding-top: 2%;
+  font-size: 1.2rem;
 }
 .titlePanier {
   display: flex;
   justify-content: center;
+  font-size: 2.2rem;
 }
 .displayGrid {
   display: grid;
   width: 70%;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
   grid-gap: 10px;
+  font-size: 1.1rem;
 }
 .one {
   text-decoration: underline;
@@ -127,184 +130,33 @@
   flex-direction: column;
   justify-content: flex-end;
 }
-
-@-webkit-keyframes extend {
-  0% {
-    width: 100%;
-    height: 3rem;
-    border-radius: 45px;
-  }
-  10% {
-    width: 100%;
-    height: 3rem;
-    background: #ffa00b;
-    /* margin-left: 5px;
-        margin-top: 5px; */
-  }
-  20% {
-    width: 70%;
-    height: 3rem;
-    background: #ffa00b;
-    /* margin-left: 0px;
-        margin-top: 0px; */
-  }
-  100% {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 45px;
-    margin-left: 30%;
-    margin-right: 50%;
-    background: #ffa00b;
-  }
+.totalShop {
+  text-align: center;
+  color: #ffa00b;
 }
-@keyframes extend {
-  0% {
-    width: 100%;
-    height: 3rem;
-    border-radius: 45px;
-  }
-  10% {
-    width: 100%;
-    height: 3rem;
-    background: #ffa00b;
-    /* margin-left: 5px;
-          margin-top: 5px; */
-  }
-  20% {
-    width: 70%;
-    height: 3rem;
-    background: #ffa00b;
-    /* margin-left: 0px;
-          margin-top: 0px; */
-  }
-  100% {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 45px;
-    margin-left: 30%;
-    margin-right: 50%;
-    background: #ffa00b;
-  }
-}
-
-@-webkit-keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    color: #282a36;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  20% {
-    color: #282a36;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .buttonValid {
   height: 3rem;
   border-radius: 45px;
   background-color: #ffa00b;
   margin-top: 30%;
-}
-
-/* .buttonValid {
-      border-radius: 45px;
-      border-color: #282A36;
-      background-color: #FFA00B;
-      padding: 0.5rem;
-      margin-top: 20%;
-      height: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    } */
-
-.buttonValid > span {
   font-size: 1rem;
   color: black;
 }
 
-.ImgV {
-  position: absolute;
-  top: 95%;
-  left: 46.5%;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: alpha(opacity=0);
-  opacity: 0;
-  height: 2rem;
-  width: 2rem;
-}
-
-.buttonValid:focus {
-  /*animation*/
-  -webkit-animation: extend 1s ease-in-out;
-  -ms-animation: extend 1s ease-in-out;
-  animation: extend 1s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  /* Chrome, Safari, Opera */
-  animation-fill-mode: forwards;
-}
-
-.buttonValid:focus > span {
-  /*animation*/
-  -webkit-animation: disappear 1s ease-in-out;
-  -ms-animation: disappear 1s ease-in-out;
-  animation: disappear 1s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  /* Chrome, Safari, Opera */
-  animation-fill-mode: forwards;
-}
-
-.buttonValid:focus > .ImgV {
-  /*animation*/
-  -webkit-animation: appear 1s ease-in-out;
-  -ms-animation: appear 1s ease-in-out;
-  animation: appear 1s ease-in-out;
-  -webkit-animation-fill-mode: forwards;
-  /* Chrome, Safari, Opera */
-  animation-fill-mode: forwards;
-}
-
 /* Ecran moyen (Tablettes) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerArticles {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5%;
+    padding: 2%;
+  }
+  .title-article {
+    font-size: 1rem;
+  }
   .shopImg {
     width: 8rem;
+    height: auto;
   }
 
   .shopMug {
@@ -315,23 +167,15 @@
   .container-descriptif {
     width: 8rem;
     height: 9rem;
+    font-size: 0.8rem;
   }
-  .title-article {
-    font-size: 1em;
+  .displayGrid {
+    font-size: 0.7rem;
   }
-
-  .description-article {
-    font-size: 0.7em;
-  }
-  .tarif-bouton {
-    font-size: 0.9rem;
-  }
-  .buttonI-D {
-    padding: 0 4px 0 4px;
-    line-height: 13px;
+  .totalShop {
+    font-size: 1rem;
   }
 }
-
 /* Petit écran (mobile) */
 @media screen and (max-width: 768px) {
   .containerArticles {
@@ -345,5 +189,26 @@
   }
   .articleShop {
     padding-bottom: 5%;
+  }
+  .displayGrid {
+    font-size: 0.7rem;
+    width: 100%;
+    padding-bottom: 5%;
+  }
+  .titlePanier {
+    font-size: 1.7rem;
+  }
+  .contenuPanier {
+    flex-direction: column;
+  }
+  .buttonValid {
+    height: 2rem;
+    margin-top: 5%;
+  }
+  .totalShop {
+    font-size: 1rem;
+  }
+  .buttonValid {
+    font-size: 0.8rem;
   }
 }

@@ -220,14 +220,12 @@ function Shop() {
             <div className="twenty">{prixTotalArticlesBol}€</div>
           </div>
           <div className="containerValidation">
-            <div className="totalShop">Total panier : {totalPrix}€</div>
+            <div className="totalShop">
+              <p>Total panier :</p>
+              <p> {totalPrix}€</p>
+            </div>
             <button className="buttonValid" type="button">
-              <span>Acheter</span>
-              <img
-                className="ImgV"
-                src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png"
-                alt="Valid"
-              />
+              Acheter
             </button>
           </div>
         </div>
