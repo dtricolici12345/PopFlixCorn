@@ -4,7 +4,7 @@
 }
 .result button {
   font-weight: bold;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
   border-radius: 30px;
   border: 0;
   padding: 15px 30px;
@@ -15,11 +15,17 @@
   cursor: pointer;
 }
 .result h2 {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Open Sans", sans-serif;
   margin-bottom: 0;
   color: #f5efef;
   margin-top: 20px;
 }
 .result img {
   width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .result {
+    width: 300px;
+  }
 }

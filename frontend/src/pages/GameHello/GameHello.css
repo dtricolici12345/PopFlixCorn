@@ -1,23 +1,24 @@
 .game-page {
-  display: flex;
+  font-family: "Open Sans", sans-serif;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
+  display: flex;
+  margin-left: 110px;
+  height: 100%;
+  width: 100%;
+  margin-top: 5rem;
 }
-h1 {
+h4 {
   color: #ffa00b;
-  font-size: 3rem;
+  font-size: 50px;
   margin-bottom: 20px;
 }
 .game-options {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
   margin-top: 20px;
 }
 .quiz-option {
+  width: 400px;
   margin: 10px;
   padding: 20px 30px;
   background-color: #ffa00b;
@@ -37,4 +38,28 @@ h1 {
   text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .game-page {
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+  .quiz-option {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .game-page {
+    max-height: 22rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .quiz-option {
+    width: 200px;
+  }
 }

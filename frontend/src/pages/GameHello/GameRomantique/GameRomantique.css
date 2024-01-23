@@ -1,10 +1,17 @@
-body {
+/* body {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.quiestion-container {
-  border-radius: 20px;
+  justify-content: space-around;
+} */
+.question-container {
+  font-family: "Open Sans", sans-serif;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  margin-left: 110px;
+  height: 100%;
+  width: 100%;
+  margin-top: 5rem;
 }
 .question-romantique {
   padding: 30px;
@@ -53,4 +60,29 @@ ul li {
 }
 ul li:hover {
   border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+  .question-container {
+    margin: 10px;
+    margin-top: 5%;
+  }
+  h1 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .question-romantique {
+    padding: 15px;
+  }
+  .progress {
+    height: 9px;
+  }
+  h1 {
+    font-size: 15px;
+  }
+
+  ul li {
+    font-size: 10px;
+  }
 }

@@ -5,7 +5,7 @@ import "./GameHello.css";
 function GameHello() {
   return (
     <div className="game-page">
-      <h1>Quiz, pleeeeeease!!!</h1>
+      <h4>Quiz, pleeeeeease!!!</h4>
       <div className="game-options">
         <div className="game-container">
           <Link to="/game/romantique" className="quiz-option">
