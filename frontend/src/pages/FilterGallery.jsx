@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CreateGallery from "../components/CreateGallery";
+import "../styles/FilterGallery.css";
 
 function FilterGallery() {
   const { filmType, selectedGenres } = useParams();
@@ -15,7 +16,7 @@ function FilterGallery() {
       const authToken =
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDA5OWZiMmIwZjMxNGY5YmIzMjJjNzY2MGExMWVmNSIsInN1YiI6IjY1OTg0OTc3MWQxYmY0MDFhOGU0YmViMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1Qtip1eiVi7XgfcZBaGDsa5LzjXMd4Ym3Ems_tmCiTQ";
 
-      let url; // Declare url here
+      let url;
 
       try {
         url = `${baseURL}/discover/${
@@ -48,7 +49,7 @@ function FilterGallery() {
       {loading ? (
         <p>Chargement...</p>
       ) : (
-        <div style={{ display: "flex", flexWrap: "wrap" }} className="Gallery">
+        <div className="Gallery">
           {searchResults && searchResults.length > 0 ? (
             searchResults.map((item) => (
               <CreateGallery
