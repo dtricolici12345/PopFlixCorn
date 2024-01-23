@@ -5,6 +5,7 @@ import "../components/Logo/Logo.css";
 import "../styles/Focus.css";
 import watch from "../assets/watch.png";
 import NoPopCorn from "../assets/NoPopCorn.png";
+import ChecklistIcon from "../assets/checklist.png";
 
 function Focus() {
   const { id, mediaType } = useParams();
@@ -24,6 +25,9 @@ function Focus() {
   const [watchedList, setWatchedList] = useState(() => {
     return JSON.parse(localStorage.getItem("watchedList")) || [];
   });
+
+  // State needed to display popup
+  const [isPopupClosed, setIsPopupClosed] = useState(true);
 
   // Function needed to define the border color around the note of the video
   const getBorderColor = () => {
@@ -113,6 +117,7 @@ function Focus() {
         )
       );
     }
+    setIsPopupClosed(false);
   };
 
   const handleWatchedClick = () => {
@@ -143,6 +148,11 @@ function Focus() {
         )
       );
     }
+    setIsPopupClosed(false);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupClosed(true);
   };
 
   // UseEffects handling the storing of new elements in local storage
@@ -156,6 +166,19 @@ function Focus() {
 
   return (
     <div className="mfocus">
+      <div
+        className={`mfocus-overlay ${isPopupClosed ? "popup-closed" : ""}`}
+      />
+      <div className={`mfocus-popup ${isPopupClosed ? "popup-closed" : ""}`}>
+        <div>Titre ajouté ! </div>
+        <div className="mfocus-popup-iconline">
+          <span> Retrouvez votre sélection dans l'onglet</span>
+          <img src={ChecklistIcon} alt="icone checklist" />
+        </div>
+        <button type="button" onClick={handleClosePopup}>
+          OK
+        </button>
+      </div>
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
           {movieDetail.poster_path || tvDetail.poster_path ? (
@@ -168,7 +191,7 @@ function Focus() {
               alt={mediaType === "movie" ? movieDetail.title : tvDetail.name}
             />
           ) : (
-            <img src={NoPopCorn} alt="Void" />
+            <img src={NoPopCorn} alt="No poster" />
           )}
           <div className={`mfocus-note ${getBorderColor()}`}>
             {mediaType === "movie"

@@ -4,7 +4,7 @@ import "../styles/Watchlist.css";
 import ViewIcon from "../assets/view.png";
 import HideIcon from "../assets/hide.png";
 import BinIcon from "../assets/bin.png";
-// import NoPopCorn from "../assets/NoPopCorn.png";
+import NoPopCorn from "../assets/NoPopCorn.png";
 
 function WatchList() {
   const [toWatchList, setToWatchList] = useState(() => {
@@ -108,10 +108,14 @@ function WatchList() {
           <div key={video.key} className="card-watchlist">
             <div className="card-watchlist-img">
               <Link to={`/focus/${video.media}/${video.id}`}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${video.poster}`}
-                  alt={video.title}
-                />
+                {video.poster ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${video.poster}`}
+                    alt={video.title}
+                  />
+                ) : (
+                  <img src={NoPopCorn} alt="No poster" />
+                )}
               </Link>
               <div
                 className={`watchlist-note ${getBorderColor(
@@ -146,13 +150,17 @@ function WatchList() {
       <h1>Vu</h1>
       <div className="container-watchlistcards">
         {watchedList.map((video) => (
-          <div key={video.key} className="card-watchlist">
+          <div key={video.key} className="card-watchlist watched-appearance">
             <div className="card-watchlist-img">
               <Link to={`/focus/${video.media}/${video.id}`}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${video.poster}`}
-                  alt={video.title}
-                />
+                {video.poster ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${video.poster}`}
+                    alt={video.title}
+                  />
+                ) : (
+                  <img src={NoPopCorn} alt="No poster" />
+                )}
               </Link>
               <div
                 className={`watchlist-note ${getBorderColor(

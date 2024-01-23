@@ -43,6 +43,7 @@
   left: 11.5rem;
   background-color: transparent;
   backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .border-red {
@@ -135,6 +136,64 @@
 .mfocus-button:hover {
   background-color: var(--secondary-color);
   transform: scale(1.03);
+}
+
+.mfocus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.mfocus-popup {
+  background-color: #464a60;
+  border-radius: 10px;
+  top: 35%;
+  left: 35%;
+  padding: 2rem 2rem 1rem 2rem;
+  position: fixed;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  color: var(--light-color);
+  z-index: 2;
+}
+
+.mfocus-popup-iconline {
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0rem;
+}
+
+.mfocus-popup img {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 0.5rem;
+}
+
+.mfocus-popup button {
+  margin-top: 0.5rem;
+  margin-left: 17rem;
+  display: block;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--light-color);
+}
+
+.mfocus-popup button:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--main-color);
+}
+
+.popup-closed {
+  display: none;
 }
 
 @media screen and (min-width: 1600px) {
