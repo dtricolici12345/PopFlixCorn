@@ -1,5 +1,6 @@
 .container_banner {
-  margin: 2rem 8rem 2rem 5rem;
+  max-width: 55rem;
+  margin: 1rem;
 }
 
 .title_acteurs {
@@ -53,6 +54,12 @@
   font-family: "Open Sans", sans-serif;
   padding: 10px 5px 10px 10px;
   font-size: 0.6em;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container_banner {
+    max-width: 38rem;
+  }
 }
 
 @media screen and (max-width: 768px) {
