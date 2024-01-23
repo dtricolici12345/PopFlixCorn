@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Watchlist.css";
+import ViewIcon from "../assets/view.png";
+import HideIcon from "../assets/hide.png";
+import BinIcon from "../assets/bin.png";
 // import NoPopCorn from "../assets/NoPopCorn.png";
 
 function WatchList() {
@@ -9,6 +13,13 @@ function WatchList() {
   const [watchedList, setWatchedList] = useState(() => {
     return JSON.parse(localStorage.getItem("watchedList")) || [];
   });
+
+  // Function needed to define the border color around the note of the video
+  const getBorderColor = (note) => {
+    if (note < 50) return "border-red";
+    if (note < 70) return "border-orange";
+    return "border-green";
+  };
 
   // Function to check if two selected videos are the same
   const isEqual = (obj1, obj2) => {
@@ -73,45 +84,87 @@ function WatchList() {
   }, [watchedList]);
 
   return (
-    <div className="watchlist-container">
+    <div className="container-watchlist">
       <h1>A voir</h1>
-      {toWatchList.map((video) => (
-        <div key={video.id}>
-          <span>{video.id}</span>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${video.poster}`}
-            alt={video.title}
-          />
-          <div>{video.note}</div>
-          <h2>{video.title}</h2>
-          <p>{video.id}</p>
-          <button type="button" onClick={() => handleWatchedClick(video)}>
-            Marquer comme vu
-          </button>
-          <button type="button" onClick={() => handleDelete(video)}>
-            Poubelle
-          </button>
-        </div>
-      ))}
+      <div className="container-watchlistcards">
+        {toWatchList.map((video) => (
+          <div key={video.id} className="card-watchlist">
+            <div className="card-watchlist-img">
+              <Link to={`/focus/movie/${video.id}`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${video.poster}`}
+                  alt={video.title}
+                />
+              </Link>
+              <div
+                className={`watchlist-note ${getBorderColor(
+                  Math.round(video.note * 10)
+                )}`}
+              >
+                {Math.round(video.note * 10)}%
+              </div>
+            </div>
+            <div className="card-watchlist-box">
+              <h2>{video.title}</h2>
+              <div className="container-icon-watchlist">
+                <img
+                  className="icon-watchlist"
+                  src={ViewIcon}
+                  onClick={() => handleWatchedClick(video)}
+                  alt="Vu"
+                  title="Marquer comme vu"
+                />
+                <img
+                  className="icon-watchlist"
+                  src={BinIcon}
+                  onClick={() => handleDelete(video)}
+                  alt="Poubelle"
+                  title="Supprimer"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <h1>Vu</h1>
-      {watchedList.map((video) => (
-        <div key={video.id}>
-          <span>{video.id}</span>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${video.poster}`}
-            alt={video.title}
-          />
-          <div>{video.note}</div>
-          <h2>{video.title}</h2>
-          <p>{video.id}</p>
-          <button type="button" onClick={() => handleToWatchClick(video)}>
-            Marquer comme A voir
-          </button>
-          <button type="button" onClick={() => handleDelete(video)}>
-            Poubelle
-          </button>
-        </div>
-      ))}
+      <div className="container-watchlistcards">
+        {watchedList.map((video) => (
+          <div key={video.id} className="card-watchlist">
+            <div className="card-watchlist-img">
+              <img
+                src={`https://image.tmdb.org/t/p/w500${video.poster}`}
+                alt={video.title}
+              />
+              <div
+                className={`watchlist-note ${getBorderColor(
+                  Math.round(video.note * 10)
+                )}`}
+              >
+                {Math.round(video.note * 10)}%
+              </div>
+            </div>
+            <div className="card-watchlist-box">
+              <h2>{video.title}</h2>
+              <div className="container-icon-watchlist">
+                <img
+                  className="icon-watchlist"
+                  src={HideIcon}
+                  onClick={() => handleToWatchClick(video)}
+                  alt="A voir"
+                  title="Marquer comme A voir"
+                />
+                <img
+                  className="icon-watchlist"
+                  src={BinIcon}
+                  onClick={() => handleDelete(video)}
+                  alt="Poubelle"
+                  title="Supprimer"
+                />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

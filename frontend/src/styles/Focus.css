@@ -153,7 +153,6 @@
   .mfocus-card {
     flex-direction: column;
     align-items: center;
-    /* padding: 20px; */
     height: auto;
     max-width: 30rem;
   }
