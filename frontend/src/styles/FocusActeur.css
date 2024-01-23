@@ -1,0 +1,64 @@
+.FocusActeur {
+  display: flex;
+  /* margin: 12rem 8rem 2rem 5rem; */
+  gap: 1.5rem;
+  font-family: "Inter", sans-serif;
+  max-width: 90rem;
+}
+
+.partie {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.partie1 {
+  display: flex;
+}
+
+.imgActeur {
+  width: 15rem;
+  height: 22.5rem;
+  border-radius: 10px;
+}
+
+.acteurH1 {
+  color: #ffa00b;
+  text-decoration: underline;
+}
+
+.bioH2 {
+  color: #ffa00b;
+}
+
+.age {
+  font-size: 2em;
+  color: #727272;
+}
+
+.biography {
+  color: white;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .FocusActeur {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .partie1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .biography {
+    padding: 0px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,17 @@
+.FilterGallery {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.FilterGallery .Gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 95%;
+}
+html {
+  width: 100vw;
+}

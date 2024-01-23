@@ -1,0 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+.TypePage {
+  display: flex;
+  background-color: #282a36;
+  color: #f8f8f2;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kanit", sans-serif;
+}

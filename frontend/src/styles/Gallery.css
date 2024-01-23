@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
+.GalleryBody {
+  /* position: fixed; */
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282a36;
+  display: flex;
+  /* align-items: center; */
+}
+
+.A4cards {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 12%;
+  margin-right: 12%;
+}
+
+.A4card {
+  border-radius: 10px;
+  width: 270px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+}
+
+.A4card-header {
+  height: 75%;
+}
+.A4card-img {
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(185, 0, 0);
+  height: 97%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.A4card-body {
+  padding: 10px 20px;
+  border: 6px solid #ffa00b;
+  height: 25%;
+  border-radius: 10px;
+  color: #f8f8f2;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  font-family: "Kanit", sans-serif;
+}
+
+.A4card-title {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.A4card-detail {
+  text-overflow: ellipsis;
+  margin-top: 4px;
+  text-justify: auto;
+  font-size: 0.7rem;
+}
+
+@media screen and (min-width: 2000px) {
+  .A4cards {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+}
