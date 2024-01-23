@@ -44,11 +44,11 @@ function FilterGallery() {
   }, [filmType, selectedGenres]);
 
   return (
-    <div>
+    <div className="FilterGallery">
       {loading ? (
         <p>Chargement...</p>
       ) : (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", flexWrap: "wrap" }} className="Gallery">
           {searchResults && searchResults.length > 0 ? (
             searchResults.map((item) => (
               <CreateGallery
@@ -57,7 +57,7 @@ function FilterGallery() {
                 title={item.name || item.title}
                 imageUrl={item.poster_path || item.profile_path}
                 details={item.overview}
-                mediaType={item.media_type}
+                mediaType={filmType}
               />
             ))
           ) : (

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-// import Menu from "../components/Menu/Menu";
 import Peignoir from "../assets/shop-peignoir.jpeg";
 import Mug from "../assets/shop-mug.png";
 import Tshirt from "../assets/shop-t-shirt.jpg";
@@ -50,101 +49,129 @@ function Shop() {
   };
 
   return (
-    <div>
-      {/* <Menu /> */}
-      <div className="listeArticle">
-        <div className="container-article-shop">
-          <img className="shopPeignoir" src={Peignoir} alt="peignoir" />
-          <div className="container-descriptif">
-            <h2 className="title-article">Peignoir</h2>
-            <p className="description-article">
-              Dans cette composition intitulée "Éclats de Douceur", le peignoir
-              devient le protagoniste d'une scène où le confort et l'élégance se
-              rencontrent harmonieusement.
-            </p>
-            <div className="tarif-bouton">
-              <p className="tarif">10€</p>
-              <div className="bouton-quantité">
-                <button type="button" onClick={decrementerPeignoir}>
-                  -
-                </button>
-                <p className="quantité" value={valeurPeignoir}>
-                  {valeurPeignoir}
-                </p>
-                <button type="button" onClick={incrementerPeignoir}>
-                  +
-                </button>
-              </div>
+    <div className="containerArticles">
+      <div className="articleShop">
+        <img className="shopImg" src={Peignoir} alt="peignoir" />
+        <div className="container-descriptif">
+          <h2 className="title-article">Peignoir</h2>
+          <p className="description-article">
+            Peignoir "PopFlixCorn", où le confort et l'élégance se rencontrent
+            harmonieusement.
+          </p>
+          <div className="tarif-bouton">
+            <p className="tarif">10€</p>
+            <div className="bouton-quantité">
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={decrementerPeignoir}
+              >
+                -
+              </button>
+              <p className="quantité" value={valeurPeignoir}>
+                {valeurPeignoir}
+              </p>
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={incrementerPeignoir}
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
-        <div className="container-article-shop">
-          <img className="shopMug" src={Mug} alt="mug" />
-          <div className="container-descriptif">
-            <h2 className="title-article">Mug</h2>
-            <p className="description-article">
-              Plongez vos soirées avec le Mug "PopFlixCorn" - 34 cl
-            </p>
-            <div className="tarif-bouton">
-              <p className="tarif">5€</p>
-              <div className="bouton-quantité">
-                <button type="button" onClick={decrementerMug}>
-                  -
-                </button>
-                <p className="quantité" value={valeurMug}>
-                  {valeurMug}
-                </p>
-                <button type="button" onClick={incrementerMug}>
-                  +
-                </button>
-              </div>
+      </div>
+      <div className="articleShop">
+        <img className="shopMug" src={Mug} alt="mug" />
+        <div className="container-descriptif">
+          <h2 className="title-article">Mug</h2>
+          <p className="description-article">
+            Plongez vos soirées avec le Mug "PopFlixCorn" - 34 cl
+          </p>
+          <div className="tarif-bouton">
+            <p className="tarif">5€</p>
+            <div className="bouton-quantité">
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={decrementerMug}
+              >
+                -
+              </button>
+              <p className="quantité" value={valeurMug}>
+                {valeurMug}
+              </p>
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={incrementerMug}
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
-        <div className="container-article-shop">
-          <img className="shopTShirt" src={Tshirt} alt="t-shirt" />
-          <div className="container-descriptif">
-            <h2 className="title-article">T-shirt</h2>
-            <p className="description-article">
-              Plongez dans l'expérience cinématographique ultime avec le T-shirt
-              “PopFlixCorn”
-            </p>
-            <div className="tarif-bouton">
-              <p className="tarif">7€</p>
-              <div className="bouton-quantité">
-                <button type="button" onClick={decrementerTshirt}>
-                  -
-                </button>
-                <p className="quantité" value={valeurTshirt}>
-                  {valeurTshirt}
-                </p>
-                <button type="button" onClick={incrementerTshirt}>
-                  +
-                </button>
-              </div>
+      </div>
+      <div className="articleShop">
+        <img className="shopImg" src={Tshirt} alt="t-shirt" />
+        <div className="container-descriptif">
+          <h2 className="title-article">T-shirt</h2>
+          <p className="description-article">
+            Plongez dans l'expérience cinématographique ultime avec le T-shirt
+            “PopFlixCorn”
+          </p>
+          <div className="tarif-bouton">
+            <p className="tarif">7€</p>
+            <div className="bouton-quantité">
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={decrementerTshirt}
+              >
+                -
+              </button>
+              <p className="quantité" value={valeurTshirt}>
+                {valeurTshirt}
+              </p>
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={incrementerTshirt}
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
-        <div className="container-article-shop">
-          <img className="shopBol" src={Bol} alt="bol" />
-          <div className="container-descriptif">
-            <h2 className="title-article">Bol</h2>
-            <p className="description-article">
-              Bol à pop-corn"PopFlixCorn en aluminium - 20 cm
-            </p>
-            <div className="tarif-bouton">
-              <p className="tarif">5€</p>
-              <div className="bouton-quantité">
-                <button type="button" onClick={decrementerBol}>
-                  -
-                </button>
-                <p className="quantité" value={valeurBol}>
-                  {valeurBol}
-                </p>
-                <button type="button" onClick={incrementerBol}>
-                  +
-                </button>
-              </div>
+      </div>
+      <div className="articleShop">
+        <img className="shopImg" src={Bol} alt="bol" />
+        <div className="container-descriptif">
+          <h2 className="title-article">Bol</h2>
+          <p className="description-article">
+            Bol à pop-corn "PopFlixCorn en aluminium - 20 cm
+          </p>
+          <div className="tarif-bouton">
+            <p className="tarif">5€</p>
+            <div className="bouton-quantité">
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={decrementerBol}
+              >
+                -
+              </button>
+              <p className="quantité" value={valeurBol}>
+                {valeurBol}
+              </p>
+              <button
+                className="buttonI-D"
+                type="button"
+                onClick={incrementerBol}
+              >
+                +
+              </button>
             </div>
           </div>
         </div>
