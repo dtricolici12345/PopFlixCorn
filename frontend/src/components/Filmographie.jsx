@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 function Filmographie() {
   const { acteurId } = useParams();
   const [acteurfilm, setActeurfilm] = useState([]);
+  const [acteurserie, setActeurserie] = useState([]);
 
   useEffect(() => {
     const options = {
@@ -22,6 +23,12 @@ function Filmographie() {
     )
       .then((response) => response.json())
       .then((response) => setActeurfilm(response.cast.slice(0, 10)));
+
+    fetch(
+      `https://api.themoviedb.org/3/person/${acteurId}/tv_credits?language=fr-FR&region=FR', options`
+    )
+      .then((response) => response.json())
+      .then((response) => setActeurserie(response.cast.slice(0, 10)));
   }, []);
 
   const getBorderColor = () => {
@@ -51,6 +58,24 @@ function Filmographie() {
               <div className="card2">
                 <p className="titles">{filmPlayActeur.title}</p>
                 <p className="overview">{filmPlayActeur.overview}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+        {acteurserie.map((seriePlayActeur) => (
+          <div className="BlocCard" key={seriePlayActeur.id}>
+            <div className="filmPoster">
+              <img
+                className="poster_paths"
+                src={`https://image.tmdb.org/t/p/w500/${seriePlayActeur.poster_path}`}
+                alt="Poster_serie"
+              />
+              <div className={`m-note ${getBorderColor()}`}>
+                {Math.round(seriePlayActeur.vote_average * 10)}%
+              </div>
+              <div className="card2">
+                <p className="titles">{seriePlayActeur.name}</p>
+                <p className="overview">{seriePlayActeur.overview}</p>
               </div>
             </div>
           </div>
