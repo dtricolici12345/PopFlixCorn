@@ -1,0 +1,88 @@
+.TypeFilter {
+  text-align: center;
+  width: 100%;
+  min-width: 90vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-right: -131px;
+}
+
+.TypeFilter .Buttons {
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+.TypeFilter .Buttons input[type="radio"] {
+  display: none;
+}
+.TypeFilter .Buttons input[type="radio"]:checked label {
+  background-color: #ffa00b;
+}
+
+.TypeFilter .Buttons label {
+  display: inline-block;
+  padding: 10px 0px;
+  align-self: center;
+  margin: 0;
+  background-color: none;
+  color: #fff;
+  min-width: 150px;
+  border: 3px solid #ffa00b;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.TypeFilter .Buttons label:hover {
+  background-color: #ffa00b;
+}
+
+/* Petit */
+@media screen and (max-width: 768px) {
+  .TypeFilter {
+    width: 100%;
+    min-width: 100vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+  }
+  .TypeFilter h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem;
+  }
+  .TypeFilter .Buttons {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .TypeFilter .Buttons label {
+    margin: 10px;
+    width: 100%;
+    height: 6rem;
+  }
+}
+
+/* Grand*/
+@media screen and (min-width: 769px) {
+  .TypeFilter h2 {
+    text-transform: uppercase;
+    font-size: 4rem;
+  }
+  .TypeFilter .Buttons {
+    flex-direction: row;
+  }
+
+  .TypeFilter .Buttons label {
+    margin: 10px;
+    width: 200px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}

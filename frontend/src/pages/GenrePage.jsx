@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import GenreFilter from "../components/GenreFilter";
+import "../styles/GenrePage.css";
 
 function GenrePage({ filmType, onGenreChange, onPageChange }) {
   const [selectedGenres, setSelectedGenres] = useState([]);
@@ -47,15 +48,26 @@ function GenrePage({ filmType, onGenreChange, onPageChange }) {
 
   return (
     searchResults && (
-      <div>
-        <h1>Page de sélection de genre</h1>
+      <div className="GenrePage">
         <GenreFilter filmType={filmType} onGenresChange={handleGenreChange} />
-        <button onClick={() => onPageChange(1)} type="submit">
-          Retour
-        </button>
-        <button onClick={handleSearch} type="submit">
-          Rechercher
-        </button>
+        <div className="GenrePageNav">
+          <div
+            onClick={() => onPageChange(1)}
+            role="button"
+            tabIndex={[0]}
+            type="submit"
+          >
+            &#60;
+          </div>
+          <div
+            onClick={handleSearch}
+            role="button"
+            tabIndex={[0]}
+            type="submit"
+          >
+            &#62;
+          </div>
+        </div>
       </div>
     )
   );

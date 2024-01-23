@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Menu.css";
 import FilterIcon from "../../assets/filter.png";
 import ChecklistIcon from "../../assets/checklist.png";
@@ -10,6 +10,16 @@ import AboutUsIcon from "../../assets/aboutus.png";
 
 function Menu() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isHome, setisHome] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      console.info("hello");
+      setisHome(true);
+    } else {
+      setisHome(false);
+    }
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -20,7 +30,9 @@ function Menu() {
   };
 
   return (
-    <div className={`menu ${isMenuOpen ? "open" : ""}`}>
+    <div
+      className={`${isHome ? "home-menu" : "menu"} ${isMenuOpen ? "open" : ""}`}
+    >
       <input
         type="checkbox"
         id="toggle"
