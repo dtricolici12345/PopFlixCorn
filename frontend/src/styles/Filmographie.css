@@ -93,7 +93,6 @@
   justify-content: center;
   flex-wrap: wrap;
   /* margin-left: 12%; */
-  margin-right: 12%;
 }
 
 .BlocCard {
@@ -125,9 +124,10 @@
   height: 140px;
   border-radius: 10px;
   color: #f8f8f2;
-  /* overflow: hidden; */
-  padding-bottom: 1rem;
+  overflow: hidden;
+  max-lines: 3;
   font-family: "Kanit", sans-serif;
+  text-align: start;
 }
 
 .titles {
@@ -137,15 +137,20 @@
 
 .overview {
   text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
   margin-top: 4px;
   text-justify: auto;
   font-size: 0.7rem;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Nombre de ligne à montrer*/
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 
 .title_film {
   color: #ffa00b;
-  margin-left: 60px;
+  margin-left: 8.5rem;
+  margin-top: 2rem;
 }
