@@ -78,7 +78,7 @@ function Focus() {
       .catch((err) => console.info(err));
   }, [id, mediaType]);
 
-  // console.info(movieDetail);
+  console.info(movieDetail);
   // console.info(movieCertification);
   // console.info(tvDetail);
   // console.info(tvCertification);
@@ -184,7 +184,7 @@ function Focus() {
       </div>
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
-          {movieDetail.poster_path || tvDetail.poster_path ? (
+          {movieDetail.poster_path ? (
             <img
               src={
                 mediaType === "movie"
