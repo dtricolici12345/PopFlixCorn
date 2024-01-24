@@ -9,7 +9,7 @@
   width: 100%;
   margin-top: 5rem;
 }
-h4 {
+.titlegame {
   color: #ffa00b;
   font-size: 50px;
   margin-bottom: 20px;
@@ -46,7 +46,7 @@ h4 {
     margin: 0 auto;
   }
 
-  h4 {
+  .titlegame {
     font-size: 30px;
   }
   .quiz-option {
