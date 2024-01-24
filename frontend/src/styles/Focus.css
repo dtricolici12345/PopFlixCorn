@@ -151,8 +151,8 @@
 .mfocus-popup {
   background-color: #464a60;
   border-radius: 10px;
-  top: 35%;
-  left: 35%;
+  top: 40%;
+  margin: 0 auto;
   padding: 2rem 2rem 1rem 2rem;
   position: fixed;
   font-size: 1rem;
@@ -186,7 +186,7 @@
 }
 
 .mfocus-popup button:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
   cursor: pointer;
   background-color: var(--light-color);
   color: var(--main-color);
@@ -230,4 +230,8 @@
     top: -3.5rem;
     left: 9.75rem;
   }
+
+  /* .mfocus-popup {
+    left: 15%;
+  } */
 }

@@ -88,7 +88,7 @@ function Focus() {
     return obj1.id === obj2.id && obj1.media === obj2.media;
   };
 
-  // Function handling the click on "To watch" and "Watched" buttons
+  // Function handling the click on "To watch" and "Watched" buttons, adding the video to the watchlist, and opening the popup
   const handleToWatchClick = () => {
     const newItem = {
       media: mediaType,
@@ -118,6 +118,7 @@ function Focus() {
       );
     }
     setIsPopupClosed(false);
+    document.body.classList.add("popup-open");
   };
 
   const handleWatchedClick = () => {
@@ -149,10 +150,12 @@ function Focus() {
       );
     }
     setIsPopupClosed(false);
+    document.body.classList.add("popup-open");
   };
 
   const handleClosePopup = () => {
     setIsPopupClosed(true);
+    document.body.classList.remove("popup-open");
   };
 
   // UseEffects handling the storing of new elements in local storage
