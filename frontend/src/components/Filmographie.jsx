@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Filmographie.css";
 import "../styles/FocusActeur.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NoPopCorn from "../assets/NoPopCorn.png";
 
 function Filmographie() {
@@ -33,8 +33,8 @@ function Filmographie() {
       .then((response) => setActeurserie(response.cast.slice(0, 30)));
   }, []);
 
-  const getBorderColor = () => {
-    const note = Math.round(acteurId.vote_average * 10);
+  const getBorderColor = (voteAverage) => {
+    const note = Math.round(voteAverage * 10);
     if (note < 50) return "border-red";
     if (note < 70) return "border-orange";
     return "border-green";
@@ -48,18 +48,28 @@ function Filmographie() {
         {console.info("je suis dans le return", acteurfilm)}
         {acteurfilm.map((filmPlayActeur) => (
           <div className="BlocCard" key={filmPlayActeur.id}>
-            <div className="headerCard">
-              {filmPlayActeur.poster_path ? (
-                <img
-                  className="poster_paths"
-                  src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.poster_path}`}
-                  alt="Poster_film"
-                />
-              ) : (
-                <img className="poster_paths" src={NoPopCorn} alt="No_Poster" />
-              )}
-            </div>
-            <div className={`m-note ${getBorderColor()}`}>
+            <Link to={`/focus/movie/${filmPlayActeur.id}`}>
+              <div className="headerCard">
+                {filmPlayActeur.poster_path ? (
+                  <img
+                    className="poster_paths"
+                    src={`https://image.tmdb.org/t/p/w500/${filmPlayActeur.poster_path}`}
+                    alt="Poster_film"
+                  />
+                ) : (
+                  <img
+                    className="poster_paths"
+                    src={NoPopCorn}
+                    alt="No_Poster"
+                  />
+                )}
+              </div>
+            </Link>
+            <div
+              className={`m-note ${getBorderColor(
+                filmPlayActeur.vote_average
+              )}`}
+            >
               {Math.round(filmPlayActeur.vote_average * 10)}%
             </div>
             <div className="card2">
@@ -74,18 +84,28 @@ function Filmographie() {
         {acteurserie.map((seriePlayActeur) => (
           <div className="BlocCard" key={seriePlayActeur.id}>
             {/* <div className="filmPoster"> */}
-            <div className="headerCard">
-              {seriePlayActeur.poster_path ? (
-                <img
-                  className="poster_paths"
-                  src={`https://image.tmdb.org/t/p/w500/${seriePlayActeur.poster_path}`}
-                  alt="Poster_serie"
-                />
-              ) : (
-                <img className="poster_paths" src={NoPopCorn} alt="No_Poster" />
-              )}
-            </div>
-            <div className={`m-note ${getBorderColor()}`}>
+            <Link to={`/focus/tv/${seriePlayActeur.id}`}>
+              <div className="headerCard">
+                {seriePlayActeur.poster_path ? (
+                  <img
+                    className="poster_paths"
+                    src={`https://image.tmdb.org/t/p/w500/${seriePlayActeur.poster_path}`}
+                    alt="Poster_serie"
+                  />
+                ) : (
+                  <img
+                    className="poster_paths"
+                    src={NoPopCorn}
+                    alt="No_Poster"
+                  />
+                )}
+              </div>
+            </Link>
+            <div
+              className={`m-note ${getBorderColor(
+                seriePlayActeur.vote_average
+              )}`}
+            >
               {Math.round(seriePlayActeur.vote_average * 10)}%
             </div>
             <div className="card2">
