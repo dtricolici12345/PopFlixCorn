@@ -1,4 +1,4 @@
-.cards {
+/* .cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -55,7 +55,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-}
+} */
 
 .m-note {
   display: inline-flex;
@@ -68,8 +68,9 @@
   height: 3rem;
   position: relative;
   top: -3.75rem;
-  left: 11.5rem;
+  left: 13rem;
   background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
 }
 
@@ -83,4 +84,68 @@
 
 .border-green {
   border-color: green;
+}
+
+/* test deuxieme css  */
+.cards {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  /* margin-left: 12%; */
+  margin-right: 12%;
+}
+
+.BlocCard {
+  border-radius: 10px;
+  width: 270px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  margin-bottom: 100px;
+}
+
+.headerCard {
+  height: 75%;
+}
+
+.poster_paths {
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(185, 0, 0);
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card2 {
+  padding: 10px 20px;
+  border: 6px solid #ffa00b;
+  height: 140px;
+  border-radius: 10px;
+  color: #f8f8f2;
+  /* overflow: hidden; */
+  padding-bottom: 1rem;
+  font-family: "Kanit", sans-serif;
+}
+
+.titles {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.overview {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 4px;
+  text-justify: auto;
+  font-size: 0.7rem;
+  width: 100%;
+}
+
+.title_film {
+  color: #ffa00b;
+  margin-left: 60px;
 }
