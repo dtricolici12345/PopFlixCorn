@@ -27,10 +27,6 @@
   width: 13rem;
 }
 
-/* .watched-appearance {
-  filter: grayscale(70%);
-} */
-
 .card-watchlist-img {
   /* border: 1px solid violet; */
   height: 19.5rem;
@@ -104,6 +100,10 @@
 
 .card-watchlist .icon-watchlist:hover {
   transform: scale(1.1);
+}
+
+.watched-appearance {
+  filter: opacity(0.5);
 }
 
 @media screen and (max-width: 768px) {
