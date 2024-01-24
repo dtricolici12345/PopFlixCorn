@@ -289,7 +289,7 @@ function Focus() {
           </div>
         </div>
       </div>
-      <CarteActeur movieId={id} />
+      <CarteActeur id={id} mediaType={mediaType} />
       <div />
     </div>
   );
