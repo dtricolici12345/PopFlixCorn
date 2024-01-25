@@ -37,7 +37,7 @@
     rgba(0, 212, 255, 1) 100%
   );
 }
-h1 {
+.categoriestitle {
   color: #ffa00b;
   font-size: 30px;
   margin: auto;
@@ -45,11 +45,11 @@ h1 {
   text-decoration: none;
   padding-bottom: 5px;
 }
-ul {
+.categoriesreponse {
   list-style: none;
   margin-top: 5px;
 }
-ul li {
+.categoriesreponse li {
   text-align: center;
   padding: 15px;
   border: 3px solid rgba(165, 94, 17, 0.1);
@@ -58,7 +58,7 @@ ul li {
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
-ul li:hover {
+.categoriesreponse li:hover {
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -67,7 +67,7 @@ ul li:hover {
     margin: 10px;
     margin-top: 5%;
   }
-  h1 {
+  .categoriestitle {
     font-size: 20px;
   }
 }
@@ -78,11 +78,11 @@ ul li:hover {
   .progress {
     height: 9px;
   }
-  h1 {
+  .categoriestitle {
     font-size: 15px;
   }
 
-  ul li {
+  .categoriesreponse li {
     font-size: 10px;
   }
 }

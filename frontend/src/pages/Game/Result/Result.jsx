@@ -7,7 +7,7 @@ function Result({ correct, total }) {
   return (
     <div className="result">
       <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
-      <h2>
+      <h2 className="resultreponse">
         Tu as deviné {correct} réponse sur {total}
       </h2>
       <a href="/game/romantique">
