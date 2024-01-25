@@ -78,9 +78,9 @@ function Focus() {
       .catch((err) => console.info(err));
   }, [id, mediaType]);
 
-  console.info(movieDetail);
+  // console.info(movieDetail);
   // console.info(movieCertification);
-  // console.info(tvDetail);
+  console.info(tvDetail);
   // console.info(tvCertification);
 
   // Function to check if two selected videos are the same
@@ -184,7 +184,8 @@ function Focus() {
       </div>
       <div className="mfocus-card">
         <div className="mfocus-card-bloc-image">
-          {movieDetail.poster_path ? (
+          {(movieDetail.poster_path && mediaType === "movie") ||
+          (tvDetail.poster_path && mediaType === "tv") ? (
             <img
               src={
                 mediaType === "movie"
@@ -256,14 +257,22 @@ function Focus() {
                       : `${genre.name}, `
                   )}
             </span>
-            <img src={watch} alt="time" />
-            <span className="mfocus-time">
-              {mediaType === "movie"
-                ? toDaysHoursAndMinutes(movieDetail.runtime)
-                : toDaysHoursAndMinutes(
-                    tvDetail.number_of_episodes * tvDetail.episode_run_time
-                  )}
-            </span>
+            {((mediaType === "tv" &&
+              tvDetail.episode_run_time &&
+              tvDetail.episode_run_time.length > 0 &&
+              tvDetail.number_of_episodes) ||
+              (mediaType === "movie" && movieDetail.runtime)) && (
+              <>
+                <img src={watch} alt="time" />
+                <span className="mfocus-time">
+                  {mediaType === "movie"
+                    ? toDaysHoursAndMinutes(movieDetail.runtime)
+                    : toDaysHoursAndMinutes(
+                        tvDetail.number_of_episodes * tvDetail.episode_run_time
+                      )}
+                </span>
+              </>
+            )}
           </div>
           <div className="mfocus-tagline">
             {mediaType === "movie" ? movieDetail.tagline : tvDetail.tagline}
