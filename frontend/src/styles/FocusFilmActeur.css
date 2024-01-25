@@ -1,4 +1,7 @@
-/* .FocusFilmActeur {
-  background-color: #282a36;
-  position: absolute;
-} */
+@media screen and (max-width: 768px) {
+  .FocusFilmActeur {
+    /* flex-direction: column;
+    height: auto;
+    max-width: 30rem; */
+  }
+}

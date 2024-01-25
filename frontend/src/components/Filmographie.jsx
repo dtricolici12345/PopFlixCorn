@@ -43,12 +43,15 @@ function Filmographie() {
   console.info("acteur film", acteurfilm);
   return (
     <div className="film">
-      <h2 className="title_film">Filmographie :</h2>
+      <h2 className="title_film">Filmographie</h2>
       <div className="cards">
         {console.info("je suis dans le return", acteurfilm)}
         {acteurfilm.map((filmPlayActeur) => (
           <div className="BlocCard" key={filmPlayActeur.id}>
-            <Link to={`/focus/movie/${filmPlayActeur.id}`}>
+            <Link
+              to={`/focus/movie/${filmPlayActeur.id}`}
+              className="custom-link"
+            >
               <div className="headerCard">
                 {filmPlayActeur.poster_path ? (
                   <img
@@ -63,18 +66,18 @@ function Filmographie() {
                     alt="No_Poster"
                   />
                 )}
+                <div
+                  className={`m-note ${getBorderColor(
+                    filmPlayActeur.vote_average
+                  )}`}
+                >
+                  {Math.round(filmPlayActeur.vote_average * 10)}%
+                </div>
               </div>
             </Link>
-            <div
-              className={`m-note ${getBorderColor(
-                filmPlayActeur.vote_average
-              )}`}
-            >
-              {Math.round(filmPlayActeur.vote_average * 10)}%
-            </div>
             <div className="card2">
-              <p className="titles">{filmPlayActeur.title}</p>
-              <p className="overview">{filmPlayActeur.overview}</p>
+              <div className="titles">{filmPlayActeur.title}</div>
+              <div className="overview">{filmPlayActeur.overview}</div>
             </div>
           </div>
         ))}
@@ -84,7 +87,10 @@ function Filmographie() {
         {acteurserie.map((seriePlayActeur) => (
           <div className="BlocCard" key={seriePlayActeur.id}>
             {/* <div className="filmPoster"> */}
-            <Link to={`/focus/tv/${seriePlayActeur.id}`}>
+            <Link
+              to={`/focus/tv/${seriePlayActeur.id}`}
+              className="custom-link"
+            >
               <div className="headerCard">
                 {seriePlayActeur.poster_path ? (
                   <img
@@ -99,15 +105,15 @@ function Filmographie() {
                     alt="No_Poster"
                   />
                 )}
+                <div
+                  className={`m-note ${getBorderColor(
+                    seriePlayActeur.vote_average
+                  )}`}
+                >
+                  {Math.round(seriePlayActeur.vote_average * 10)}%
+                </div>
               </div>
             </Link>
-            <div
-              className={`m-note ${getBorderColor(
-                seriePlayActeur.vote_average
-              )}`}
-            >
-              {Math.round(seriePlayActeur.vote_average * 10)}%
-            </div>
             <div className="card2">
               <div className="titles">{seriePlayActeur.original_name}</div>
               <div className="overview">{seriePlayActeur.overview}</div>
