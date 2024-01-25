@@ -1,6 +1,7 @@
 .container_banner {
   max-width: 55rem;
   margin: 1rem;
+  font-family: "Kanit", sans-serif;
 }
 
 .title_acteurs {
@@ -49,7 +50,6 @@
   border-radius: 10px 10px 0 0;
 }
 .original_name {
-  font-family: "Kanit", sans-serif;
   color: var(--light-color);
   padding: 10px 10px 2px 10px;
   font-size: 0.8em;
@@ -57,8 +57,7 @@
 }
 
 .character {
-  color: white;
-  font-family: "Kanit", sans-serif;
+  color: var(--light-color);
   padding: 10px 5px 10px 10px;
   font-size: 0.6em;
 }
