@@ -7,7 +7,6 @@
 }
 .containerArticles {
   color: black;
-  font-family: "Open Sans", sans-serif;
   display: flex;
   justify-content: space-around;
   margin-top: 5rem;
@@ -24,7 +23,7 @@
   height: 12rem;
   object-fit: cover;
   border-radius: 10px;
-  background-color: #b8b8b6;
+  background-color: var(--darkerlight-color);
 }
 
 .container-descriptif {
@@ -32,7 +31,7 @@
   width: 12rem;
   height: 10rem;
   border-radius: 10px;
-  background-color: #b8b8b6;
+  background-color: var(--darkerlight-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,11 +66,10 @@
 }
 
 .containerPanier {
-  color: #b8b8b6;
-  background-color: #282a36;
-  font-family: "Open Sans", sans-serif;
+  color: var(--darkerlight-color);
+  background-color: var(--main-color);
   border-radius: 10px;
-  box-shadow: 0px 0px 10px #b8b8b6;
+  box-shadow: 0px 0px 10px var(--darkerlight-color);
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -132,12 +130,12 @@
 }
 .totalShop {
   text-align: center;
-  color: #ffa00b;
+  color: var(--secondary-color);
 }
 .buttonValid {
   height: 3rem;
   border-radius: 45px;
-  background-color: #ffa00b;
+  background-color: var(--secondary-color);
   margin-top: 30%;
   font-size: 1rem;
   color: black;

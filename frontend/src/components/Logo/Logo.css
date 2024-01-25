@@ -22,15 +22,15 @@
   }
 
   .word-pop {
-    color: #f8f8f2;
+    color: var(--light-color);
   }
 
   .word-flix {
-    color: #ffa00b;
+    color: var(--secondary-color);
   }
 
   .word-corn {
-    color: #f8f8f2;
+    color: var(--light-color);
   }
 }
 @media screen and (max-width: 768px) {
@@ -59,14 +59,14 @@
   }
 
   .word-pop {
-    color: #f8f8f2;
+    color: var(--light-color);
   }
 
   .word-flix {
-    color: #ffa00b;
+    color: var(--secondary-color);
   }
 
   .word-corn {
-    color: #f8f8f2;
+    color: var(--light-color);
   }
 }
