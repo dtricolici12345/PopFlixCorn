@@ -1,0 +1,61 @@
+.Error404 {
+  height: 100;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--light-color);
+  margin-left: 115px;
+  margin-top: 5rem;
+}
+
+.Error404 .header404 h1 {
+  text-transform: uppercase;
+  margin: 1rem;
+}
+
+.Error404 .header404 p {
+  margin: 1rem;
+  text-align: center;
+  color: var(--darkerlight-color);
+}
+
+.Error404 .Buttons {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Error404 .Buttons button {
+  font-size: 2rem;
+  padding: 10px;
+
+  color: var(--light-color);
+  background: none;
+  border: none;
+}
+
+.Error404 .Buttons .Pig {
+  opacity: 0;
+}
+
+.Error404 .Buttons .Pig {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.Error404 .Buttons .Pig:hover {
+  opacity: 100;
+}
+
+@media screen and (min-width: 1025px) {
+  .Error404 .header404 h1 {
+    font-size: 4rem;
+  }
+
+  .Error404 .header404 p {
+    font-size: 2rem;
+  }
+}

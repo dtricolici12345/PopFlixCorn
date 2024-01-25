@@ -30,7 +30,7 @@ function CarteActeur({ id, mediaType }) {
 
   return (
     <div className="container_banner">
-      <h2 className="title_acteurs">Acteurs :</h2>
+      <h2 className="title_acteurs">Acteurs</h2>
       <div className="container_card_acteur">
         {/* {console.info("je suis dans le return", acteursInfos)} */}
         {acteursInfos?.map((acteurInfo) => (

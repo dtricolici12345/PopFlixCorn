@@ -23,6 +23,7 @@
   width: 15rem;
   height: 22.5rem;
   border-radius: 10px;
+  box-shadow: 5px 5px 26px 5px #0303034f;
 }
 
 .acteurH1 {
@@ -59,22 +60,48 @@
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .FocusActeur {
     max-width: 38rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+  .imgActeur {
+    height: 19.5rem;
+    width: 13rem;
+    margin-left: 50px;
+  }
+
+  .partie1 {
+    font-size: 12px;
+  }
+
+  .bioH2 {
+    display: flex;
+    margin-left: -2.5rem;
+    justify-content: center;
+  }
+
+  .partie {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 768px) {
   .FocusActeur {
+    max-width: 38rem;
+    display: flex;
+    align-items: center;
     flex-direction: column;
     margin-left: 40px;
-    /* align-items: center; */
-    /* height: auto;
-    max-width: 30rem; */
   }
 
   .imgActeur {
     height: 19.5rem;
     width: 13rem;
-    margin-left: 50px;
+    margin-right: 15%;
   }
 
   .partie1 {
