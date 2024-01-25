@@ -5,7 +5,7 @@
   /* overflow-y: auto; */
   width: 100vw;
   height: 100vh;
-  background-color: #282a36;
+  background-color: var(--main-color);
   display: flex;
   /* align-items: center; */
 }
@@ -54,13 +54,12 @@
 
 .A4card-body {
   padding: 10px 20px;
-  /* border: 6px solid #ffa00b; */
+  /* border: 6px solid var(--secondary-color); */
   /* height: 25%; */
   border-radius: 10px;
-  color: #f8f8f2;
+  color: var(--light-color);
   overflow: hidden;
   padding-bottom: 1rem;
-  font-family: "Kanit", sans-serif;
 }
 
 .A4card-title {

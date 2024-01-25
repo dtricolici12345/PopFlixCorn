@@ -26,7 +26,7 @@
 }
 
 .acteurH1 {
-  color: #ffa00b;
+  color: var(--secondary-color);
   text-decoration: underline;
   text-align: left;
   margin: 0px;
@@ -34,7 +34,7 @@
 }
 
 .bioH2 {
-  color: #ffa00b;
+  color: var(--secondary-color);
 }
 
 .age {

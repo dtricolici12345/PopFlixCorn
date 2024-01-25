@@ -4,23 +4,21 @@
 }
 .result button {
   font-weight: bold;
-  font-family: "Kanit", sans-serif;
   border-radius: 30px;
   border: 0;
   padding: 15px 30px;
   font-size: 20px;
-  background-color: #ffa00b;
+  background-color: var(--secondary-color);
   color: #f7f5f5;
   margin-top: 20px;
   cursor: pointer;
 }
 .result button:hover {
   background-color: #f7f5f5;
-  color: #ffa00b;
+  color: var(--secondary-color);
 }
 
 .resultreponse {
-  font-family: "Kanit", sans-serif;
   margin-bottom: 0;
   color: #f5efef;
   margin-top: 20px;
