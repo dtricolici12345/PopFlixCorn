@@ -1,21 +1,14 @@
-:root {
-  background-color: #282a36;
-}
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 
 /* Section Film */
 
-.film {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
+.film .text {
+  text-align: left;
+  margin-block: 0;
 }
-
 .affiche {
   height: 400px;
-  width: 300px;
+  margin: 0rem 4rem 0rem 4rem;
   background-color: #282a36;
   border-radius: 10px;
   display: flex;
@@ -39,7 +32,7 @@
   background-size: contain;
   height: 100px;
   width: 100px;
-  color: #ffffff;
+  color: #f8f8f2;
   font-size: 2rem;
   text-decoration: none;
 }
@@ -47,7 +40,8 @@
 .text {
   display: flex;
   flex-direction: column;
-  margin-left: 50px;
+  justify-content: center;
+  gap: 10px;
 }
 
 .title {
@@ -55,22 +49,60 @@
   flex-direction: row;
   gap: 10px;
   font-size: 1.5rem;
+  color: #f8f8f2;
 }
 
 .syno {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
+  flex-wrap: wrap;
+  width: 80%;
+  color: #b8b8b6;
 }
 
 /* Section Acteur */
+
+.acteur {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+  font-family: "Kanit", sans-serif;
+}
+
 .name {
   display: flex;
+  color: #f8f8f2;
+  font-size: 2rem;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.non {
+  display: none;
 }
 
 .people {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  font-size: 0.5rem;
+}
+
+.desc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.acteur a {
+  text-decoration: none;
 }
 
 .git {
@@ -94,7 +126,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 250px;
   width: 200px;
   background-color: #282a36;
   border-radius: 10px;
@@ -105,105 +136,56 @@
 
 /* Photo profil */
 
-.imgr {
-  background-image: url(../assets/ryan.PNG);
+.img {
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
+  background-size: cover;
+  background-position: center;
+  height: 60%;
+  width: 100%;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 15px;
+  filter: grayscale(100);
 }
 
-.imgd {
-  background-image: url(../assets/daniela.PNG);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
+.img:hover {
+  filter: grayscale(0);
 }
 
-.imgs {
-  background-image: url(../assets/sabrina.jpeg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.imgc {
-  background-image: url(../assets/cedric.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.imgp {
-  background-image: url(../assets/pauline.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.imgy {
-  background-image: url(../assets/yohan.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-.imge {
-  background-image: url(../assets/elise.jpg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 170px;
-  width: 170px;
-  border-radius: 10px;
-  cursor: pointer;
-  margin-top: 15px;
-}
-
-@media screen and (max-width: 320px) {
-  /* Section Acteur */
-
-  .acteur {
+@media screen and (max-width: 768px) {
+  .film {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     gap: 50px;
-    margin-top: 70px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
   }
 }
 
-@media screen and (min-width: 1024px) {
-  /* Section Acteur */
-
-  .acteur {
+@media screen and (min-width: 1025px) {
+  .film {
     display: flex;
     justify-content: center;
     flex-direction: row;
     align-items: center;
     gap: 50px;
-    margin-top: 70px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .film {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
   }
 }

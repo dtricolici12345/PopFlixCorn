@@ -1,67 +1,55 @@
-// import React, { useState, useEffect } from 'react';
-// import '../styles/Us.css';
+// import "../styles/Us.css";
 
-// const People = () => {
-//   const [apiData, setApiData] = useState([]);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const response = await fetch('URL_DE_VOTRE_API');
-//         const data = await response.json();
-//         setApiData(data);
-//       } catch (error) {
-//         console.error('Erreur lors de la récupération des données de l API', error);
-//       }
-//     };
-
-//     fetchData();
-//   }, []);
-
-//   const [personData, setPersonData] = useState(apiData[0]);
-
-//   const updatePersonData = (personId) => {
-//     const selectedPerson = apiData.find(person => person.id === personId);
-//     setPersonData(selectedPerson);
-//   };
+// function People({ name, picture, text, movie, series, quote, project, hackathon }) {
 
 //   return (
-//     <body>
+//     <div>
 //       <section className="film">
 //         <article className="affiche">
-//           <div className="soonr"></div>
+//           <img className="soonr" src={picture} alt={name} />
 //         </article>
 //         <article className="text">
 //           <div className="title">
-//           <h1>{personData.name}</h1>
+//             <h1>{name}</h1>
 //           </div>
 //           <p className="syno">
-//             {personData.text}
-//             <br />
-//             Film: {personData.movie}
-//             <br />
-//             Série: {personData.series}
-//             <br />
-//             Citation: {personData.quote}
+//             {text}
+//             Film: {movie}
+//             Série: {series}
+//             Citation: {quote}
 //           </p>
 //         </article>
 //       </section>
 //       <section className="acteur">
-//         <article key={person.id} className="person">
-//           <a href="https://github.com/codeIsHard2023/AdopteUneChaussette" className="soon1"></a>
+//         <article className="person">
+//           {/* <a href="" className="soon1">
+//             <div>|</div>
+//           </a> */}
 //           <div className="people">
-//             <h4 className="name">{personData.project}</h4>
+//             <h4 className="name">{project}</h4>
 //           </div>
 //         </article>
 //         <article className="person">
-//           <a href="https://github.com/ThisIsHowVillainsAreMade/Star-Love" className="soon2"></a>
+//           {/* <a href="" className="soon1">
+//             <div>|</div>
+//           </a> */}
 //           <div className="people">
-//             <h4 className="name">{personData.hackathon}</h4>
+//             <h4 className="name">{hackathon}</h4>
 //           </div>
 //         </article>
 //       </section>
-//     </body>
+//     </div>
 //   );
-// };
+// }
 
 // export default People;
+
+// http://localhost:4748/api/user
+
+//   useEffect(() => {
+//     fetch("http://localhost:4748/api/user")
+//       .then((response) => response.json())
+//       .then((data) => console.log(data))
+//       .catch((error) => console.error(error));
+//   }, []);
+// }

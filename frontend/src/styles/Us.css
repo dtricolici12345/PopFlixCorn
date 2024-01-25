@@ -1,9 +1,9 @@
-body {
+/* body {
   background-image: url(font.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
-}
+} */
 
 /* Section Before */
 
@@ -122,9 +122,6 @@ body {
 /* Photo profil */
 
 .soonr {
-  background-image: url(ryan.PNG);
-  background-repeat: no-repeat;
-  background-size: contain;
   height: 250px;
   width: 250px;
   display: flex;
