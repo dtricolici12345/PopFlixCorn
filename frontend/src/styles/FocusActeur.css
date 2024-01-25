@@ -50,23 +50,38 @@
   width: 80%;
 }
 
+@media screen and (min-width: 1600px) {
+  .FocusActeur {
+    max-width: 90rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .FocusActeur {
+    max-width: 38rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .FocusActeur {
-    display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
-    padding: 20px;
-    height: auto;
+    margin-left: 40px;
+    /* align-items: center; */
+    /* height: auto;
+    max-width: 30rem; */
+  }
+
+  .imgActeur {
+    height: 19.5rem;
+    width: 13rem;
+    margin-left: 50px;
   }
 
   .partie1 {
-    display: flex;
-    justify-content: center;
+    font-size: 12px;
   }
 
-  .biography {
-    padding: 0px;
-    text-align: center;
+  .bioH2 {
+    margin-left: 4.5rem;
   }
 }

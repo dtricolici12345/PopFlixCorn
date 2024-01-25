@@ -154,8 +154,8 @@ function GameSerie() {
               className="progress__inner"
             />
           </div>
-          <h1>{serieQuestion.title}</h1>
-          <ul>
+          <h1 className="categoriestitle">{serieQuestion.title}</h1>
+          <ul className="categoriesreponse">
             {serieQuestion.variants.map((text, index) => (
               <li onClick={() => onClickVariant(index)} key={text}>
                 {text}

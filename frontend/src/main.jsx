@@ -6,6 +6,7 @@ import Filter from "./pages/Filter";
 import FilterGallery from "./pages/FilterGallery";
 import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
+import Watchlist from "./pages/Watchlist";
 import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
 import Shop from "./pages/Shop";
@@ -32,8 +33,8 @@ const router = createBrowserRouter([
         element: <FilterGallery />,
       },
       {
-        path: "/checklist",
-        element: <App />,
+        path: "/watchlist",
+        element: <Watchlist />,
       },
       {
         path: "/game",

@@ -211,8 +211,8 @@ function GameRomantique() {
               className="progress__inner"
             />
           </div>
-          <h1>{romanticQuestion.title}</h1>
-          <ul>
+          <h1 className="categoriestitle">{romanticQuestion.title}</h1>
+          <ul className="categoriesreponse">
             {romanticQuestion.variants.map((text, index) => (
               <li onClick={() => onClickVariant(index)} key={text}>
                 {text}
