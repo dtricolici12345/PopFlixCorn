@@ -1,16 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
-/* :root{
-    background-color: red;
-} */
+
 .GenrePage {
   display: flex;
-  background-color: #282a36;
-  color: #f8f8f2;
+  background-color: var(--main-color);
+  color: var(--light-color);
   height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Kanit", sans-serif;
   overflow: hidden;
 }
 
@@ -26,7 +23,7 @@
 }
 
 .GenrePageNav div {
-  color: #ffa00b;
+  color: var(--secondary-color);
   background: none;
   height: 100%;
   font-size: 3rem;
@@ -47,7 +44,7 @@
   }
 
   .GenrePageNav div {
-    color: #f8f8f2;
+    color: var(--light-color);
     margin: 0;
   }
 }
