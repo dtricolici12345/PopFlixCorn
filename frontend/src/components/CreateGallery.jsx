@@ -18,7 +18,13 @@ function CreateGallery({ title, imageUrl, details, mediaType, id, note }) {
   //     : details;
 
   const handleClick = () => {
-    window.location.href = `/focus/${mediaType}/${id}`;
+    let redirectUrl = "";
+    if (mediaType === "tv" || mediaType === "movie") {
+      redirectUrl = `/focus/${mediaType}/${id}`;
+    } else if (mediaType === "person") {
+      redirectUrl = `/acteur/${id}`;
+    }
+    window.location.href = redirectUrl;
   };
 
   const getBorderColorA4 = (x) => {
