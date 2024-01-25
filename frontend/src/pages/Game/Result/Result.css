@@ -4,7 +4,7 @@
 }
 .result button {
   font-weight: bold;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Kanit", sans-serif;
   border-radius: 30px;
   border: 0;
   padding: 15px 30px;
@@ -20,7 +20,7 @@
 }
 
 .resultreponse {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Kanit", sans-serif;
   margin-bottom: 0;
   color: #f5efef;
   margin-top: 20px;
