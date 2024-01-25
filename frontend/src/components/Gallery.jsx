@@ -26,7 +26,12 @@ function Gallery() {
       .catch((err) => console.error(err));
   }, []);
 
-  const researchListGallery = searchResults.slice(0, 20);
+  const researchListGallery = searchResults
+    .slice(0, 20)
+    .filter(({ popularity }) => popularity >= 20);
+
+  // const researchListGallery = searchResults.slice(0, 20);
+  console.info(researchListGallery);
 
   return (
     <div className="GalleryBody">
