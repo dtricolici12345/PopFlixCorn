@@ -1,6 +1,7 @@
 .DiceButton {
   background: none;
   border: none;
+  cursor: pointer;
 }
 @media screen and (max-width: 768px) {
   .Dice {

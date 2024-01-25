@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
 :root {
+  /* Colors */
   --main-color: #282a36;
   --secondary-color: #ffa00b;
   --accent-color: #b50101;
@@ -11,6 +14,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
 }
 
 body {

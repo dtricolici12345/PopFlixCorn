@@ -18,10 +18,10 @@
   display: none;
 }
 .SelectedGenreLabel {
-  background-color: #ffa00b;
+  background-color: var(--secondary-color);
 }
 .GenreButton:checked {
-  background-color: #ffa00b;
+  background-color: var(--secondary-color);
 }
 
 .GenreFilter .Buttons label {
@@ -32,7 +32,7 @@
   background-color: none;
   color: #fff;
   min-width: 150px;
-  border: 3px solid #ffa00b;
+  border: 3px solid var(--secondary-color);
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
@@ -40,7 +40,7 @@
 }
 
 .GenreFilter .Buttons label:hover {
-  background-color: #ffa00b;
+  background-color: var(--secondary-color);
 }
 
 /* Petit */
@@ -57,7 +57,7 @@
     height: 100%;
     overflow: scroll;
     overflow-x: hidden;
-    width: 100vw;
+    width: 90%;
   }
 
   .GenreFilter .Buttons label {

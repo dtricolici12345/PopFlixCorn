@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import NoPopCorn from "../assets/NoPopCorn.png";
 
 function CreateGallery({ title, imageUrl, details, mediaType, id, note }) {
   CreateGallery.propTypes = {
@@ -17,10 +18,16 @@ function CreateGallery({ title, imageUrl, details, mediaType, id, note }) {
   //     : details;
 
   const handleClick = () => {
-    window.location.href = `/focus/${mediaType}/${id}`;
+    let redirectUrl = "";
+    if (mediaType === "tv" || mediaType === "movie") {
+      redirectUrl = `/focus/${mediaType}/${id}`;
+    } else if (mediaType === "person") {
+      redirectUrl = `/acteur/${id}`;
+    }
+    window.location.href = redirectUrl;
   };
 
-  const getBorderColor = (x) => {
+  const getBorderColorA4 = (x) => {
     if (x < 50) return "border-red";
     if (x < 70) return "border-orange";
     return "border-green";
@@ -35,15 +42,30 @@ function CreateGallery({ title, imageUrl, details, mediaType, id, note }) {
       style={{ cursor: "pointer" }}
     >
       <div className="A4card-header">
-        <div
-          className="A4card-img"
-          style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w500${imageUrl})`,
-          }}
-        />
-        <div className={`mfocus-note ${getBorderColor(Math.round(note * 10))}`}>
-          {Math.round(note * 10)}%
-        </div>
+        {imageUrl ? (
+          <div
+            className="A4card-img"
+            style={{
+              backgroundImage: `url(https://image.tmdb.org/t/p/w500${imageUrl})`,
+            }}
+          />
+        ) : (
+          <div
+            className="A4card-img"
+            style={{
+              backgroundImage: `url(${NoPopCorn})`,
+            }}
+          />
+        )}
+        {note && (
+          <div
+            className={`A4focus-note ${getBorderColorA4(
+              Math.round(note * 10)
+            )}`}
+          >
+            {Math.round(note * 10)}%
+          </div>
+        )}
       </div>
       <div className="A4card-body">
         <div className="A4card-title">{title}</div>

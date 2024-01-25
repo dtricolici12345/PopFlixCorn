@@ -75,13 +75,12 @@
 
 .card2 {
   padding: 10px 20px;
-  /* border: 6px solid #ffa00b; */
+  /* border: 6px solid var(--secondary-color); */
   /* height: 25%; */
   border-radius: 10px;
-  color: #f8f8f2;
+  color: var(--light-color);
   overflow: hidden;
   padding-bottom: 1rem;
-  font-family: "Kanit", sans-serif;
 }
 
 .titles {
@@ -109,7 +108,7 @@
 }
 
 .title_film {
-  color: #ffa00b;
+  color: var(--secondary-color);
   margin-left: 8.5rem;
   margin-top: 2rem;
 }
