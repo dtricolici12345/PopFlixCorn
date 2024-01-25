@@ -1,73 +1,3 @@
-/* test deuxieme css  */
-/* .cards {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-} */
-
-/* .BlocCard {
-  border-radius: 10px;
-  width: 270px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 50%;
-  margin-bottom: 100px;
-}
-
-.headerCard {
-  height: 75%;
-}
-
-.poster_paths {
-  background-size: cover;
-  background-position: center;
-  background-color: rgb(185, 0, 0);
-  height: 400px;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.card2 {
-  padding: 10px 20px;
-  border: 6px solid #ffa00b;
-  height: 140px;
-  border-radius: 10px;
-  color: #f8f8f2;
-  overflow: hidden;
-  max-lines: 3;
-  font-family: "Kanit", sans-serif;
-  text-align: start;
-}
-
-.titles {
-  font-weight: bold;
-  font-size: 1rem;
-}
-
-.overview {
-  text-overflow: ellipsis;
-  margin-top: 4px;
-  text-justify: auto;
-  font-size: 0.7rem;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 4; /* Nombre de ligne à montrer*/
-/* line-clamp: 4;
-  -webkit-box-orient: vertical;
-}
-
-.title_film {
-  color: #ffa00b;
-  margin-left: 8.5rem;
-  margin-top: 2rem;
-} */
-
-/* test troisieme css  */
-
 @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
 
 .cards {
@@ -110,7 +40,6 @@
   border-radius: 10px 10px 0 0;
   background-size: cover;
   background-position: center;
-  background-color: rgb(185, 0, 0);
   height: 360px;
   width: 240px;
 }
@@ -211,6 +140,13 @@
     justify-content: center; */
 /* margin-left: 15%;
     margin-right: 15%; */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .title_film {
+    display: flex;
+    margin-left: -0.5rem;
+    justify-content: center;
+  }
+}
 
 @media screen and (max-width: 768px) {
   /* .mfocus-card-bloc-image img {
@@ -232,5 +168,6 @@
 
   .title_film {
     margin-left: 7.5rem;
+    align-items: center;
   }
 }
