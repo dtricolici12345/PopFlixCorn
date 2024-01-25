@@ -4,34 +4,49 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  font-family: "Kanit", sans-serif;
+}
+
+.articleShop {
+  margin: 20px;
+  height: 28.5rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  height: 410px;
+  background-color: rgba(168, 168, 168, 0.187);
+  border-radius: 10px;
+  box-shadow: 5px 5px 26px 5px #0303034f;
+  transition: all 0.5s;
 }
 .containerArticles {
-  color: black;
+  color: var(--light-color);
   display: flex;
-  justify-content: space-around;
   margin-top: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .shopImg {
-  width: 12rem;
+  width: 100%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .shopMug {
-  width: 12rem;
-  height: 12rem;
+  width: 100%;
+  height: 20rem;
   object-fit: cover;
-  border-radius: 10px;
-  background-color: var(--darkerlight-color);
+  border-radius: 10px 10px 0 0;
 }
 
 .container-descriptif {
   padding: 5%;
-  width: 12rem;
-  height: 10rem;
-  border-radius: 10px;
-  background-color: var(--darkerlight-color);
+  width: 100%;
+  height: 13.5rem;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 5px 5px 26px 5px #0303034f;
+  background-color: rgba(168, 168, 168, 0.187);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,10 +81,9 @@
 }
 
 .containerPanier {
-  color: var(--darkerlight-color);
-  background-color: var(--main-color);
+  color: var(--light-color);
   border-radius: 10px;
-  box-shadow: 0px 0px 10px var(--darkerlight-color);
+  box-shadow: 0px 0px 10px var(--light-color);
   width: 90%;
   display: flex;
   flex-direction: column;
@@ -138,34 +152,17 @@
   background-color: var(--secondary-color);
   margin-top: 30%;
   font-size: 1rem;
-  color: black;
+  color: var(--main-color);
+}
+.buttonValid:hover {
+  cursor: pointer;
+  transform: var(--main-color);
 }
 
 /* Ecran moyen (Tablettes) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .containerArticles {
-    width: 90%;
-    margin: auto;
-    margin-bottom: 5%;
-    padding: 2%;
-  }
   .title-article {
     font-size: 1rem;
-  }
-  .shopImg {
-    width: 8rem;
-    height: auto;
-  }
-
-  .shopMug {
-    width: 8rem;
-    height: 8rem;
-  }
-
-  .container-descriptif {
-    width: 8rem;
-    height: 9rem;
-    font-size: 0.8rem;
   }
   .displayGrid {
     font-size: 0.7rem;
@@ -178,6 +175,7 @@
 @media screen and (max-width: 768px) {
   .containerArticles {
     display: flex;
+    flex-wrap: nowrap;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -185,9 +183,7 @@
     overflow-y: auto;
     margin-top: 5%;
   }
-  .articleShop {
-    padding-bottom: 5%;
-  }
+
   .displayGrid {
     font-size: 0.7rem;
     width: 100%;
