@@ -6,15 +6,22 @@ import Filter from "./pages/Filter";
 import FilterGallery from "./pages/FilterGallery";
 import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
+import Watchlist from "./pages/Watchlist";
+import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
+import Shop from "./pages/Shop";
+import GameHello from "./pages/Game/GameHello";
+import GameRomantique from "./pages/Game/Categories/GameRomantique";
+import GameHorreur from "./pages/Game/Categories/GameHorreur";
+import GameAnime from "./pages/Game/Categories/GameAnime";
+import GameSerie from "./pages/Game/Categories/GameSerie";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <App />,
     children: [
       {
-        path: "/home",
+        path: "/",
         element: <Home />,
       },
       {
@@ -26,30 +33,50 @@ const router = createBrowserRouter([
         element: <FilterGallery />,
       },
       {
-        path: "/checklist",
-        element: <App />,
+        path: "/watchlist",
+        element: <Watchlist />,
       },
       {
         path: "/game",
-        element: <App />,
+        element: <GameHello />,
       },
       {
-        path: "/shope",
-        element: <App />,
+        path: "/game/romantique",
+        element: <GameRomantique />,
+      },
+      {
+        path: "/game/horreur",
+        element: <GameHorreur />,
+      },
+      {
+        path: "/game/anime",
+        element: <GameAnime />,
+      },
+      {
+        path: "/game/seria",
+        element: <GameSerie />,
+      },
+      {
+        path: "/shop",
+        element: <Shop />,
       },
       {
         path: "/aboutus",
         element: <App />,
       },
       {
+        path: "/gallery/:query",
+        element: <Gallery />,
+      },
+      {
         path: "/focus/:mediaType/:id",
         element: <Focus />,
       },
+      {
+        path: "/acteur/:acteurId",
+        element: <FocusFilmActeur />,
+      },
     ],
-  },
-  {
-    path: "/FocusFilmActeur",
-    element: <FocusFilmActeur />,
   },
 ]);
 

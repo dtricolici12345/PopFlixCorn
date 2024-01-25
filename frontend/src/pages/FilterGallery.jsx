@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import CreateGallery from "../components/CreateGallery";
+import "../styles/FilterGallery.css";
 
 function FilterGallery() {
   const { filmType, selectedGenres } = useParams();
@@ -14,7 +16,7 @@ function FilterGallery() {
       const authToken =
         "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDA5OWZiMmIwZjMxNGY5YmIzMjJjNzY2MGExMWVmNSIsInN1YiI6IjY1OTg0OTc3MWQxYmY0MDFhOGU0YmViMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1Qtip1eiVi7XgfcZBaGDsa5LzjXMd4Ym3Ems_tmCiTQ";
 
-      let url; // Declare url here
+      let url;
 
       try {
         url = `${baseURL}/discover/${
@@ -43,21 +45,22 @@ function FilterGallery() {
   }, [filmType, selectedGenres]);
 
   return (
-    <div>
+    <div className="FilterGallery">
       {loading ? (
         <p>Chargement...</p>
       ) : (
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div className="Gallery">
           {searchResults && searchResults.length > 0 ? (
-            searchResults.map((result) => (
-              <div key={result.id} style={{ margin: "10px", width: "200px" }}>
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${result.poster_path}`}
-                  alt={result.title || result.name}
-                  style={{ width: "100%", height: "auto" }}
-                />
-                <p>{result.title || result.name}</p>
-              </div>
+            searchResults.map((item) => (
+              <CreateGallery
+                key={item.id}
+                id={item.id}
+                title={item.name || item.title}
+                imageUrl={item.poster_path || item.profile_path}
+                details={item.overview}
+                note={item.vote_average}
+                mediaType={filmType}
+              />
             ))
           ) : (
             <p>Aucun résultat trouvé.</p>

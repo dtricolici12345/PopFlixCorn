@@ -1,24 +1,19 @@
-:root {
-  --main-color: #282a36;
-  --secondary-color: #ffa00b;
-  --accent-color: #b50101;
-  --light-color: #f8f8f2;
-  --darkerlight-color: #b8b8b6;
-}
-
 .mfocus {
   background-color: var(--main-color);
-  position: absolute;
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
 }
 
 .mfocus-card {
   display: flex;
-  margin: 12rem 8rem 2rem 5rem;
   gap: 1.5rem;
-  font-family: "Inter", sans-serif;
-  max-width: 90rem;
+  max-width: 55rem;
+  margin: 0rem 1rem 2rem 1rem;
 }
 
 .mfocus-card-bloc-image {
@@ -31,6 +26,7 @@
   height: 22.5rem;
   object-position: cover;
   border-radius: 10px;
+  box-shadow: 5px 5px 26px 5px #0303034f;
 }
 
 .mfocus-note {
@@ -47,6 +43,7 @@
   left: 11.5rem;
   background-color: transparent;
   backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .border-red {
@@ -119,6 +116,7 @@
 .mfocus-overview {
   color: var(--light-color);
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .mfocus-wrap-btn {
@@ -141,12 +139,81 @@
   transform: scale(1.03);
 }
 
+.mfocus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.mfocus-popup {
+  background-color: #464a60;
+  border-radius: 10px;
+  top: 40%;
+  margin: 0 auto;
+  padding: 2rem 2rem 1rem 2rem;
+  position: fixed;
+  font-size: 1rem;
+  color: var(--light-color);
+  z-index: 2;
+}
+
+.mfocus-popup-iconline {
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0rem;
+}
+
+.mfocus-popup img {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 0.5rem;
+}
+
+.mfocus-popup button {
+  margin-top: 0.5rem;
+  margin-left: 17rem;
+  display: block;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--light-color);
+}
+
+.mfocus-popup button:hover {
+  transform: scale(1.01);
+  cursor: pointer;
+  background-color: var(--light-color);
+  color: var(--main-color);
+}
+
+.popup-closed {
+  display: none;
+}
+
+@media screen and (min-width: 1600px) {
+  .mfocus-card {
+    max-width: 90rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .mfocus-card {
+    max-width: 38rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .mfocus-card {
     flex-direction: column;
     align-items: center;
-    margin: 5rem 2rem 2rem 2rem;
     height: auto;
+    max-width: 30rem;
   }
 
   .mfocus-card-bloc-image {
@@ -163,4 +230,8 @@
     top: -3.5rem;
     left: 9.75rem;
   }
+
+  /* .mfocus-popup {
+    left: 15%;
+  } */
 }

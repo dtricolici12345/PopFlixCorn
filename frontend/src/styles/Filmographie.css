@@ -1,70 +1,234 @@
-/* .title_film {
-  padding: 40px 0 0 70px;
-}
-
-.card {
+/* test deuxieme css  */
+/* .cards {
   box-sizing: border-box;
-  margin-top: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #282a36;
+} */
+
+/* .BlocCard {
   border-radius: 10px;
-  width: 248.02px;
+  width: 270px;
   margin: 20px;
-}
-/* display: flex;
-  width: 8rem;
-  height: 20rem;
-  margin: 10px;
-  list-style: none; */
-
-.card {
-  box-sizing: border-box;
-  margin-top: 10px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  /* Ajoutez cette ligne pour aligner les éléments en haut */
-  background-color: #282a36;
-  border-radius: 10px;
-  margin: 20px;
+  flex-direction: column;
+  height: 50%;
+  margin-bottom: 100px;
 }
 
-.filmPoster {
-  display: flex;
-  flex-wrap: wrap;
-  width: calc(25% - 20px);
-  /* Ajustez la largeur pour faire tenir quatre images dans une rangée avec un peu d'espace entre elles */
-  margin: 10px;
-  list-style: none;
-  box-sizing: border-box;
+.headerCard {
+  height: 75%;
 }
 
-.img {
+.poster_paths {
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(185, 0, 0);
+  height: 400px;
+  width: 100%;
   border-radius: 10px;
 }
 
 .card2 {
+  padding: 10px 20px;
+  border: 6px solid var(--secondary-color);
+  height: 140px;
+  border-radius: 10px;
+  color: var(--light-color);
+  overflow: hidden;
+  max-lines: 3;
+  text-align: start;
+}
+
+.titles {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.overview {
+  text-overflow: ellipsis;
+  margin-top: 4px;
+  text-justify: auto;
+  font-size: 0.7rem;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Nombre de ligne à montrer*/
+/* line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.title_film {
+  color: var(--secondary-color);
+  margin-left: 8.5rem;
+  margin-top: 2rem;
+} */
+
+/* test troisieme css  */
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
+.cards {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: 12%;
+  margin-right: 12%;
+  transition: all 1s;
+}
+
+.BlocCard {
+  border-radius: 10px;
+  /* width: 270px; */
+  margin: 20px;
   display: flex;
   flex-direction: column;
+  /* height: 410px; */
+  background-color: rgba(168, 168, 168, 0.187);
+  border-radius: 10px;
+  box-shadow: 5px 5px 26px 5px #0303034f;
+  transition: all 0.5s;
+  height: 28.5rem;
+  width: 15rem;
+}
+
+.BlocCard:hover {
+  scale: 1.02;
+}
+
+.headercard {
+  width: 240px;
+  height: 360px;
+  /* height: 28.5rem;
+  width: 15rem;
+  max-height: 22.5rem; */
+}
+.poster_paths {
+  border-radius: 10px 10px 0 0;
+  background-size: cover;
+  background-position: center;
+  background-color: rgb(185, 0, 0);
+  height: 360px;
+  width: 240px;
+}
+
+.m-note {
+  display: inline-flex;
   align-items: center;
-  text-align: center;
-  border: 2px solid #ffa00b;
-  border-radius: 10px;
-  color: white;
-  padding: 10px;
-  margin-top: 10px;
+  justify-content: center;
+  color: var(--light-color);
+  border: 4px solid;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  top: -3.75rem;
+  left: 11.5rem;
+  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
 }
 
-.title {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
+.border-red {
+  border-color: red;
 }
 
-.poster_path {
+.border-orange {
+  border-color: orange;
+}
+
+.border-green {
+  border-color: green;
+}
+
+.card2 {
+  padding: 10px 20px;
+  /* border: 6px solid var(--secondary-color); */
+  /* height: 25%; */
   border-radius: 10px;
-  height: 20rem;
-  width: 10;
+  color: var(--light-color);
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.titles {
+  font-weight: bold;
+  font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Nombre de ligne à montrer*/
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.overview {
+  margin-top: 4px;
+  text-justify: auto;
+  font-size: 0.7rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Nombre de ligne à montrer*/
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  margin-bottom: 1rem;
+}
+
+.title_film {
+  color: var(--secondary-color);
+  margin-left: 8.5rem;
+  margin-top: 2rem;
+}
+
+.custom-link {
+  width: 240px;
+  height: 360px;
+}
+
+/* @media screen and (min-width: 2000px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; */
+/* margin-left: 15%;
+    margin-right: 15%; */
+
+/* .FocusFilmActeur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* margin-left: 15%;
+    margin-right: 15%; */
+/* }
+.FocusFilmActeur {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; */
+/* margin-left: 15%;
+    margin-right: 15%; */
+
+@media screen and (max-width: 768px) {
+  /* .mfocus-card-bloc-image img {
+    height: 19.5rem;
+    width: 13rem;
+  } */
+
+  .m-note {
+    top: -3.5rem;
+    left: 9.75rem;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .title_film {
+    margin-left: 7.5rem;
+  }
 }

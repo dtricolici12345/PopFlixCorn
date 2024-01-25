@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Menu.css";
 import FilterIcon from "../../assets/filter.png";
 import ChecklistIcon from "../../assets/checklist.png";
@@ -10,6 +10,16 @@ import AboutUsIcon from "../../assets/aboutus.png";
 
 function Menu() {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isHome, setisHome] = useState(false);
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/") {
+      console.info("hello");
+      setisHome(true);
+    } else {
+      setisHome(false);
+    }
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -20,7 +30,9 @@ function Menu() {
   };
 
   return (
-    <div className={`menu ${isMenuOpen ? "open" : ""}`}>
+    <div
+      className={`${isHome ? "home-menu" : "menu"} ${isMenuOpen ? "open" : ""}`}
+    >
       <input
         type="checkbox"
         id="toggle"
@@ -40,18 +52,18 @@ function Menu() {
         <NavLink to="/filter" className="btn">
           <img src={FilterIcon} className="material-icons " alt="Filter" />
         </NavLink>
-        <NavLink to="/checklist" className="btn">
+        <NavLink to="/watchlist" className="btn">
           <img
             src={ChecklistIcon}
-            alt="CheckList"
+            alt="Watchlist"
             className="material-icons "
           />
         </NavLink>
         <NavLink to="/game" className="btn">
           <img src={GameIcon} alt="Game" className="material-icons" />
         </NavLink>
-        <NavLink to="/shope" className="btn">
-          <img src={ShopeIcon} alt="Shope" className="material-icons" />
+        <NavLink to="/shop" className="btn">
+          <img src={ShopeIcon} alt="Shop" className="material-icons" />
         </NavLink>
         <NavLink to="/aboutus" className="btn">
           <img src={AboutUsIcon} alt="AboutUs" className="material-icons " />

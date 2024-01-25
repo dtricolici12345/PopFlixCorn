@@ -1,0 +1,212 @@
+/* Grand écran (Ordi) */
+.container-shop {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.containerArticles {
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5rem;
+}
+
+.shopImg {
+  width: 12rem;
+  height: auto;
+  border-radius: 10px;
+}
+
+.shopMug {
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 10px;
+  background-color: var(--darkerlight-color);
+}
+
+.container-descriptif {
+  padding: 5%;
+  width: 12rem;
+  height: 10rem;
+  border-radius: 10px;
+  background-color: var(--darkerlight-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title-article {
+  font-size: 1.5em;
+}
+
+.description-article {
+  font-size: 0.8em;
+}
+
+.tarif-bouton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bouton-quantité {
+  display: flex;
+  align-items: center;
+}
+.quantité {
+  width: 2rem;
+  text-align: center;
+}
+
+.buttonI-D {
+  padding: 0 4px 0 4px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.containerPanier {
+  color: var(--darkerlight-color);
+  background-color: var(--main-color);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px var(--darkerlight-color);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+.contenuPanier {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2%;
+  font-size: 1.2rem;
+}
+.titlePanier {
+  display: flex;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+.displayGrid {
+  display: grid;
+  width: 70%;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  font-size: 1.1rem;
+}
+.one {
+  text-decoration: underline;
+}
+.two,
+.three,
+.four {
+  text-decoration: underline;
+  text-align: center;
+}
+.six,
+.ten,
+.fourteen,
+.eighteen {
+  text-align: center;
+}
+.seven,
+.eleven,
+.fifteen,
+.nineteen {
+  text-align: center;
+}
+.eight,
+.twelve,
+.sixteen,
+.twenty {
+  text-align: center;
+}
+.containerValidation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.totalShop {
+  text-align: center;
+  color: var(--secondary-color);
+}
+.buttonValid {
+  height: 3rem;
+  border-radius: 45px;
+  background-color: var(--secondary-color);
+  margin-top: 30%;
+  font-size: 1rem;
+  color: black;
+}
+
+/* Ecran moyen (Tablettes) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .containerArticles {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 5%;
+    padding: 2%;
+  }
+  .title-article {
+    font-size: 1rem;
+  }
+  .shopImg {
+    width: 8rem;
+    height: auto;
+  }
+
+  .shopMug {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .container-descriptif {
+    width: 8rem;
+    height: 9rem;
+    font-size: 0.8rem;
+  }
+  .displayGrid {
+    font-size: 0.7rem;
+  }
+  .totalShop {
+    font-size: 1rem;
+  }
+}
+/* Petit écran (mobile) */
+@media screen and (max-width: 768px) {
+  .containerArticles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    max-height: 23rem;
+    overflow-y: auto;
+    margin-top: 5%;
+  }
+  .articleShop {
+    padding-bottom: 5%;
+  }
+  .displayGrid {
+    font-size: 0.7rem;
+    width: 100%;
+    padding-bottom: 5%;
+  }
+  .titlePanier {
+    font-size: 1.7rem;
+  }
+  .contenuPanier {
+    flex-direction: column;
+  }
+  .buttonValid {
+    height: 2rem;
+    margin-top: 5%;
+  }
+  .totalShop {
+    font-size: 1rem;
+  }
+  .buttonValid {
+    font-size: 0.8rem;
+  }
+}
