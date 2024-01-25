@@ -2,7 +2,7 @@
 
 .GalleryBody {
   width: 100vw;
-  background-color: #282a36;
+  background-color: var(--main-color);
   display: flex;
 }
 
@@ -47,10 +47,9 @@
 .A4card-body {
   padding: 10px 20px;
   border-radius: 10px;
-  color: #f8f8f2;
+  color: var(--light-color);
   overflow: hidden;
   padding-bottom: 1rem;
-  font-family: "Kanit", sans-serif;
 }
 
 .A4card-title {
