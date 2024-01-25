@@ -65,7 +65,7 @@ function GenrePage({ filmType, onGenreChange, onPageChange }) {
             tabIndex={[0]}
             type="submit"
           >
-            &#62;
+            ⌕
           </div>
         </div>
       </div>
