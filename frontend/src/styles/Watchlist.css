@@ -1,7 +1,6 @@
 .container-watchlist {
   width: 100%;
   margin: 3rem;
-  /* border: 1px solid green; */
 }
 
 .container-watchlist h1 {
@@ -10,7 +9,6 @@
 }
 
 .container-watchlistcards {
-  /* border: 1px solid blue; */
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -18,7 +16,6 @@
 }
 
 .card-watchlist {
-  /* border: 1px solid pink; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +27,6 @@
 }
 
 .card-watchlist-img {
-  /* border: 1px solid violet; */
   height: 19.5rem;
   transition: all 100ms;
 }
@@ -57,7 +53,7 @@
   width: 3rem;
   height: 3rem;
   position: relative;
-  top: -3.5rem;
+  top: -3.65rem;
   left: 9.75rem;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
@@ -87,6 +83,10 @@
   font-size: 1rem;
   padding-bottom: 0.75rem;
   text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 11rem;
+  height: 3rem;
 }
 
 .container-icon-watchlist {
