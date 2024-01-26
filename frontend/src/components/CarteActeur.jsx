@@ -5,10 +5,7 @@ import PropTypes from "prop-types";
 
 import NoPopCorn from "../assets/NoPopCorn.png";
 
-function CarteActeur({ movieId }) {
-  CarteActeur.propTypes = {
-    movieId: PropTypes.number.isRequired,
-  };
+function CarteActeur({ id, mediaType }) {
   const [acteursInfos, setActeursInfos] = useState([]);
 
   useEffect(() => {
@@ -21,23 +18,22 @@ function CarteActeur({ movieId }) {
       },
     };
     fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
+      `https://api.themoviedb.org/3/${mediaType}/${id}/credits?language=en-US`,
       options
     )
       .then((res) => res.json())
       .then((data) => {
-        console.info("Acteurs Infos", data.cast);
-        setActeursInfos(data.cast.slice(0, 15));
+        // console.info("Acteurs Infos films", data.cast);
+        setActeursInfos(data?.cast?.slice(0, 15));
       });
-  }, [movieId]);
+  }, [id, mediaType]);
 
   return (
     <div className="container_banner">
-      <h2 className="title_acteurs">Acteurs :</h2>
-
+      <h2 className="title_acteurs">Acteurs</h2>
       <div className="container_card_acteur">
-        {console.info("je suis dans le return", acteursInfos)}
-        {acteursInfos.map((acteurInfo) => (
+        {/* {console.info("je suis dans le return", acteursInfos)} */}
+        {acteursInfos?.map((acteurInfo) => (
           <div key={acteurInfo.id}>
             <li className="card">
               <Link key={acteurInfo.id} to={`/acteur/${acteurInfo.id}`}>
@@ -66,5 +62,9 @@ function CarteActeur({ movieId }) {
     </div>
   );
 }
+CarteActeur.propTypes = {
+  id: PropTypes.number.isRequired,
+  mediaType: PropTypes.string.isRequired,
+};
 
 export default CarteActeur;

@@ -1,37 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
-/* :root{
-    background-color: red;
-} */
+
 .GenrePage {
   display: flex;
-  background-color: #282a36;
-  color: #f8f8f2;
+  background-color: var(--main-color);
+  color: var(--light-color);
   height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Kanit", sans-serif;
   overflow: hidden;
 }
 
 .GenrePageNav {
-  width: 100%;
+  width: 70%;
   height: 5rem;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   display: flex;
   justify-content: space-between;
-  right: 0;
+  right: 115;
   position: absolute;
 }
 
 .GenrePageNav div {
-  color: #ffa00b;
+  color: var(--secondary-color);
   background: none;
   height: 100%;
   font-size: 3rem;
-  padding: 0 10px 0 10px;
   cursor: pointer;
+  margin-bottom: 50vh;
 }
 @media screen and (max-width: 768px) {
   .GenrePageNav {
@@ -43,9 +40,11 @@
     );
     position: fixed;
     bottom: 0px;
+    width: 100%;
   }
 
   .GenrePageNav div {
-    color: #f8f8f2;
+    color: var(--light-color);
+    margin: 15px;
   }
 }

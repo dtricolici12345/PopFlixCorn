@@ -161,8 +161,8 @@ function GameAnime() {
               className="progress__inner"
             />
           </div>
-          <h1>{animeQuestion.title}</h1>
-          <ul>
+          <h1 className="categoriestitle">{animeQuestion.title}</h1>
+          <ul className="categoriesreponse">
             {animeQuestion.variants.map((text, index) => (
               <li onClick={() => onClickVariant(index)} key={text}>
                 {text}

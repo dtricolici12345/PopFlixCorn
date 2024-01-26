@@ -58,6 +58,7 @@ function FilterGallery() {
                 title={item.name || item.title}
                 imageUrl={item.poster_path || item.profile_path}
                 details={item.overview}
+                note={item.vote_average}
                 mediaType={filmType}
               />
             ))

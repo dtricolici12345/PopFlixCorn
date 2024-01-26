@@ -1,4 +1,5 @@
-.FocusFilmActeur {
-  background-color: #282a36;
-  position: absolute;
+@media screen and (max-width: 768px) {
+  .FocusFilmActeur {
+    background-color: var(--main-color);
+  }
 }

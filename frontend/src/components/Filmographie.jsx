@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Filmographie.css";
 import "../styles/FocusActeur.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NoPopCorn from "../assets/NoPopCorn.png";
 
 function Filmographie() {
@@ -23,17 +23,18 @@ function Filmographie() {
       options
     )
       .then((response) => response.json())
-      .then((response) => setActeurfilm(response.cast.slice(0, 10)));
+      .then((response) => setActeurfilm(response.cast.slice(0, 30)));
 
     fetch(
-      `https://api.themoviedb.org/3/person/${acteurId}/tv_credits?language=fr-FR&region=FR', options`
+      `https://api.themoviedb.org/3/person/${acteurId}/tv_credits?language=fr-FR&region=FR`,
+      options
     )
       .then((response) => response.json())
-      .then((response) => setActeurserie(response.cast.slice(0, 10)));
+      .then((response) => setActeurserie(response.cast.slice(0, 30)));
   }, []);
 
-  const getBorderColor = () => {
-    const note = Math.round(acteurId.vote_average * 10);
+  const getBorderColor = (voteAverage) => {
+    const note = Math.round(voteAverage * 10);
     if (note < 50) return "border-red";
     if (note < 70) return "border-orange";
     return "border-green";
@@ -42,13 +43,16 @@ function Filmographie() {
   console.info("acteur film", acteurfilm);
   return (
     <div className="film">
-      <h2 className="title_film">Filmographie :</h2>
+      <h2 className="title_film">Filmographie</h2>
       <div className="cards">
         {console.info("je suis dans le return", acteurfilm)}
         {acteurfilm.map((filmPlayActeur) => (
           <div className="BlocCard" key={filmPlayActeur.id}>
-            <div className="filmPoster">
-              <div>
+            <Link
+              to={`/focus/movie/${filmPlayActeur.id}`}
+              className="custom-link"
+            >
+              <div className="headerCard">
                 {filmPlayActeur.poster_path ? (
                   <img
                     className="poster_paths"
@@ -62,21 +66,32 @@ function Filmographie() {
                     alt="No_Poster"
                   />
                 )}
+                <div
+                  className={`m-note ${getBorderColor(
+                    filmPlayActeur.vote_average
+                  )}`}
+                >
+                  {Math.round(filmPlayActeur.vote_average * 10)}%
+                </div>
               </div>
-              <div className={`m-note ${getBorderColor()}`}>
-                {Math.round(filmPlayActeur.vote_average * 10)}%
-              </div>
-              <div className="card2">
-                <p className="titles">{filmPlayActeur.title}</p>
-                <p className="overview">{filmPlayActeur.overview}</p>
-              </div>
+            </Link>
+            <div className="card2">
+              <div className="titles">{filmPlayActeur.title}</div>
+              <div className="overview">{filmPlayActeur.overview}</div>
             </div>
           </div>
         ))}
+        {console.info("je suis dans le return serie", acteurserie)}
+
+        {/* <h2 className="title_film">Series :</h2> */}
         {acteurserie.map((seriePlayActeur) => (
           <div className="BlocCard" key={seriePlayActeur.id}>
-            <div className="filmPoster">
-              <div>
+            {/* <div className="filmPoster"> */}
+            <Link
+              to={`/focus/tv/${seriePlayActeur.id}`}
+              className="custom-link"
+            >
+              <div className="headerCard">
                 {seriePlayActeur.poster_path ? (
                   <img
                     className="poster_paths"
@@ -90,16 +105,21 @@ function Filmographie() {
                     alt="No_Poster"
                   />
                 )}
+                <div
+                  className={`m-note ${getBorderColor(
+                    seriePlayActeur.vote_average
+                  )}`}
+                >
+                  {Math.round(seriePlayActeur.vote_average * 10)}%
+                </div>
               </div>
-              <div className={`m-note ${getBorderColor()}`}>
-                {Math.round(seriePlayActeur.vote_average * 10)}%
-              </div>
-              <div className="card2">
-                <p className="titles">{seriePlayActeur.name}</p>
-                <p className="overview">{seriePlayActeur.overview}</p>
-              </div>
+            </Link>
+            <div className="card2">
+              <div className="titles">{seriePlayActeur.original_name}</div>
+              <div className="overview">{seriePlayActeur.overview}</div>
             </div>
           </div>
+          // </div>
         ))}
       </div>
     </div>

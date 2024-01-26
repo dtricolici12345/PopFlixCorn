@@ -7,6 +7,9 @@
   flex-direction: column;
   padding-right: 5px;
   margin-left: 1rem;
+  /* Propriétés position & top ajoutées pour garder le menu visible sur le côté au scroll */
+  position: sticky;
+  top: 20%;
 }
 
 @media screen and (max-width: 768px) {
@@ -137,11 +140,12 @@
   .menu {
     display: flex;
     flex-direction: column;
-    /* position: fixed; */
-    /* top: 50%; */
-    /* transform: translateY(-50%); */
-    /* right: 0; */
+    /* position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0; */
   }
+
   .home-menu {
     display: flex;
     flex-direction: column;

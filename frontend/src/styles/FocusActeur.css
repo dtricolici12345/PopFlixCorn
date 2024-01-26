@@ -2,14 +2,17 @@
   display: flex;
   /* margin: 12rem 8rem 2rem 5rem; */
   gap: 1.5rem;
-  font-family: "Inter", sans-serif;
   max-width: 90rem;
+  margin-left: 8.5rem;
+  margin-top: 4rem;
+  width: 90%;
 }
 
 .partie {
   display: flex;
   flex-direction: column;
   padding-left: 20px;
+  text-align: start;
 }
 
 .partie1 {
@@ -20,45 +23,92 @@
   width: 15rem;
   height: 22.5rem;
   border-radius: 10px;
+  box-shadow: 5px 5px 26px 5px #0303034f;
 }
 
 .acteurH1 {
-  color: #ffa00b;
+  color: var(--secondary-color);
   text-decoration: underline;
+  text-align: left;
+  margin: 0px;
+  margin-right: 1.5rem;
 }
 
 .bioH2 {
-  color: #ffa00b;
+  color: var(--secondary-color);
 }
 
 .age {
   font-size: 2em;
   color: #727272;
+  text-align: right;
 }
 
 .biography {
   color: white;
   text-align: justify;
   margin-bottom: 1rem;
+  width: 80%;
+}
+
+@media screen and (min-width: 1600px) {
+  .FocusActeur {
+    max-width: 90rem;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .FocusActeur {
+    max-width: 38rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+  .imgActeur {
+    height: 19.5rem;
+    width: 13rem;
+    margin-left: 50px;
+  }
+
+  .partie1 {
+    font-size: 12px;
+  }
+
+  .bioH2 {
+    display: flex;
+    margin-left: -2.5rem;
+    justify-content: center;
+  }
+
+  .partie {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .FocusActeur {
+    max-width: 38rem;
     display: flex;
-    flex-direction: column;
-    text-align: center;
     align-items: center;
-    padding: 20px;
-    height: auto;
+    flex-direction: column;
+    margin-left: 40px;
+  }
+
+  .imgActeur {
+    height: 19.5rem;
+    width: 13rem;
+    margin-right: 15%;
   }
 
   .partie1 {
-    display: flex;
-    justify-content: center;
+    font-size: 12px;
   }
 
-  .biography {
-    padding: 0px;
-    text-align: center;
+  .bioH2 {
+    margin-left: 4.5rem;
   }
 }

@@ -6,6 +6,7 @@ import Filter from "./pages/Filter";
 import FilterGallery from "./pages/FilterGallery";
 import FocusFilmActeur from "./pages/FocusFilmActeur";
 import Home from "./pages/Home";
+import Watchlist from "./pages/Watchlist";
 import Gallery from "./components/Gallery";
 import Focus from "./pages/Focus";
 import Shop from "./pages/Shop";
@@ -15,6 +16,7 @@ import GameHorreur from "./pages/Game/Categories/GameHorreur";
 import GameAnime from "./pages/Game/Categories/GameAnime";
 import GameSerie from "./pages/Game/Categories/GameSerie";
 import AboutUs from "./pages/AboutUs";
+import Error404 from "./pages/404";
 
 const router = createBrowserRouter([
   {
@@ -37,8 +39,8 @@ const router = createBrowserRouter([
         element: <FilterGallery />,
       },
       {
-        path: "/checklist",
-        element: <App />,
+        path: "/watchlist",
+        element: <Watchlist />,
       },
       {
         path: "/game",
@@ -79,6 +81,10 @@ const router = createBrowserRouter([
       {
         path: "/acteur/:acteurId",
         element: <FocusFilmActeur />,
+      },
+      {
+        path: "*",
+        element: <Error404 />,
       },
     ],
   },
