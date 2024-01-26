@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Peignoir from "../assets/shop-peignoir.jpeg";
 import Mug from "../assets/shop-mug.png";
@@ -8,7 +8,7 @@ import Bol from "../assets/shop-bol.png";
 import "../styles/Shop.css";
 
 function Shop() {
-  const [valeurPeignoir, setValeurPeignoir] = useState(0);
+  const [valeurPeignoir, setValeurPeignoir] = useState(0, true);
   const [prixTotalArticlesPeignoir, setPrixTotalArticlesPeignoir] = useState(0);
   const incrementerPeignoir = () => {
     setValeurPeignoir(valeurPeignoir + 1);
@@ -21,7 +21,7 @@ function Shop() {
     }
   };
   const [valeurMug, setValeurMug] = useState(0);
-  const [prixTotalArticlesMug, setPrixTotalArticlesMug] = useState(0);
+  const [prixTotalArticlesMug, setPrixTotalArticlesMug] = useState(0, true);
   const incrementerMug = () => {
     setValeurMug(valeurMug + 1);
     setPrixTotalArticlesMug(5 * (valeurMug + 1));
@@ -32,7 +32,7 @@ function Shop() {
       setPrixTotalArticlesMug(5 * (valeurMug - 1));
     }
   };
-  const [valeurTshirt, setValeurTshirt] = useState(0);
+  const [valeurTshirt, setValeurTshirt] = useState(0, true);
   const [prixTotalArticlesTshirt, setPrixTotalArticlesTshirt] = useState(0);
 
   const incrementerTshirt = () => {
@@ -46,7 +46,7 @@ function Shop() {
     }
   };
 
-  const [valeurBol, setValeurBol] = useState(0);
+  const [valeurBol, setValeurBol] = useState(0, true);
   const [prixTotalArticlesBol, setPrixTotalArticlesBol] = useState(0);
   const incrementerBol = () => {
     setValeurBol(valeurBol + 1);
@@ -58,11 +58,41 @@ function Shop() {
       setPrixTotalArticlesBol(5 * (valeurBol - 1));
     }
   };
-  const totalPrix =
-    prixTotalArticlesPeignoir +
-    prixTotalArticlesMug +
-    prixTotalArticlesTshirt +
-    prixTotalArticlesBol;
+  const [totalPrix, setTotalPrix] = useState(0);
+  useEffect(() => {
+    // Calculer le total du panier à partir des valeurs actuelles des articles
+    const nouveauTotalPrix =
+      prixTotalArticlesPeignoir +
+      prixTotalArticlesMug +
+      prixTotalArticlesTshirt +
+      prixTotalArticlesBol;
+
+    setTotalPrix(nouveauTotalPrix);
+  }, [
+    prixTotalArticlesPeignoir,
+    prixTotalArticlesMug,
+    prixTotalArticlesTshirt,
+    prixTotalArticlesBol,
+  ]);
+  const resetTotalPanier = () => {
+    setTotalPrix(0);
+  };
+
+  const handleButtonClick = () => {
+    // eslint-disable-next-line no-alert
+    alert(
+      "Merci pour votre commande. Elle sera traitée dans les meilleurs délais!"
+    );
+    setValeurPeignoir(0);
+    setValeurMug(0);
+    setValeurTshirt(0);
+    setValeurBol(0);
+    setPrixTotalArticlesPeignoir(0);
+    setPrixTotalArticlesMug(0);
+    setPrixTotalArticlesTshirt(0);
+    setPrixTotalArticlesBol(0);
+    resetTotalPanier();
+  };
 
   return (
     <div className="container-shop">
@@ -224,7 +254,11 @@ function Shop() {
               <p>Total panier :</p>
               <p> {totalPrix}€</p>
             </div>
-            <button className="buttonValid" type="button">
+            <button
+              onClick={handleButtonClick}
+              className="buttonValid"
+              type="button"
+            >
               Acheter
             </button>
           </div>
