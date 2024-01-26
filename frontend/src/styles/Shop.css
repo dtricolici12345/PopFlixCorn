@@ -156,7 +156,7 @@
 }
 .buttonValid:hover {
   cursor: pointer;
-  transform: var(--main-color);
+  transform: scale(1.2);
 }
 
 /* Ecran moyen (Tablettes) */
