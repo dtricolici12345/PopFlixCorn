@@ -15,12 +15,17 @@ import GameRomantique from "./pages/Game/Categories/GameRomantique";
 import GameHorreur from "./pages/Game/Categories/GameHorreur";
 import GameAnime from "./pages/Game/Categories/GameAnime";
 import GameSerie from "./pages/Game/Categories/GameSerie";
+import AboutUs from "./pages/AboutUs";
 import Error404 from "./pages/404";
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
       {
         path: "/",
         element: <Home />,
