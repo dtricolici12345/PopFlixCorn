@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
+/* Section Film */
+
+.About-film .About-text {
+  text-align: left;
+  margin-block: 0;
+}
+.About-affiche {
+  height: 400px;
+  margin: 0rem 4rem 0rem 4rem;
+  background-color: #282a36;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.About-soon {
+  height: 350px;
+  width: 250px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.About-play {
+  background-image: url(../assets/play.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 100px;
+  width: 100px;
+  color: #f8f8f2;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.About-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.About-title {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  font-size: 1.5rem;
+  color: #f8f8f2;
+}
+
+.About-syno {
+  font-size: 1.5rem;
+  flex-wrap: wrap;
+  width: 80%;
+  color: #b8b8b6;
+}
+
+/* Section Acteur */
+
+.About-acteur {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  margin-top: 50px;
+  font-family: "Kanit", sans-serif;
+}
+
+.About-name {
+  display: flex;
+  color: #f8f8f2;
+  font-size: 2rem;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.About-non {
+  display: none;
+}
+
+.About-people {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+}
+
+.About-desc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.About-acteur a {
+  text-decoration: none;
+}
+
+.About-git {
+  background-image: url(../assets/git.png);
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.About-lin {
+  background-image: url(../assets/linkedin.png);
+  background-size: contain;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.About-person {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  background-color: #282a36;
+  border-radius: 10px;
+  color: #ffffff;
+  border-style: none;
+  box-shadow: 0px 0px 4px #ffffff;
+}
+
+/* Photo profil */
+
+.About-img {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 60%;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  filter: grayscale(100);
+}
+
+.About-img:hover {
+  filter: grayscale(0);
+}
+
+@media screen and (max-width: 768px) {
+  .About-film {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .About-film {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .About-film {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-family: "Kanit", sans-serif;
+  }
+}
