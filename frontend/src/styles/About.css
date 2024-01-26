@@ -2,11 +2,11 @@
 
 /* Section Film */
 
-.film .text {
+.About-film .About-text {
   text-align: left;
   margin-block: 0;
 }
-.affiche {
+.About-affiche {
   height: 400px;
   margin: 0rem 4rem 0rem 4rem;
   background-color: #282a36;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.soon {
+.About-soon {
   height: 350px;
   width: 250px;
   background-color: #000000;
@@ -26,7 +26,7 @@
   border-radius: 10px;
 }
 
-.play {
+.About-play {
   background-image: url(../assets/play.png);
   background-repeat: no-repeat;
   background-size: contain;
@@ -37,14 +37,14 @@
   text-decoration: none;
 }
 
-.text {
+.About-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
 
-.title {
+.About-title {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -52,7 +52,7 @@
   color: #f8f8f2;
 }
 
-.syno {
+.About-syno {
   font-size: 1.5rem;
   flex-wrap: wrap;
   width: 80%;
@@ -61,7 +61,7 @@
 
 /* Section Acteur */
 
-.acteur {
+.About-acteur {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -71,7 +71,7 @@
   font-family: "Kanit", sans-serif;
 }
 
-.name {
+.About-name {
   display: flex;
   color: #f8f8f2;
   font-size: 2rem;
@@ -79,11 +79,11 @@
   margin-bottom: 10px;
 }
 
-.non {
+.About-non {
   display: none;
 }
 
-.people {
+.About-people {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,7 +91,7 @@
   font-size: 0.5rem;
 }
 
-.desc {
+.About-desc {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -101,11 +101,11 @@
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.acteur a {
+.About-acteur a {
   text-decoration: none;
 }
 
-.git {
+.About-git {
   background-image: url(../assets/git.png);
   background-size: contain;
   height: 20px;
@@ -113,7 +113,7 @@
   cursor: pointer;
 }
 
-.lin {
+.About-lin {
   background-image: url(../assets/linkedin.png);
   background-size: contain;
   height: 20px;
@@ -121,7 +121,7 @@
   cursor: pointer;
 }
 
-.person {
+.About-person {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,7 +136,7 @@
 
 /* Photo profil */
 
-.img {
+.About-img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -147,12 +147,12 @@
   filter: grayscale(100);
 }
 
-.img:hover {
+.About-img:hover {
   filter: grayscale(0);
 }
 
 @media screen and (max-width: 768px) {
-  .film {
+  .About-film {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -165,7 +165,7 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .film {
+  .About-film {
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -178,7 +178,7 @@
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .film {
+  .About-film {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
