@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/About.css";
 import Ryan from "../assets/ryan.png";
-import Daniela from "../assets/daniela.png";
+import Daniela from "../assets/daniela.jpeg";
 import Sabrina from "../assets/sabrina.jpeg";
 import Cedric from "../assets/cedric.jpg";
 import Pauline from "../assets/pauline.jpg";
