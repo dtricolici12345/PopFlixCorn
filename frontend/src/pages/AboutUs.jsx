@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/About.css";
-import Ryan from "../assets/ryan.png";
+import RyanB from "../assets/ryan-B.png";
 import Daniela from "../assets/daniela.jpeg";
-import Sabrina from "../assets/sabrina.jpeg";
+import Sabrina from "../assets/sabrina.jpg";
 import Cedric from "../assets/cedric.jpg";
 import Pauline from "../assets/pauline.jpg";
 import Yohan from "../assets/yohan.jpg";
@@ -35,7 +35,7 @@ function Aboutus() {
         <article className="About-person">
           <Link to="/people/1">
             <div className="About-people">
-              <img src={Ryan} alt="Ryan" className="About-img" />
+              <img src={RyanB} alt="Ryan" className="About-img" />
               <div className="About-desc">
                 <h4 className="About-name">Ryan</h4>
                 <a href="https://github.com/RetrozDev" className="About-git ">
