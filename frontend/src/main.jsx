@@ -15,7 +15,6 @@ import GameHorreur from "./pages/Game/Categories/GameHorreur";
 import GameAnime from "./pages/Game/Categories/GameAnime";
 import GameSerie from "./pages/Game/Categories/GameSerie";
 import AboutUs from "./pages/AboutUs";
-// import People from "./pages/People.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,10 +24,6 @@ const router = createBrowserRouter([
         path: "/about",
         element: <AboutUs />,
       },
-      // {
-      //   path: "/people/:id",
-      //   element: <People />,
-      // },
       {
         path: "/",
         element: <Home />,

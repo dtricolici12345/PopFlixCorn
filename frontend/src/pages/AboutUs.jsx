@@ -25,7 +25,9 @@ function Aboutus() {
             Dans un monde où la technologie façonne l'avenir, une équipe de
             développeurs novateurs se réunit pour entreprendre une aventure
             épique à la Wild Code School, une institution légendaire où les
-            esprits brillants sont formés à maîtriser l'art du code.
+            esprits brillants sont formés à maîtriser l'art du code. (Ce site
+            utilise TMDB et les API de TMDB, mais il n'est pas soutenu, certifié
+            ou autrement approuvé par TMDB.)
           </p>
         </article>
       </section>
