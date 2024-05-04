@@ -1,79 +1,24 @@
-## Concept
+The PopFlixCorn app is your reliable guide to the world of movies and series! Easily discover interesting films and series, mark the ones you've already watched, and create a list for future viewings.
+But if you're stuck without ideas, don't worry. Just choose a genre, and we'll take care of the rest.
+And if you're tired of watching, why not spend some quality time with our engaging movie quiz? Test your knowledge and dive deeper into the world of cinema!
+Plus, our store offers branded items for a comfortable viewing experience with the PopFlixCorn logo. Treat yourself or your friends to a nice gift and immerse yourself in the movie atmosphere with us.
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying a pedagogical tool.
+![1](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/7d6c6024-086f-4f45-bf1f-0938da6ab916)
+![2](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/29870dab-fc6f-4bee-9978-31b712efb845)
+![3](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/507f166d-4e8b-438a-af10-f1778c5ca7da)
+![4](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/5b339844-df91-4688-a2d2-685a14447c66)
+![5](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/ddafdbbe-771d-4c99-a1cf-2f14f4814b7e)
+![6](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/d62b4b02-95ae-43a9-a756-434b70fc02b0)
+![7](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/5afc77c7-cee9-4cac-bcc4-7611e9ae91e5)
+![8](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/22d7f782-125b-43a4-9439-005f626877c1)
+![9](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/f6d5b2b1-091f-4e6e-a00f-9f2b3dd37313)
+![10](https://github.com/dtricolici12345/PopFlixCorn/assets/150685346/4d0ea72d-1230-4a75-8457-0365ba484485)
 
-## Setup & Use
 
-### Windows users
 
-Be sure to run these commands in a git terminal to avoid [issues with newline formats](https://en.wikipedia.org/wiki/Newline#Issues_with_different_newline_formats):
 
-```
-git config --global core.eol lf
-git config --global core.autocrlf false
-```
 
-### Project Initialization
 
-- In VSCode, install plugins **Prettier - Code formatter** and **ESLint** and configure them
-- Clone this repo, enter it
-- Run command `npm install`
-- Create environment files (`.env`) in both `backend` and `frontend`: you can copy `.env.sample` files as starters (**don't** delete them)
 
-### Available Commands
 
-- `db:migrate` : Run the database migration script
-- `db:seed` : Run the database seed script
-- `dev` : Starts both servers (frontend + backend) in one terminal
-- `dev-front` : Starts the React frontend server
-- `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools (will be executed on every _commit_, and refuse unclean code)
 
-## FAQ
-
-### Tools
-
-- _Concurrently_ : Allows for several commands to run concurrently in the same CLI
-- _Husky_ : Allows to execute specific commands that trigger on _git_ events
-- _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
-- _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
-
-## Deployment with Traefik
-
-> ⚠️ Prerequisites : You must have installed and configured Traefik on your VPS beforehand.
-> https://github.com/WildCodeSchool/vps-traefik-starter-kit/
-
-For deployment, you have to go to `secrets` → app `actions` on the github repo to insert via `New repository secret` :
-
-- SSH_HOST : IP address of your VPS
-- SSH_USER : SSH login to your VPS
-- SSH_PASSWORD : SSH connection password to your VPS
-
-And a public variable from the tab `/settings/variables/actions` :
-
-- PROJECT_NAME : the name of the project used to create the subdomain.
-
-> ⚠️ Warning : underscores are not allowed. They can cause trouble with the let's encrypt certificate
-
-Use this same tab to add the other environment variables required for the project if any.
-
-Only the backend will be accessible. The root path `"/"` will redirect to the dist folder on your frontend. In order to allow that, please uncomment the line as explain on `backend/src/app.js` (Line 102).
-Because the backend will serve the front, the global variable VITE_BACKEND_URL will be set with an empty string.
-
-Your url will be ` https://${PROJECT-NAME}.${subdomain}.wilders.dev/`.
-
-### About the database
-
-The database is automaticaly deployed with the name of your repo. During the build of the projet (`docker-entry.sh`), the `node migrate.js` command is executed in the backend. If you want to seed automaticaly your database using the `seed.js` script, replace the command _build_ on you `backend/package.json` by `node migrate.js && node seed.js`.
-
-### About public assets (pictures, fonts...)
-
-Don't use any public folder on your frontend. This folder won't be accessible online. You may move your public assets in the `backend/public` folder. Prefer [static assets](https://vitejs.dev/guide/assets) when possible.
-
-### About Logs
-
-If you want to access the logs of your online projet (to follow the deployement or to watch any bug error), connect to your VPS (`ssh user@host`).
-Then, go on your specific project and run  `docker compose logs -t -f`.
